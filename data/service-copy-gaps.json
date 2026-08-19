@@ -1,0 +1,724 @@
+{
+  "strategy": "tabs-on-parent",
+  "copyCoveredThrough": "Word docs cover India practice through RERA 1.9.2.3. Missing: rest of RERA 1.9.3-1.9.6, Loan Syndication 1.10, Valuation 1.11, EPFO/Labour 1.12, and all Global Practice 2.x.",
+  "servicesWithCopy": 188,
+  "servicesMissingCopy": 179,
+  "missing": [
+    {
+      "code": "1.9.3.1",
+      "title": "Quarterly Compliance Filing"
+    },
+    {
+      "code": "1.9.3.2",
+      "title": "Annual Compliance & Form Filing"
+    },
+    {
+      "code": "1.9.3.3",
+      "title": "Uploading of Project Progress Details"
+    },
+    {
+      "code": "1.9.3.4",
+      "title": "Compliance for Real Estate Agents"
+    },
+    {
+      "code": "1.9.4.1",
+      "title": "RERA Audit by Chartered Accountant"
+    },
+    {
+      "code": "1.9.4.2",
+      "title": "Engineer / Architect Certificate"
+    },
+    {
+      "code": "1.9.4.3",
+      "title": "Fund Utilization & Withdrawal Certification"
+    },
+    {
+      "code": "1.9.5.1",
+      "title": "Representation before RERA Authority / Tribunal"
+    },
+    {
+      "code": "1.9.5.2",
+      "title": "Drafting & Filing of RERA Complaints"
+    },
+    {
+      "code": "1.9.5.3",
+      "title": "Assistance in Refund / Penalty Proceedings"
+    },
+    {
+      "code": "1.9.6.1",
+      "title": "Monitoring of RERA Compliance Calendar"
+    },
+    {
+      "code": "1.9.6.2",
+      "title": "Advisory on RERA Law Updates"
+    },
+    {
+      "code": "1.9.6.3",
+      "title": "Handholding for New Projects"
+    },
+    {
+      "code": "1.10.1.1",
+      "title": "Preparation of Detailed Project Report (DPR)"
+    },
+    {
+      "code": "1.10.1.2",
+      "title": "Financial Feasibility Study"
+    },
+    {
+      "code": "1.10.1.3",
+      "title": "Project Costing & Budget Estimation"
+    },
+    {
+      "code": "1.10.1.4",
+      "title": "Term Loan & Working Capital Assessment"
+    },
+    {
+      "code": "1.10.2.1",
+      "title": "Debt Syndication from Banks / FIs"
+    },
+    {
+      "code": "1.10.2.2",
+      "title": "Preparation of CMA Data & Financial Projections"
+    },
+    {
+      "code": "1.10.2.3",
+      "title": "Consortium / Multiple Banking Arrangements"
+    },
+    {
+      "code": "1.10.2.4",
+      "title": "Loan Renewal & Enhancement Assistance"
+    },
+    {
+      "code": "1.10.2.5",
+      "title": "Preparation of Bankable Business Plan"
+    },
+    {
+      "code": "1.10.3.1",
+      "title": "Assistance under CGTMSE Scheme"
+    },
+    {
+      "code": "1.10.3.2",
+      "title": "PMEGP / Stand-Up India / Mudra Loan Advisory"
+    },
+    {
+      "code": "1.10.3.3",
+      "title": "Interest Subsidy / Capital Subsidy Assistance"
+    },
+    {
+      "code": "1.10.3.4",
+      "title": "NABARD / SIDBI / NSIC Funding Assistance"
+    },
+    {
+      "code": "1.10.4.1",
+      "title": "Preparation of Appraisal Note for Banks"
+    },
+    {
+      "code": "1.10.4.2",
+      "title": "Vetting of Loan Documentation"
+    },
+    {
+      "code": "1.10.4.3",
+      "title": "Compliance with Pre-Disbursement Conditions"
+    },
+    {
+      "code": "1.10.4.4",
+      "title": "Monitoring of End Use of Funds"
+    },
+    {
+      "code": "1.10.5.1",
+      "title": "Coordination for Disbursement"
+    },
+    {
+      "code": "1.10.5.2",
+      "title": "Post-Sanction Compliance"
+    },
+    {
+      "code": "1.10.5.3",
+      "title": "Credit Rating Advisory"
+    },
+    {
+      "code": "1.10.5.4",
+      "title": "Restructuring & CDR Advisory"
+    },
+    {
+      "code": "1.10.6.1",
+      "title": "Lease & Hire Purchase Finance"
+    },
+    {
+      "code": "1.10.6.2",
+      "title": "ECB & Foreign Loan Advisory"
+    },
+    {
+      "code": "1.10.6.3",
+      "title": "Private Equity / Venture Debt Advisory"
+    },
+    {
+      "code": "1.10.6.4",
+      "title": "Financial Restructuring & Turnaround Management"
+    },
+    {
+      "code": "1.11.1.1",
+      "title": "Valuation as per Companies Act, 2013"
+    },
+    {
+      "code": "1.11.1.2",
+      "title": "Valuation as per Income Tax Act"
+    },
+    {
+      "code": "1.11.1.3",
+      "title": "Valuation under FEMA / RBI Regulations"
+    },
+    {
+      "code": "1.11.1.4",
+      "title": "Startup Valuation"
+    },
+    {
+      "code": "1.11.1.5",
+      "title": "Valuation for Mergers, Demergers & Amalgamations"
+    },
+    {
+      "code": "1.11.1.6",
+      "title": "ESOP / Sweat Equity Valuation"
+    },
+    {
+      "code": "1.11.2.1",
+      "title": "Preparation of Dynamic Financial Models"
+    },
+    {
+      "code": "1.11.2.2",
+      "title": "Scenario & Sensitivity Analysis"
+    },
+    {
+      "code": "1.11.2.3",
+      "title": "Cash Flow & Fund Flow Modelling"
+    },
+    {
+      "code": "1.11.2.4",
+      "title": "Project Feasibility & Viability Modelling"
+    },
+    {
+      "code": "1.11.2.5",
+      "title": "Discounted Cash Flow (DCF) Valuation"
+    },
+    {
+      "code": "1.11.2.6",
+      "title": "Comparable Company / Transaction Valuation"
+    },
+    {
+      "code": "1.11.3.1",
+      "title": "Financial Due Diligence"
+    },
+    {
+      "code": "1.11.3.2",
+      "title": "Business Plan Review"
+    },
+    {
+      "code": "1.11.3.3",
+      "title": "Preparation of Information Memorandum"
+    },
+    {
+      "code": "1.11.3.4",
+      "title": "Support in Term Sheet & Share Swap Ratios"
+    },
+    {
+      "code": "1.11.4.1",
+      "title": "Valuation for FEMA / ODI / FDI Transactions"
+    },
+    {
+      "code": "1.11.4.2",
+      "title": "Valuation for Insolvency & Bankruptcy (IBC)"
+    },
+    {
+      "code": "1.11.4.3",
+      "title": "Valuation for Purchase Price Allocation (PPA)"
+    },
+    {
+      "code": "1.11.4.4",
+      "title": "Fairness Opinion Reports"
+    },
+    {
+      "code": "1.11.4.5",
+      "title": "Net Worth & NAV Valuation"
+    },
+    {
+      "code": "1.11.5.1",
+      "title": "Cap Table Management"
+    },
+    {
+      "code": "1.11.5.2",
+      "title": "ESOP Pool Structuring"
+    },
+    {
+      "code": "1.11.5.3",
+      "title": "Investor Reporting Dashboard"
+    },
+    {
+      "code": "1.11.5.4",
+      "title": "Investment Readiness Assessment"
+    },
+    {
+      "code": "1.12.1.1",
+      "title": "EPF Registration"
+    },
+    {
+      "code": "1.12.1.2",
+      "title": "ESIC Registration"
+    },
+    {
+      "code": "1.12.1.3",
+      "title": "Professional Tax (PT) Registration"
+    },
+    {
+      "code": "1.12.1.4",
+      "title": "Labour Welfare Fund (LWF) Registration"
+    },
+    {
+      "code": "1.12.1.5",
+      "title": "Shops & Establishment Registration"
+    },
+    {
+      "code": "1.12.2.1",
+      "title": "EPF Monthly Return Filing (ECR)"
+    },
+    {
+      "code": "1.12.2.2",
+      "title": "ESIC Monthly Return Filing"
+    },
+    {
+      "code": "1.12.2.3",
+      "title": "Professional Tax Return Filing"
+    },
+    {
+      "code": "1.12.2.4",
+      "title": "LWF Periodic Compliance"
+    },
+    {
+      "code": "1.12.2.5",
+      "title": "Contractor Labour Compliance"
+    },
+    {
+      "code": "1.12.3.1",
+      "title": "Payroll Processing & Statutory Deductions"
+    },
+    {
+      "code": "1.12.3.2",
+      "title": "Employee Record Maintenance"
+    },
+    {
+      "code": "1.12.3.3",
+      "title": "Leave & Attendance Registers"
+    },
+    {
+      "code": "1.12.3.4",
+      "title": "New Joinee & Exit Formalities"
+    },
+    {
+      "code": "1.12.4.1",
+      "title": "Labour Law Audit"
+    },
+    {
+      "code": "1.12.4.2",
+      "title": "Compliance Gap Analysis"
+    },
+    {
+      "code": "1.12.4.3",
+      "title": "Advisory on Applicability of Labour Laws"
+    },
+    {
+      "code": "1.12.4.4",
+      "title": "Audit Assistance by Labour Authorities"
+    },
+    {
+      "code": "1.12.5.1",
+      "title": "Maintenance of Statutory Registers"
+    },
+    {
+      "code": "1.12.5.2",
+      "title": "Annual Return under Labour Laws"
+    },
+    {
+      "code": "1.12.5.3",
+      "title": "Form 5A, Form 6A, and Other Returns"
+    },
+    {
+      "code": "1.12.5.4",
+      "title": "Labour Welfare Fund Annual Return"
+    },
+    {
+      "code": "1.12.6.1",
+      "title": "Gratuity & Bonus Compliance"
+    },
+    {
+      "code": "1.12.6.2",
+      "title": "Sexual Harassment (POSH) Compliance"
+    },
+    {
+      "code": "1.12.6.3",
+      "title": "Factories Act Compliance"
+    },
+    {
+      "code": "1.12.6.4",
+      "title": "Labour Law Licensing & Renewal"
+    },
+    {
+      "code": "1.12.6.5",
+      "title": "HR & Statutory Compliance Outsourcing"
+    },
+    {
+      "code": "2.1.1.1",
+      "title": "Tax Residency and Permanent Establishment (PE) Analysis"
+    },
+    {
+      "code": "2.1.1.2",
+      "title": "Double Taxation Avoidance Agreements (DTAA) Planning"
+    },
+    {
+      "code": "2.1.1.3",
+      "title": "Repatriation Strategy & Withholding Tax Management"
+    },
+    {
+      "code": "2.1.1.4",
+      "title": "Controlled Foreign Company (CFC) & GAAR Advisory"
+    },
+    {
+      "code": "2.1.1.5",
+      "title": "BEPS (Base Erosion and Profit Shifting) Compliance Support"
+    },
+    {
+      "code": "2.1.2.1",
+      "title": "Country-by-Country Reporting (CbCR) & Master File Preparation"
+    },
+    {
+      "code": "2.1.2.2",
+      "title": "Foreign Tax Credit Computation & Optimization"
+    },
+    {
+      "code": "2.1.2.3",
+      "title": "Global Income Disclosure & Compliance"
+    },
+    {
+      "code": "2.1.2.4",
+      "title": "Cross-border Investments Structuring"
+    },
+    {
+      "code": "2.1.2.5",
+      "title": "Expatriate Taxation and Compensation Structuring"
+    },
+    {
+      "code": "2.1.3.1",
+      "title": "Representation before Tax Authorities"
+    },
+    {
+      "code": "2.1.3.2",
+      "title": "Drafting & Submission of Reassessment/Appeal Documents"
+    },
+    {
+      "code": "2.1.3.3",
+      "title": "Assistance during International Tax Audits & Investigations"
+    },
+    {
+      "code": "2.2.1.1",
+      "title": "Local File, Master File & Country-by-Country Report Preparation"
+    },
+    {
+      "code": "2.2.1.2",
+      "title": "Functional, Asset & Risk (FAR) Analysis"
+    },
+    {
+      "code": "2.2.1.3",
+      "title": "Benchmarking Analysis using Indian & Global Databases"
+    },
+    {
+      "code": "2.2.1.4",
+      "title": "Intercompany Agreement Drafting & Review"
+    },
+    {
+      "code": "2.2.2.1",
+      "title": "Pricing Model Design for Intercompany Transactions"
+    },
+    {
+      "code": "2.2.2.2",
+      "title": "Intragroup Service Charge Structuring"
+    },
+    {
+      "code": "2.2.2.3",
+      "title": "IP Valuation & Royalty Rate Analysis"
+    },
+    {
+      "code": "2.2.2.4",
+      "title": "Transfer Pricing Policy Formulation"
+    },
+    {
+      "code": "2.2.3.1",
+      "title": "Support during TP Audits & Assessments"
+    },
+    {
+      "code": "2.2.3.2",
+      "title": "Drafting & Defense of TP Documentation before Authorities"
+    },
+    {
+      "code": "2.2.3.3",
+      "title": "Advance Pricing Agreements (APA) & Safe Harbour Advisory"
+    },
+    {
+      "code": "2.3.1.1",
+      "title": "Financial & Tax Due Diligence"
+    },
+    {
+      "code": "2.3.1.2",
+      "title": "Deal Structuring and Valuation"
+    },
+    {
+      "code": "2.3.1.3",
+      "title": "SPA/SSA Review & Advisory"
+    },
+    {
+      "code": "2.3.1.4",
+      "title": "Integration and Post-Deal Support"
+    },
+    {
+      "code": "2.3.2.1",
+      "title": "Valuation under Companies Act, FEMA & Income Tax Act"
+    },
+    {
+      "code": "2.3.2.2",
+      "title": "Fairness Opinions & Impairment Testing"
+    },
+    {
+      "code": "2.3.2.3",
+      "title": "Start-up Valuations & ESOP Structuring"
+    },
+    {
+      "code": "2.3.2.4",
+      "title": "Capital Restructuring and Fund-Raising Support"
+    },
+    {
+      "code": "2.3.3.1",
+      "title": "Cash Flow Modelling & Sensitivity Analysis"
+    },
+    {
+      "code": "2.3.3.2",
+      "title": "Business Plan Preparation for Investors"
+    },
+    {
+      "code": "2.3.3.3",
+      "title": "Pitch Deck & Information Memorandum Assistance"
+    },
+    {
+      "code": "2.4.1.1",
+      "title": "Company Formation in Singapore, Mauritius, UK, USA & Other Jurisdictions"
+    },
+    {
+      "code": "2.4.1.2",
+      "title": "Comparison of Jurisdictions for Holding or Trading Structures"
+    },
+    {
+      "code": "2.4.1.3",
+      "title": "Entity Structuring for Start-ups, Funds & Family Offices"
+    },
+    {
+      "code": "2.4.1.4",
+      "title": "Liaison Office / Branch Office Setup for Indian Entities Abroad"
+    },
+    {
+      "code": "2.4.2.1",
+      "title": "FEMA & RBI Compliances for Overseas Investments"
+    },
+    {
+      "code": "2.4.2.2",
+      "title": "Outbound Investment Structuring for Indian Residents"
+    },
+    {
+      "code": "2.4.2.3",
+      "title": "Double Taxation Avoidance Agreement (DTAA) Planning"
+    },
+    {
+      "code": "2.4.2.4",
+      "title": "Repatriation Strategy & Profit Distribution Planning"
+    },
+    {
+      "code": "2.4.2.5",
+      "title": "Global Accounting & Statutory Audit Support"
+    },
+    {
+      "code": "2.4.3.1",
+      "title": "Corporate Bank Account Opening in Global Jurisdictions"
+    },
+    {
+      "code": "2.4.3.2",
+      "title": "Local Accounting & Payroll Setup"
+    },
+    {
+      "code": "2.4.3.3",
+      "title": "Global VAT/GST Registration and Filings"
+    },
+    {
+      "code": "2.4.3.4",
+      "title": "Secretarial & Legal Compliance Management"
+    },
+    {
+      "code": "2.4.3.5",
+      "title": "Virtual Office, Nominee Director & Resident Agent Services"
+    },
+    {
+      "code": "2.5.1.1",
+      "title": "Mainland, Free Zone & Offshore Company Formation"
+    },
+    {
+      "code": "2.5.1.2",
+      "title": "DIFC & ADGM Setup & Regulatory Advisory"
+    },
+    {
+      "code": "2.5.1.3",
+      "title": "Global Holding Company Structuring for Tax Efficiency"
+    },
+    {
+      "code": "2.5.1.4",
+      "title": "Corporate Bank Account Assistance & KYC Documentation"
+    },
+    {
+      "code": "2.5.1.5",
+      "title": "Assistance in Drafting MOA/AOA & Corporate Documentation"
+    },
+    {
+      "code": "2.5.2.1",
+      "title": "Economic Substance Regulation (ESR) Compliance"
+    },
+    {
+      "code": "2.5.2.2",
+      "title": "Ultimate Beneficial Ownership (UBO) Reporting"
+    },
+    {
+      "code": "2.5.2.3",
+      "title": "VAT Registration, Compliance & Filing (UAE & GCC)"
+    },
+    {
+      "code": "2.5.2.4",
+      "title": "Anti-Money Laundering (AML) & Counter Financing of Terrorism (CFT) Advisory"
+    },
+    {
+      "code": "2.5.2.5",
+      "title": "Annual Audit & Accounting Compliance"
+    },
+    {
+      "code": "2.5.3.1",
+      "title": "Accounting, Audit & Tax Support"
+    },
+    {
+      "code": "2.5.3.2",
+      "title": "Virtual CFO & Compliance Management"
+    },
+    {
+      "code": "2.5.3.3",
+      "title": "Investor Visa, Residency & PRO Services"
+    },
+    {
+      "code": "2.5.3.4",
+      "title": "Cross-border Repatriation & Structuring"
+    },
+    {
+      "code": "2.5.3.5",
+      "title": "Assistance in Local Partner Arrangements & Sponsorship"
+    },
+    {
+      "code": "2.6.1.1",
+      "title": "End-to-End Finance Function Management"
+    },
+    {
+      "code": "2.6.1.2",
+      "title": "Monthly MIS, Financial Dashboards & KPI Reporting"
+    },
+    {
+      "code": "2.6.1.3",
+      "title": "Budgeting, Forecasting & Cash Flow Management"
+    },
+    {
+      "code": "2.6.1.4",
+      "title": "Strategic Decision Support & Scenario Planning"
+    },
+    {
+      "code": "2.6.1.5",
+      "title": "Board-Level Financial Presentations and Review"
+    },
+    {
+      "code": "2.6.2.1",
+      "title": "Annual Operating Plan (AOP) & Long-Term Financial Planning"
+    },
+    {
+      "code": "2.6.2.2",
+      "title": "Cost Optimization and Margin Improvement Analysis"
+    },
+    {
+      "code": "2.6.2.3",
+      "title": "Business Modelling & Sensitivity Analysis"
+    },
+    {
+      "code": "2.6.2.4",
+      "title": "Departmental Performance & Variance Analysis"
+    },
+    {
+      "code": "2.6.2.5",
+      "title": "Pricing Strategy and Profitability Analytics"
+    },
+    {
+      "code": "2.6.3.1",
+      "title": "Statutory Compliance Management (Direct, Indirect & Regulatory)"
+    },
+    {
+      "code": "2.6.3.2",
+      "title": "Corporate Governance Reporting & Audit Coordination"
+    },
+    {
+      "code": "2.6.3.3",
+      "title": "Internal Financial Controls (IFC) Design & Review"
+    },
+    {
+      "code": "2.6.3.4",
+      "title": "Risk Management Framework Implementation"
+    },
+    {
+      "code": "2.6.3.5",
+      "title": "Liaison with Auditors, Legal & Tax Teams"
+    },
+    {
+      "code": "2.6.4.1",
+      "title": "Fundraising Strategy & Investor Deck Preparation"
+    },
+    {
+      "code": "2.6.4.2",
+      "title": "Financial Due Diligence & Data Room Preparation"
+    },
+    {
+      "code": "2.6.4.3",
+      "title": "Support in Debt, Equity & Venture Capital Transactions"
+    },
+    {
+      "code": "2.6.4.4",
+      "title": "Business Valuation and Cap Table Management"
+    },
+    {
+      "code": "2.6.4.5",
+      "title": "Investor Reporting & Periodic Review Support"
+    },
+    {
+      "code": "2.6.5.1",
+      "title": "Multi-Entity and Multi-Currency Consolidation"
+    },
+    {
+      "code": "2.6.5.2",
+      "title": "Compliance Coordination Across Jurisdictions"
+    },
+    {
+      "code": "2.6.5.3",
+      "title": "IFRS & IND AS Reporting Conversion"
+    },
+    {
+      "code": "2.6.5.4",
+      "title": "Treasury & Forex Management"
+    },
+    {
+      "code": "2.6.5.5",
+      "title": "Global Expansion Planning & Tax-Efficient Structuring"
+    }
+  ]
+}

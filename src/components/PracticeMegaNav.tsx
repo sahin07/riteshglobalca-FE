@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { useState, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 import {
   StrapiMainModule,
   StrapiService,
@@ -30,6 +31,7 @@ export function DesktopPracticeNav({
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const pathname = usePathname()
   const [activeModuleId, setActiveModuleId] = useState<number | null>(modules[0]?.id ?? null)
   const activeModule = modules.find((m) => m.id === activeModuleId) || modules[0] || null
   const moduleCats = activeModule ? categoriesForModule(categories, activeModule.id) : []
@@ -55,6 +57,24 @@ export function DesktopPracticeNav({
     closeTimer.current = setTimeout(() => setMenuOpen(false), 300)
   }
 
+  const closeMenu = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+    setMenuOpen(false)
+  }
+
+  useEffect(() => {
+    closeMenu()
+  }, [pathname])
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current)
+    }
+  }, [])
+
   const selectModule = (id: number) => {
     setActiveModuleId(id)
     setActiveCategoryId(null)
@@ -70,6 +90,7 @@ export function DesktopPracticeNav({
     >
       <Link
         href="/services"
+        onClick={closeMenu}
         className={`relative z-[70] flex h-full items-center gap-1 text-[14px] xl:text-[15px] transition-colors ${menuOpen ? 'text-brand-dark' : 'text-slate-600'}`}
       >
         Services
@@ -90,6 +111,7 @@ export function DesktopPracticeNav({
         onCategory={(id) => { setActiveCategoryId(id); setActiveSubcategoryId(null); setActiveServiceId(null) }}
         onSubcategory={(id) => { setActiveSubcategoryId(id); setActiveServiceId(null) }}
         onService={setActiveServiceId}
+        onNavigate={closeMenu}
       />
     </div>
   )
@@ -110,6 +132,7 @@ function PracticeMegaMenu({
   onCategory,
   onSubcategory,
   onService,
+  onNavigate,
 }: {
   open: boolean
   modules: StrapiMainModule[]
@@ -125,6 +148,7 @@ function PracticeMegaMenu({
   onCategory: (id: number) => void
   onSubcategory: (id: number) => void
   onService: (id: number) => void
+  onNavigate: () => void
 }) {
   const category = categories.find((c) => c.id === activeCategoryId) || categories[0] || null
   const subcategory = subcategories.find((s) => s.id === activeSubcategoryId) || subcategories[0] || null
@@ -151,6 +175,7 @@ function PracticeMegaMenu({
                   <Link
                     key={mod.id}
                     href={moduleHref(mod.slug)}
+                    onClick={onNavigate}
                     onMouseEnter={() => onModule(mod.id)}
                     className={`w-full text-left flex items-start rounded-lg px-3 py-2 text-[13px] leading-snug transition-all duration-200 ${isActive ? 'bg-[#003B49] text-white shadow-sm' : 'text-slate-700 hover:bg-[#003B49]/10'}`}
                   >
@@ -169,6 +194,7 @@ function PracticeMegaMenu({
                   <Link
                     key={cat.id}
                     href={categoryHref(moduleSlug, cat.slug)}
+                    onClick={onNavigate}
                     onMouseEnter={() => onCategory(cat.id)}
                     className={`w-full text-left flex items-start rounded-lg px-3 py-2 text-[13px] leading-snug transition-all duration-200 ${isActive ? 'bg-[#F19020] text-white shadow-sm' : 'text-slate-700 hover:bg-[#F19020]/10'}`}
                   >
@@ -187,6 +213,7 @@ function PracticeMegaMenu({
                   <Link
                     key={sub.id}
                     href={category ? subcategoryHref(moduleSlug, category.slug, sub.slug) : '#'}
+                    onClick={onNavigate}
                     onMouseEnter={() => onSubcategory(sub.id)}
                     className={`w-full text-left flex items-start rounded-lg px-3 py-2 text-[13px] leading-snug transition-all duration-200 ${isActive ? 'bg-[#003B49] text-white shadow-sm' : 'text-slate-700 hover:bg-[#003B49]/10'}`}
                   >
@@ -213,6 +240,7 @@ function PracticeMegaMenu({
                           })
                         : serviceHref(srv.slug)
                     }
+                    onClick={onNavigate}
                     onMouseEnter={() => onService(srv.id)}
                     className={`rounded-lg px-3 py-2 text-[13px] leading-snug transition-all duration-200 ${isActive ? 'bg-[#F19020] text-white shadow-sm font-medium' : 'text-slate-700 hover:bg-[#F19020]/10 hover:text-[#003B49]'}`}
                   >

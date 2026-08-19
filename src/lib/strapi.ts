@@ -7,7 +7,7 @@ import {
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1338';
 
-async function fetchAllPages(pathWithQuery: string, init: RequestInit = { cache: 'no-store' }): Promise<any[]> {
+async function fetchAllPages(pathWithQuery: string, init: RequestInit = { next: { revalidate: 60 } }): Promise<any[]> {
   const pageSize = 100;
   let page = 1;
   const all: any[] = [];

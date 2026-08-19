@@ -25,7 +25,9 @@ import {
   categoryHref,
   categoriesForModule,
   findCategory,
+  findModule,
   findServiceAncestors,
+  findSubcategory,
   moduleHref,
   serviceHref,
   servicesForSubcategory,
@@ -59,27 +61,27 @@ async function resolvePath(segments: string[]) {
   if (segments.length === 1) {
     const service = await getServiceBySlug(a)
     if (service) return { kind: 'service' as const, service, tree }
-    const module = findModule(tree.modules, a)
-    if (module) return { kind: 'module' as const, module, tree }
+    const mainModule = findModule(tree.modules, a)
+    if (mainModule) return { kind: 'module' as const, module: mainModule, tree }
     return null
   }
 
   if (segments.length === 2) {
-    const module = findModule(tree.modules, a)
-    if (!module) return null
-    const category = findCategory(tree.categories, b, module.id)
+    const mainModule = findModule(tree.modules, a)
+    if (!mainModule) return null
+    const category = findCategory(tree.categories, b, mainModule.id)
     if (!category || isHiddenCategorySlug(category.slug)) return null
-    return { kind: 'category' as const, module, category, tree }
+    return { kind: 'category' as const, module: mainModule, category, tree }
   }
 
   if (segments.length === 3) {
-    const module = findModule(tree.modules, a)
-    if (!module) return null
-    const category = findCategory(tree.categories, b, module.id)
+    const mainModule = findModule(tree.modules, a)
+    if (!mainModule) return null
+    const category = findCategory(tree.categories, b, mainModule.id)
     if (!category || isHiddenCategorySlug(category.slug)) return null
     const subcategory = findSubcategory(tree.subcategories, c, category.id)
     if (!subcategory || isHiddenSubcategorySlug(subcategory.slug)) return null
-    return { kind: 'subcategory' as const, module, category, subcategory, tree }
+    return { kind: 'subcategory' as const, module: mainModule, category, subcategory, tree }
   }
 
   if (segments.length === 4) {
@@ -247,7 +249,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         intro={resolved.module.intro}
         description={resolved.module.description}
         crumbs={[{ label: 'Services', href: '/services' }, { label: resolved.module.title }]}
-        children={cats.map((cat) => ({
+        links={cats.map((cat) => ({
           title: cat.title,
           href: categoryHref(resolved.module.slug, cat.slug),
           description: cat.intro,
@@ -269,7 +271,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
           { label: resolved.module.title, href: moduleHref(resolved.module.slug) },
           { label: resolved.category.title },
         ]}
-        children={subs.map((sub) => ({
+        links={subs.map((sub) => ({
           title: sub.title,
           href: subcategoryHref(resolved.module.slug, resolved.category.slug, sub.slug),
           description: sub.intro,
@@ -291,7 +293,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         { label: resolved.category.title, href: categoryHref(resolved.module.slug, resolved.category.slug) },
         { label: resolved.subcategory.title },
       ]}
-      children={pages.map((srv) => ({
+      links={pages.map((srv) => ({
         title: srv.title,
         href: serviceHref(srv.slug, {
           moduleSlug: resolved.module.slug,

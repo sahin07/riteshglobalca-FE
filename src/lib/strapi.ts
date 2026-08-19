@@ -174,6 +174,8 @@ export interface StrapiService {
   heroTitle?: string;
   heroSubtitle?: string;
   shortDescription?: string;
+  introDescription?: string;
+  introQuote?: string;
   subcategory?: { id: number; documentId?: string; title?: string; slug?: string } | null;
   image?: {
     url: string;

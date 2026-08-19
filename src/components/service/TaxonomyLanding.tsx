@@ -9,14 +9,14 @@ export function TaxonomyLanding({
   intro,
   description,
   crumbs,
-  children,
+  links,
 }: {
   eyebrow?: string
   title: string
   intro?: string | null
   description?: string | null
   crumbs: Crumb[]
-  children: ChildLink[]
+  links: ChildLink[]
 }) {
   return (
     <main className="min-h-screen bg-[#f8f9fa]">
@@ -53,11 +53,11 @@ export function TaxonomyLanding({
               {description}
             </div>
           )}
-          {children.length === 0 ? (
+          {links.length === 0 ? (
             <p className="text-slate-500">Content for this level will be added soon.</p>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {children.map((child) => (
+              {links.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}

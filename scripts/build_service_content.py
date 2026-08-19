@@ -2,10 +2,17 @@
 
 5th-level Excel items are NOT extra dropdown pages. They become tabs on the
 parent (4th-level) service via service.tabbed-rich-text.
+
+Usage:
+  python scripts/build_service_content.py           # all 4 docs -> service-tree.json
+  python scripts/build_service_content.py --doc 1   # doc 1 only -> data/doc-1-copy.json
 """
 from __future__ import annotations
 
+import argparse
+import html as html_module
 import json
+import re
 import re
 import zipfile
 import xml.etree.ElementTree as ET
@@ -272,8 +279,19 @@ def docx_to_html_paragraphs(path: Path) -> list[dict]:
     return result
 
 
+def is_separator_paragraph(p: dict) -> bool:
+    text = (p.get("text") or "").strip()
+    if not text:
+        return False
+    compact = text.replace(" ", "")
+    if compact.startswith("---") or (compact and set(compact) <= {"-"}):
+        return True
+    return False
+
+
 def paragraphs_to_html(paras: list[dict]) -> str:
     """Convert structured paragraphs into an HTML string with proper tags."""
+    paras = [p for p in paras if not is_separator_paragraph(p)]
     out = []
     in_ul = False
     in_ol = False
@@ -350,7 +368,8 @@ def paragraphs_to_html(paras: list[dict]) -> str:
                 out.append(f"<p>{html}</p>")
 
     close_lists()
-    return "\n".join(out)
+    html = "\n".join(out)
+    return re.sub(r"<p>\s*-{10,}\s*</p>\s*", "", html, flags=re.IGNORECASE)
 
 
 def docx_paragraphs(path: Path) -> list[str]:
@@ -383,10 +402,218 @@ UNNUMBERED_MAP = OrderedDict(
 
 
 PROCESS_HEADINGS = {
-    "our process", "our audit process", "our gst registration process",
+    "our process",
+    "our audit process",
+    "our gst registration process",
     "our gst return filing process",
 }
 PROCESS_SKIP = {"step", "our approach"}
+STEP_NUM = re.compile(r"^step\s+\d+\s*[:\.]?\s*", re.I)
+FEATURE_SECTION_HEADING = re.compile(r"^our .+ services$", re.I)
+PROCESS_CLOSING_PREFIXES = (
+    "why choose",
+    "supporting ",
+    "reliable ",
+    "documents commonly",
+    "professional assistance",
+    "expert guidance",
+    "comprehensive support",
+    "seamless ",
+    "simplifying ",
+)
+
+
+def is_process_heading(text: str) -> bool:
+    lower = text.strip().lower()
+    if lower in PROCESS_HEADINGS:
+        return True
+    return lower.startswith("our ") and lower.endswith(" process")
+
+
+def is_process_closing_line(text: str) -> bool:
+    stripped = (text or "").strip()
+    if not stripped:
+        return False
+    lower = stripped.lower()
+    if NUM.match(stripped):
+        return True
+    if stripped.startswith("---") or set(stripped) <= {"-"}:
+        return True
+    if any(lower.startswith(prefix) for prefix in PROCESS_CLOSING_PREFIXES):
+        return True
+    if lower.endswith("services ensure") or lower.endswith("services help"):
+        return True
+    if len(stripped) > 180:
+        return True
+    return False
+
+
+def normalize_step_title(text: str) -> str:
+    return STEP_NUM.sub("", text or "").strip() or text
+
+
+def is_card_section_heading(text: str) -> bool:
+    """Headings for sections rendered as feature-grid cards."""
+    stripped = (text or "").strip()
+    lower = stripped.lower()
+    if is_process_heading(stripped):
+        return False
+    if lower.startswith("why choose"):
+        return False
+    if lower.startswith("documents commonly"):
+        return False
+    if lower.startswith("business entities covered"):
+        return True
+    return bool(FEATURE_SECTION_HEADING.match(stripped))
+
+
+def is_feature_section_heading(text: str) -> bool:
+    return is_card_section_heading(text)
+
+
+def extract_intro_paras(paras: list[dict]) -> list[dict]:
+    """Opening prose paragraphs before the first section heading."""
+    intro: list[dict] = []
+    for p in paras:
+        text = (p.get("text") or "").strip()
+        if not text:
+            continue
+        html = (p.get("html") or "").strip().lower()
+        if "<h3>" in html:
+            break
+        if len(text) <= 90 and not text.endswith("."):
+            break
+        intro.append(p)
+    return intro
+
+
+def trim_intro_paras(paras: list[dict]) -> list[dict]:
+    """Drop opening intro paragraphs; content blocks start at the first section heading."""
+    count = len(extract_intro_paras(paras))
+    return paras[count:] if count else paras
+
+
+def is_strong_paragraph(p: dict) -> bool:
+    html = (p.get("html") or "").strip()
+    text = (p.get("text") or "").strip()
+    strong_only = html_module.unescape(re.sub(r"</?(strong|em)>", "", html).strip())
+    return bool(text and strong_only == text and "<strong>" in html and not p.get("numId"))
+
+
+def extract_feature_sections(paras: list[dict]) -> list[dict]:
+    sections: list[dict] = []
+    i = 0
+    while i < len(paras):
+        text = paras[i]["text"].strip()
+        if not is_card_section_heading(text):
+            i += 1
+            continue
+
+        title = text
+        subtitle = ""
+        cards: list[dict] = []
+        i += 1
+
+        if i < len(paras):
+            lead = paras[i]["text"].strip()
+            if lead and not is_strong_paragraph(paras[i]) and not is_card_section_heading(lead):
+                subtitle = lead
+                i += 1
+
+        while i < len(paras):
+            current = paras[i]["text"].strip()
+            lower = current.lower()
+            if (
+                not current
+                or is_process_heading(current)
+                or is_card_section_heading(current)
+                or lower.startswith("why choose")
+                or lower.startswith("documents commonly")
+                or current.startswith("---")
+                or NUM.match(current)
+            ):
+                break
+
+            if is_strong_paragraph(paras[i]):
+                card_title = current
+                card_description = ""
+                if i + 1 < len(paras):
+                    nxt = paras[i + 1]["text"].strip()
+                    if (
+                        nxt
+                        and not is_strong_paragraph(paras[i + 1])
+                        and not is_card_section_heading(nxt)
+                        and not is_process_heading(nxt)
+                        and not NUM.match(nxt)
+                    ):
+                        card_description = nxt
+                        i += 1
+                cards.append({"title": card_title, "description": card_description})
+            i += 1
+
+        if cards:
+            sections.append(
+                {
+                    "sectionTitle": title,
+                    "sectionSubtitle": subtitle,
+                    "cards": cards,
+                }
+            )
+
+    return sections
+
+
+def extract_process_lines_from_paras(paras: list[dict]) -> list[str]:
+    flat: list[str] = []
+    in_process = False
+    i = 0
+    while i < len(paras):
+        p = paras[i]
+        text = p["text"].strip()
+        if is_process_heading(text):
+            in_process = True
+            i += 1
+            continue
+        if not in_process:
+            i += 1
+            continue
+        if text.lower() in PROCESS_SKIP:
+            i += 1
+            continue
+        if not text:
+            i += 1
+            continue
+        if is_process_closing_line(text):
+            break
+
+        if STEP_NUM.match(text):
+            flat.append(text)
+            if i + 1 < len(paras):
+                nxt = paras[i + 1]["text"].strip()
+                if (
+                    nxt
+                    and not STEP_NUM.match(nxt)
+                    and not is_process_heading(nxt)
+                    and not is_process_closing_line(nxt)
+                ):
+                    flat.append(nxt)
+                    i += 2
+                    continue
+            i += 1
+            continue
+
+        if (
+            not flat
+            and is_likely_process_description(text)
+            and i + 1 < len(paras)
+            and STEP_NUM.match(paras[i + 1]["text"].strip())
+        ):
+            i += 1
+            continue
+
+        flat.append(text)
+        i += 1
+    return flat
 
 
 def strip_process_from_paras(paras: list[dict]) -> list[dict]:
@@ -394,30 +621,104 @@ def strip_process_from_paras(paras: list[dict]) -> list[dict]:
     result = []
     in_process = False
     for p in paras:
-        text = p["text"].strip().lower()
-        if text in PROCESS_HEADINGS:
+        text = p["text"].strip()
+        if is_process_heading(text):
             in_process = True
             continue
         if in_process:
-            if text in PROCESS_SKIP:
+            if text.lower() in PROCESS_SKIP:
                 continue
-            # End of process section: next heading or a long paragraph or numbered section
-            style = p["style"].lower()
-            is_heading = style.startswith("heading")
-            is_long = len(p["text"]) > 80
-            is_numbered = NUM.match(p["text"].strip())
-            if is_heading or is_long or is_numbered:
+            if not text:
+                continue
+            if is_process_closing_line(text):
                 in_process = False
                 result.append(p)
-            # Otherwise skip (these are the step lines)
+                continue
             continue
         result.append(p)
     return result
 
 
-def parse_word_copy() -> dict[str, dict]:
+def _skip_card_section(paras: list[dict], i: int) -> int:
+    """Return index after the card section whose heading is at paras[i]."""
+    i += 1
+    if i < len(paras):
+        lead = paras[i]["text"].strip()
+        if lead and not is_strong_paragraph(paras[i]) and not is_card_section_heading(lead):
+            i += 1
+
+    while i < len(paras):
+        current = paras[i]["text"].strip()
+        lower = current.lower()
+        if (
+            not current
+            or is_process_heading(current)
+            or is_card_section_heading(current)
+            or lower.startswith("why choose")
+            or lower.startswith("documents commonly")
+            or current.startswith("---")
+            or NUM.match(current)
+        ):
+            break
+        i += 1
+    return i
+
+
+def split_paras_around_features(paras: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Split paragraphs into content before and after card sections (process excluded)."""
+    before: list[dict] = []
+    after: list[dict] = []
+    seen_feature = False
+    i = 0
+    while i < len(paras):
+        text = paras[i]["text"].strip()
+        if is_process_heading(text):
+            i += 1
+            while i < len(paras):
+                t = paras[i]["text"].strip()
+                if t.lower() in PROCESS_SKIP:
+                    i += 1
+                    continue
+                if not t:
+                    i += 1
+                    continue
+                if is_process_closing_line(t):
+                    break
+                i += 1
+        elif is_card_section_heading(text):
+            seen_feature = True
+            i = _skip_card_section(paras, i)
+            continue
+
+        if i >= len(paras):
+            break
+
+        if not seen_feature:
+            before.append(paras[i])
+        else:
+            after.append(paras[i])
+        i += 1
+    return before, after
+
+
+def strip_feature_sections_from_paras(paras: list[dict]) -> list[dict]:
+    result: list[dict] = []
+    i = 0
+    while i < len(paras):
+        text = paras[i]["text"].strip()
+        if not is_card_section_heading(text):
+            result.append(paras[i])
+            i += 1
+            continue
+        i = _skip_card_section(paras, i)
+
+    return result
+
+
+def parse_word_copy(doc_paths: list[Path] | None = None) -> dict[str, dict]:
     all_paras: list[dict] = []
-    for doc in DOCS:
+    sources = doc_paths if doc_paths is not None else DOCS
+    for doc in sources:
         if doc.exists():
             all_paras.extend(docx_to_html_paragraphs(doc))
 
@@ -445,48 +746,115 @@ def parse_word_copy() -> dict[str, dict]:
     for code, paras in sections.items():
         plain_lines = [p["text"] for p in paras]
         plain_body = "\n\n".join(plain_lines).strip()
-        intro = ""
-        for line in plain_lines:
-            if len(line) > 80:
-                intro = line
-                break
-        if not intro and plain_lines:
-            intro = plain_lines[0]
 
-        # Strip "Our Process" section from HTML body (it becomes a separate process-section block)
-        body_paras = strip_process_from_paras(paras)
+        intro_paras = extract_intro_paras(paras)
+        intro_hero = (intro_paras[0]["text"] or "").strip() if intro_paras else ""
+        intro_rest = paragraphs_to_html(intro_paras[1:]) if len(intro_paras) > 1 else ""
+        content_paras = paras[len(intro_paras) :] if intro_paras else paras
+
+        feature_sections = extract_feature_sections(paras)
+        before_paras, after_paras = split_paras_around_features(content_paras)
+        # Strip structured sections from HTML body; they become separate blocks.
+        body_paras = strip_feature_sections_from_paras(strip_process_from_paras(content_paras))
         html_body = paragraphs_to_html(body_paras)
+        body_before = paragraphs_to_html(before_paras)
+        body_after = paragraphs_to_html(after_paras)
 
+        process_lines = extract_process_lines_from_paras(paras)
         copy[code] = {
-            "hasCopy": bool(html_body),
-            "intro": intro[:500],
+            "hasCopy": bool(html_body or plain_body),
+            "intro": intro_hero,
+            "introHero": intro_hero,
+            "introRest": intro_rest,
             "body": html_body,
+            "bodyBefore": body_before,
+            "bodyAfter": body_after,
             "plainBody": plain_body,
+            "featureSections": feature_sections,
+            "processLines": process_lines,
+            "processSteps": pair_process_lines(process_lines),
         }
     return copy
 
 
-def split_process_steps(body: str) -> list[str]:
-    steps = []
+def is_likely_process_description(text: str) -> bool:
+    text = (text or "").strip()
+    if not text:
+        return False
+    if text.endswith("."):
+        return True
+    if len(text) > 45:
+        return True
+    if text[:1].islower():
+        return True
+    return False
+
+
+def pair_process_lines(flat: list[str]) -> list[dict]:
+    if not flat:
+        return []
+
+    if any(STEP_NUM.match(x) for x in flat):
+        paired: list[dict] = []
+        i = 0
+        while i < len(flat):
+            raw_title = flat[i].strip()
+            if not raw_title:
+                i += 1
+                continue
+            title = normalize_step_title(raw_title)
+            description = ""
+            if i + 1 < len(flat) and is_likely_process_description(flat[i + 1]):
+                description = flat[i + 1].strip()
+                i += 2
+            else:
+                i += 1
+            paired.append({"title": title, "description": description})
+        return paired
+
+    start = 1 if len(flat) > 1 and len(flat[0]) > 70 and is_likely_process_description(flat[0]) else 0
+    step_lines = [line.strip() for line in flat[start:] if line.strip()]
+    if step_lines and all(is_likely_process_description(line) for line in step_lines):
+        return [
+            {"title": line.rstrip("."), "description": ""}
+            for line in step_lines
+        ]
+
+    paired = []
+    i = 0
+    while i < len(flat):
+        raw_title = flat[i].strip()
+        if not raw_title:
+            i += 1
+            continue
+        title = normalize_step_title(raw_title)
+        description = ""
+        if i + 1 < len(flat) and is_likely_process_description(flat[i + 1]):
+            description = flat[i + 1].strip()
+            i += 2
+        else:
+            i += 1
+        paired.append({"title": title, "description": description})
+    return paired
+
+
+def split_process_steps(body: str) -> list[dict]:
+    flat: list[str] = []
     in_process = False
     for line in body.split("\n"):
         stripped = line.strip()
-        if stripped.lower() in {"our process", "our audit process", "our gst registration process", "our gst return filing process"}:
+        if is_process_heading(stripped):
             in_process = True
             continue
         if in_process:
-            if stripped.lower() in {"step", "our approach"}:
+            if stripped.lower() in PROCESS_SKIP:
                 continue
             if not stripped:
                 continue
-            if stripped.endswith("Services") and len(stripped) < 80:
+            if is_process_closing_line(stripped):
                 break
-            if NUM.match(stripped):
-                break
-            steps.append(stripped)
-            if len(steps) >= 8:
-                break
-    return steps
+            flat.append(stripped)
+    return pair_process_lines(flat)
 
 
 def attach_copy(tree: dict, copy: dict[str, dict]) -> tuple[dict, dict]:
@@ -504,9 +872,16 @@ def attach_copy(tree: dict, copy: dict[str, dict]) -> tuple[dict, dict]:
         c = copy.get(svc["code"]) or {}
         svc["hasCopy"] = bool(c.get("hasCopy"))
         svc["intro"] = c.get("intro") or ""
+        svc["introHero"] = c.get("introHero") or c.get("intro") or ""
+        svc["introRest"] = c.get("introRest") or ""
         svc["body"] = c.get("body") or ""
+        svc["bodyBefore"] = c.get("bodyBefore") or ""
+        svc["bodyAfter"] = c.get("bodyAfter") or ""
         svc["plainBody"] = c.get("plainBody") or ""
-        svc["processSteps"] = split_process_steps(svc.get("plainBody") or "") if svc.get("plainBody") else []
+        svc["featureSections"] = c.get("featureSections") or []
+        svc["processSteps"] = c.get("processSteps") or (
+            split_process_steps(svc.get("plainBody") or "") if svc.get("plainBody") else []
+        )
         for tab in svc["tabs"]:
             tc = copy.get(tab["code"]) or {}
             tab["hasCopy"] = bool(tc.get("hasCopy"))
@@ -526,10 +901,35 @@ def attach_copy(tree: dict, copy: dict[str, dict]) -> tuple[dict, dict]:
     return tree, gaps
 
 
+def doc_path(doc_num: int) -> Path:
+    return WORKSPACE / f"Content RA Assosciates {doc_num}.docx"
+
+
+def build_doc_copy(doc_num: int) -> dict[str, dict]:
+    path = doc_path(doc_num)
+    if not path.exists():
+        raise SystemExit(f"Missing doc file: {path}")
+    return parse_word_copy([path])
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Build service tree and Word copy JSON")
+    parser.add_argument("--doc", type=int, choices=[1, 2, 3, 4], help="Build copy JSON for one doc only")
+    args = parser.parse_args()
+
     OUT_DIR.mkdir(exist_ok=True)
     rows = read_excel_rows()
     tree = build_tree(rows)
+
+    if args.doc:
+        copy = build_doc_copy(args.doc)
+        doc_out = OUT_DIR / f"doc-{args.doc}-copy.json"
+        doc_out.write_text(json.dumps(copy, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("Wrote", doc_out)
+        print("sections_in_doc", len(copy))
+        print("codes", ", ".join(sorted(copy.keys())[:8]), "...")
+        return
+
     copy = parse_word_copy()
     tree, gaps = attach_copy(tree, copy)
     (OUT_DIR / "service-tree.json").write_text(json.dumps(tree, ensure_ascii=False, indent=2), encoding="utf-8")

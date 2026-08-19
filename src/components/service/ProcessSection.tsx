@@ -42,7 +42,7 @@ export function ProcessSection({ block }: ProcessSectionProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {steps.map((step: any, idx: number) => (
           <div key={idx} className="flex items-center gap-4 bg-[#f8f9fa] rounded-2xl p-5 border border-slate-100">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#22c55e] flex items-center justify-center text-white font-bold text-[15px]">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#0b293d] flex items-center justify-center text-white font-bold text-[15px]">
               {String(idx + 1).padStart(2, '0')}
             </div>
             <div>

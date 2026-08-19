@@ -10,7 +10,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
         {title}
       </h2>
       <div className="flex w-24">
-        <span className="h-[3px] w-10 bg-[#22c55e] rounded-full" />
+        <span className="h-[3px] w-10 bg-[#0b293d] rounded-full" />
         <span className="h-[3px] flex-1 bg-[#0b293d] rounded-full" />
       </div>
       {subtitle && (

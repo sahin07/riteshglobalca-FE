@@ -20,11 +20,11 @@ export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps)
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#0a201c] via-[#0f2e2a] to-[#163d36]" />
+          <div className="w-full h-full bg-gradient-to-br from-[#081e2e] via-[#0b293d] to-[#0d3148]" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a201c]/90 via-[#0f2e2a]/60 to-[#0f2e2a]/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(72,187,120,0.15)_0%,_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(72,187,120,0.08)_0%,_transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b293d]/95 via-[#0b293d]/65 to-[#0b293d]/45" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(241,144,32,0.12)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.06)_0%,_transparent_50%)]" />
       </div>
 
       <div className="relative w-full max-w-[1400px] mx-auto px-4 lg:px-8 py-20 md:py-24">

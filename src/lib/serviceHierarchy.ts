@@ -36,21 +36,59 @@ export function findServiceAncestors(
     subcategories: StrapiServiceSubcategory[]
   }
 ) {
-  const subId = service.subcategory?.id
-  const subSlug = service.subcategory?.slug
-  const sub =
-    tree.subcategories.find((s) => (subId != null && s.id === subId) || (subSlug && s.slug === subSlug)) || null
-  if (!sub) return null
-  const cat =
-    tree.categories.find(
-      (c) => c.id === sub.category?.id || (sub.category?.slug && c.slug === sub.category.slug)
-    ) || null
-  if (!cat) return null
-  const mod =
-    tree.modules.find(
-      (m) => m.id === cat.mainModule?.id || (cat.mainModule?.slug && m.slug === cat.mainModule.slug)
-    ) || null
-  if (!mod) return null
+  const populatedSub = service.subcategory
+  const subId = populatedSub?.id
+  const subSlug = populatedSub?.slug
+
+  let sub =
+    tree.subcategories.find((s) => (subId != null && s.id === subId) || (subSlug && s.slug === subSlug)) ||
+    null
+
+  let cat =
+    sub != null
+      ? tree.categories.find(
+          (c) => c.id === sub!.category?.id || (sub!.category?.slug && c.slug === sub!.category!.slug)
+        ) || null
+      : null
+
+  let mod =
+    cat != null
+      ? tree.modules.find(
+          (m) => m.id === cat!.mainModule?.id || (cat!.mainModule?.slug && m.slug === cat!.mainModule!.slug)
+        ) || null
+      : null
+
+  // Taxonomy may be filtered from nav tree (hideDocs) while detail API still populates relations.
+  if (!sub && populatedSub?.slug) {
+    sub = {
+      id: populatedSub.id,
+      documentId: populatedSub.documentId ?? '',
+      title: populatedSub.title ?? populatedSub.slug,
+      slug: populatedSub.slug,
+      category: populatedSub.category ?? undefined,
+    }
+  }
+
+  if (!cat && populatedSub?.category?.slug) {
+    cat = {
+      id: populatedSub.category.id,
+      documentId: populatedSub.category.documentId ?? '',
+      title: populatedSub.category.title ?? populatedSub.category.slug,
+      slug: populatedSub.category.slug,
+      mainModule: populatedSub.category.mainModule ?? undefined,
+    }
+  }
+
+  if (!mod && populatedSub?.category?.mainModule?.slug) {
+    mod = {
+      id: populatedSub.category.mainModule.id,
+      documentId: populatedSub.category.mainModule.documentId ?? '',
+      title: populatedSub.category.mainModule.title ?? populatedSub.category.mainModule.slug,
+      slug: populatedSub.category.mainModule.slug,
+    }
+  }
+
+  if (!sub || !cat || !mod) return null
   return { module: mod, category: cat, subcategory: sub }
 }
 
@@ -70,9 +108,16 @@ export function subcategoriesForCategory(
 
 export function servicesForSubcategory(
   services: StrapiService[],
-  subcategoryId: number
+  subcategoryId: number,
+  subcategorySlug?: string
 ) {
-  return services.filter((s) => s.subcategory?.id === subcategoryId)
+  return services.filter((s) => {
+    const sub = s.subcategory
+    if (!sub) return false
+    if (subcategoryId != null && sub.id === subcategoryId) return true
+    if (subcategorySlug && sub.slug === subcategorySlug) return true
+    return false
+  })
 }
 
 export function findModule(modules: StrapiMainModule[], slug: string) {

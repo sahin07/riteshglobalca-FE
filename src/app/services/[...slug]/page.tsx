@@ -225,7 +225,11 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         ]
       : [{ label: 'Services', href: '/services' }, { label: resolved.service.title }]
     const siblingServices = ancestors
-      ? servicesForSubcategory(resolved.tree.services, ancestors.subcategory.id)
+      ? servicesForSubcategory(
+          resolved.tree.services,
+          ancestors.subcategory.id,
+          ancestors.subcategory.slug
+        )
           .filter((s) => s.id !== resolved.service.id)
           .slice(0, 8)
           .map((s) => ({

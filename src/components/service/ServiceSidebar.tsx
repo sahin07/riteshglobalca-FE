@@ -36,7 +36,7 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
       )}
 
       {/* Get Started CTA Card */}
-      <div className="bg-[#0f2e2a] rounded-2xl p-6 text-white relative overflow-hidden">
+      <div className="bg-[#0b293d] rounded-2xl p-6 text-white relative overflow-hidden">
         {/* Decorative burst */}
         <div className="absolute top-0 right-0 w-24 h-24">
           <svg viewBox="0 0 100 100" className="w-full h-full text-white/10">
@@ -64,19 +64,19 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
 
         <ul className="space-y-3 mb-6">
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-green-400 flex items-center justify-center flex-shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
             Average response rate 1 hour
           </li>
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-green-400 flex items-center justify-center flex-shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
+            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
             Proven track of results
           </li>
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-green-400 flex items-center justify-center flex-shrink-0">
+            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
               <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
             Dedicated and honest team
@@ -85,7 +85,7 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
 
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-green-400 text-[#0f2e2a] font-bold text-[14px] rounded-full hover:bg-green-300 transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#F19020] text-white font-bold text-[14px] rounded-full hover:bg-[#d87f1c] transition-colors"
         >
           Get Appointment
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

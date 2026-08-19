@@ -1,3 +1,5 @@
+import { SectionHeading } from './SectionHeading'
+
 interface FeatureGridSectionProps {
   block: any
   gridIndex?: number
@@ -8,7 +10,7 @@ const iconColors = [
   'bg-[#e04f5f]',
   'bg-[#3b4b5b]',
   'bg-[#2d88ff]',
-  'bg-[#4aa554]',
+  'bg-[#0b293d]',
   'bg-[#8B5CF6]',
   'bg-[#f88f24]',
 ]
@@ -26,44 +28,82 @@ const defaultIcons = [
 function renderIcon(card: any, idx: number) {
   const imgUrl = card.icon?.data?.attributes?.url || card.icon?.url
   if (imgUrl) {
-    return <img src={imgUrl} alt={card.title} className="w-5 h-5 object-contain filter brightness-0 invert" />
+    return <img src={imgUrl} alt={card.title} className="h-5 w-5 object-contain brightness-0 invert filter" />
   }
   return defaultIcons[idx % defaultIcons.length]
 }
 
-import { SectionHeading } from './SectionHeading'
+/** "Our … Services" cards vs "Business Entities Covered" use different layouts. */
+function isEntityCoverageSection(sectionTitle: string): boolean {
+  return sectionTitle.toLowerCase().includes('business entities covered')
+}
 
-export function FeatureGridSection({ block, gridIndex = 0 }: FeatureGridSectionProps) {
-  const cards = block.cards || []
-  const title = block.section_title || block.sectionTitle || ''
-  const subtitle = block.section_subtitle || block.sectionSubtitle || ''
-
+function ServicesCardGrid({ cards }: { cards: any[] }) {
   return (
-    <div className="mb-12">
-      {title && <SectionHeading title={title} subtitle={subtitle} />}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {cards.map((card: any, idx: number) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
-          >
-            <div className="bg-[#F19020] px-5 py-2.5">
-              <h4 className="text-white font-bold text-[14px]">{card.title}</h4>
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      {cards.map((card: any, idx: number) => (
+        <div
+          key={idx}
+          className="rounded-2xl border border-slate-200 bg-white p-6 transition-shadow hover:shadow-lg md:p-7"
+        >
+          <div className="flex items-start gap-4">
+            <div
+              className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white ${iconColors[idx % iconColors.length]}`}
+            >
+              <div className="h-6 w-6">{renderIcon(card, idx)}</div>
             </div>
-            <div className="px-5 py-4">
-              <div className="flex items-start gap-3 mb-2">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0 ${iconColors[idx % iconColors.length]}`}>
-                  {renderIcon(card, idx)}
-                </div>
-              </div>
-              <p className="text-slate-600 text-[13px] leading-relaxed whitespace-pre-line">
+            <div className="min-w-0">
+              <h4 className="mb-3 text-[21px] font-bold leading-tight text-[#0b293d]">
+                {card.title}
+              </h4>
+              <p className="whitespace-pre-line text-[15px] leading-7 text-slate-600">
                 {card.description}
               </p>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function EntityCoverageList({ cards }: { cards: any[] }) {
+  return (
+    <div className="flex flex-col gap-4">
+      {cards.map((card: any, idx: number) => (
+        <div
+          key={idx}
+          className="flex overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+        >
+          <div className="flex w-[72px] flex-shrink-0 items-center justify-center self-stretch bg-[#0b293d] md:w-[88px]">
+            <span className="text-[32px] font-bold leading-none text-white md:text-[40px]">
+              {idx + 1}
+            </span>
+          </div>
+          <div className="min-w-0 flex-1 px-6 py-5 md:px-8 md:py-6">
+            <h4 className="mb-2 text-[13px] font-bold uppercase leading-snug tracking-wide text-[#0b293d] md:text-[14px]">
+              {card.title}
+            </h4>
+            <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-600">
+              {card.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export function FeatureGridSection({ block }: FeatureGridSectionProps) {
+  const cards = block.cards || []
+  const title = block.section_title || block.sectionTitle || ''
+  const subtitle = block.section_subtitle || block.sectionSubtitle || ''
+  const useEntityLayout = isEntityCoverageSection(title)
+
+  return (
+    <div className="mb-12">
+      {title && <SectionHeading title={title} subtitle={subtitle} />}
+      {useEntityLayout ? <EntityCoverageList cards={cards} /> : <ServicesCardGrid cards={cards} />}
     </div>
   )
 }

@@ -176,7 +176,19 @@ export interface StrapiService {
   shortDescription?: string;
   introDescription?: string;
   introQuote?: string;
-  subcategory?: { id: number; documentId?: string; title?: string; slug?: string } | null;
+  subcategory?: {
+    id: number;
+    documentId?: string;
+    title?: string;
+    slug?: string;
+    category?: {
+      id: number;
+      documentId?: string;
+      title?: string;
+      slug?: string;
+      mainModule?: { id: number; documentId?: string; title?: string; slug?: string } | null;
+    } | null;
+  } | null;
   image?: {
     url: string;
   } | null;
@@ -252,7 +264,7 @@ export async function getServices(): Promise<StrapiService[]> {
   try {
     // Nav only needs title/slug/subcategory — avoid populate=* across hundreds of pages.
     const rows = await fetchAllPages(
-      '/api/services?fields[0]=title&fields[1]=slug&populate[subcategory][fields][0]=title&populate[subcategory][fields][1]=slug'
+      '/api/services?fields[0]=title&fields[1]=slug&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=title&populate[subcategory][fields][2]=slug'
     );
     return rows.filter((row) => !isHiddenServiceSlug(row.slug));
   } catch (error) {

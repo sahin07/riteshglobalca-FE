@@ -197,3 +197,25 @@ html, body {
   border-top: 1px solid #e2e8f0;
   margin: 2rem 0;
 }
+
+.header-card .strapi-html p {
+  margin-bottom: 0.85rem;
+}
+
+.header-card .strapi-html p:last-child,
+.header-card .strapi-html ul:last-child {
+  margin-bottom: 0;
+}
+
+.header-card .strapi-html li {
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.header-card .strapi-html li::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  top: 0.55em;
+  background-color: #F19020;
+  background-image: none;
+}

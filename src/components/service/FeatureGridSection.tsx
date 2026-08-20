@@ -33,9 +33,30 @@ function renderIcon(card: any, idx: number) {
   return defaultIcons[idx % defaultIcons.length]
 }
 
-/** "Our … Services" cards vs "Business Entities Covered" use different layouts. */
-function isEntityCoverageSection(sectionTitle: string): boolean {
-  return sectionTitle.toLowerCase().includes('business entities covered')
+/** Coverage / entity lists render as a table; “Our … Services” stay as icon cards. */
+function isCoverageTableSection(sectionTitle: string, gridIndex?: number): boolean {
+  const lower = sectionTitle.toLowerCase()
+  if (
+    lower.includes('covered') ||
+    lower.includes('entities') ||
+    lower.includes('applicable') ||
+    lower.includes('who can') ||
+    lower.includes('types of')
+  ) {
+    return true
+  }
+  return (gridIndex ?? 0) >= 1
+}
+
+function coverageColumnLabel(sectionTitle: string): string {
+  const stripped = sectionTitle
+    .replace(/^business entities covered under\s+/i, '')
+    .replace(/^business entities covered\s*/i, '')
+    .trim()
+  if (stripped && stripped.toLowerCase() !== sectionTitle.toLowerCase()) {
+    return stripped
+  }
+  return 'Coverage'
 }
 
 function ServicesCardGrid({ cards }: { cards: any[] }) {
@@ -67,43 +88,54 @@ function ServicesCardGrid({ cards }: { cards: any[] }) {
   )
 }
 
-function EntityCoverageList({ cards }: { cards: any[] }) {
+function EntityCoverageTable({ cards, columnLabel }: { cards: any[]; columnLabel: string }) {
   return (
-    <div className="flex flex-col gap-4">
-      {cards.map((card: any, idx: number) => (
-        <div
-          key={idx}
-          className="flex overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
-        >
-          <div className="flex w-[72px] flex-shrink-0 items-center justify-center self-stretch bg-[#0b293d] md:w-[88px]">
-            <span className="text-[32px] font-bold leading-none text-white md:text-[40px]">
-              {idx + 1}
-            </span>
-          </div>
-          <div className="min-w-0 flex-1 px-6 py-5 md:px-8 md:py-6">
-            <h4 className="mb-2 text-[13px] font-bold uppercase leading-snug tracking-wide text-[#0b293d] md:text-[14px]">
-              {card.title}
-            </h4>
-            <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-600">
-              {card.description}
-            </p>
-          </div>
-        </div>
-      ))}
+    <div className="overflow-x-auto rounded-xl border border-[#e8c9a0] bg-white shadow-sm">
+      <table className="w-full min-w-[560px] border-collapse text-left">
+        <thead>
+          <tr className="bg-[#F19020] text-white">
+            <th className="w-[44%] px-5 py-3.5 text-[14px] font-bold md:px-6 md:text-[15px]">
+              Particulars
+            </th>
+            <th className="px-5 py-3.5 text-[14px] font-bold md:px-6 md:text-[15px]">
+              {columnLabel}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {cards.map((card: any, idx: number) => (
+            <tr
+              key={idx}
+              className={`border-t border-[#eadac8] ${idx % 2 === 1 ? 'bg-[#fff8f1]' : 'bg-white'}`}
+            >
+              <td className="px-5 py-4 align-top text-[14px] font-semibold leading-snug text-[#0b293d] md:px-6 md:text-[15px]">
+                {card.title}
+              </td>
+              <td className="px-5 py-4 align-top text-[14px] leading-relaxed text-slate-600 md:px-6 md:text-[15px]">
+                {card.description}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
 
-export function FeatureGridSection({ block }: FeatureGridSectionProps) {
+export function FeatureGridSection({ block, gridIndex }: FeatureGridSectionProps) {
   const cards = block.cards || []
   const title = block.section_title || block.sectionTitle || ''
   const subtitle = block.section_subtitle || block.sectionSubtitle || ''
-  const useEntityLayout = isEntityCoverageSection(title)
+  const useTableLayout = isCoverageTableSection(title, gridIndex)
 
   return (
     <div className="mb-12">
       {title && <SectionHeading title={title} subtitle={subtitle} />}
-      {useEntityLayout ? <EntityCoverageList cards={cards} /> : <ServicesCardGrid cards={cards} />}
+      {useTableLayout ? (
+        <EntityCoverageTable cards={cards} columnLabel={coverageColumnLabel(title)} />
+      ) : (
+        <ServicesCardGrid cards={cards} />
+      )}
     </div>
   )
 }

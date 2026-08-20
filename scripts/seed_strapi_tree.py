@@ -6,11 +6,12 @@ service-subcategory, and service. Reads NEXT_PUBLIC_STRAPI_URL from env.
 Usage:
   python scripts/seed_strapi_tree.py           # all services from service-tree.json
   python scripts/seed_strapi_tree.py --doc 1 # only services from doc-1-copy.json
-  python scripts/seed_strapi_tree.py --missing # create services in Excel tree but absent in Strapi
+  python scripts/seed_strapi_tree.py --fix-heroes # rewrite heroSubtitle to a full first paragraph ending with .
 """
 from __future__ import annotations
 
 import argparse
+import html as html_module
 import json
 import os
 import re
@@ -201,6 +202,23 @@ def strip_separator_html(html: str) -> str:
     return re.sub(r"<p>\s*-{10,}\s*</p>\s*", "", html or "", flags=re.IGNORECASE).strip()
 
 
+def first_complete_paragraph(text: str) -> str:
+    """First intro paragraph, always ending at . ? or !"""
+    raw = re.sub(r"<[^>]+>", " ", text or "")
+    raw = html_module.unescape(raw)
+    raw = " ".join(raw.split()).strip()
+    if not raw:
+        return ""
+    para = re.split(r"\n\s*\n", raw)[0].strip()
+    if para[-1:] not in ".!?":
+        idx = max(para.rfind("."), para.rfind("?"), para.rfind("!"))
+        if idx >= 20:
+            para = para[: idx + 1].strip()
+        else:
+            para = para.rstrip(" ,;:") + "."
+    return para
+
+
 def append_rich_text_block(blocks: list, content: str, intro: str, title: str = "") -> None:
     rest = strip_separator_html((content or "").strip())
     if intro and rest.startswith(intro):
@@ -247,7 +265,7 @@ def service_payload(svc: dict, sub_doc: str | None) -> dict:
     body = svc.get("body") or ""
     body_before = svc.get("bodyBefore") or ""
     body_after = svc.get("bodyAfter") or ""
-    intro_hero = (svc.get("introHero") or svc.get("intro") or "").strip()
+    intro_hero = first_complete_paragraph(svc.get("introHero") or svc.get("intro") or "")
     intro_rest = (svc.get("introRest") or "").strip()
     blocks = []
 
@@ -332,10 +350,15 @@ def main() -> None:
         action="store_true",
         help="Create only services present in service-tree.json but absent in Strapi",
     )
+    parser.add_argument(
+        "--fix-heroes",
+        action="store_true",
+        help="Update only heroSubtitle so the first paragraph ends with a full stop",
+    )
     args = parser.parse_args()
 
-    if args.doc and args.missing:
-        raise SystemExit("Use either --doc or --missing, not both")
+    if sum(bool(x) for x in (args.doc, args.missing, args.fix_heroes)) > 1:
+        raise SystemExit("Use only one of --doc, --missing, or --fix-heroes")
 
     load_env_files()
     tree = json.loads(TREE_PATH.read_text(encoding="utf-8"))
@@ -366,7 +389,31 @@ def main() -> None:
     modules_idx = index_by_slug(api.fetch_all("main-modules"))
     cats_idx = index_by_slug(api.fetch_all("service-categories", "&populate=mainModule"))
     subs_idx = index_by_slug(api.fetch_all("service-subcategories", "&populate=category"))
-    svcs_idx = index_by_slug(api.fetch_all("services", "&fields[0]=title&fields[1]=slug"))
+    svcs_idx = index_by_slug(api.fetch_all("services", "&fields[0]=title&fields[1]=slug&fields[2]=heroSubtitle"))
+
+    if args.fix_heroes:
+        updated = 0
+        skipped = 0
+        for mod in tree["modules"]:
+            for cat in mod["categories"]:
+                for sub in cat["subcategories"]:
+                    for svc in sub["services"]:
+                        hero = first_complete_paragraph(svc.get("introHero") or svc.get("intro") or "")
+                        if not hero:
+                            skipped += 1
+                            continue
+                        row = svcs_idx.get(svc["slug"])
+                        if not row:
+                            skipped += 1
+                            continue
+                        current = (row.get("heroSubtitle") or "").strip()
+                        if current == hero:
+                            continue
+                        rec = api.upsert("services", svcs_idx, svc["slug"], {"heroSubtitle": hero})
+                        updated += 1
+                        print("  hero", svc["code"], svc["slug"], "ok" if rec else "fail", f"len={len(hero)}")
+        print("Done", json.dumps({"updated": updated, "skipped": skipped}))
+        return
 
     if args.missing:
         missing_codes = find_missing_service_codes(tree, svcs_idx)

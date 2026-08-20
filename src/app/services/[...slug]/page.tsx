@@ -160,9 +160,21 @@ function ServiceDetail({
               )}
             </div>
             <ServiceOverviewSection service={service} />
-            {blocks.map((block: any, idx: number) => {
+            {(() => {
+              const lastFeatureIdx = blocks.reduce(
+                (acc: number, b: any, i: number) => (b.__component === 'service.feature-grid' ? i : acc),
+                -1
+              )
+              const lastRichTextIdx = blocks.reduce(
+                (acc: number, b: any, i: number) => (b.__component === 'service.rich-text-section' ? i : acc),
+                -1
+              )
+              return blocks.map((block: any, idx: number) => {
               const componentType = block.__component
               const featureGridCount = blocks.slice(0, idx).filter((b: any) => b.__component === 'service.feature-grid').length
+              const isClosingRichText =
+                componentType === 'service.rich-text-section' &&
+                (lastFeatureIdx === -1 ? idx === lastRichTextIdx : idx > lastFeatureIdx)
               switch (componentType) {
                 case 'service.table-section':
                   return <TableSection key={idx} block={block} />
@@ -175,13 +187,14 @@ function ServiceDetail({
                 case 'service.contact-cta':
                   return null
                 case 'service.rich-text-section':
-                  return <RichTextSection key={idx} block={block} />
+                  return <RichTextSection key={idx} block={block} variant={isClosingRichText ? 'closing' : 'default'} />
                 case 'service.tabbed-rich-text':
                   return <TabbedRichTextSection key={idx} block={block} />
                 default:
                   return null
               }
-            })}
+            })
+            })()}
             {service.faqs && service.faqs.length > 0 && (
               <ServiceFaqAccordion faqs={service.faqs} />
             )}

@@ -6,8 +6,18 @@ interface ServiceHeroSectionProps {
   crumbs?: { label: string; href?: string }[]
 }
 
+function completeSentences(text: string): string {
+  const cleaned = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+  if (!cleaned) return ''
+  if (/[.!?]["']?$/.test(cleaned)) return cleaned
+  const idx = Math.max(cleaned.lastIndexOf('.'), cleaned.lastIndexOf('?'), cleaned.lastIndexOf('!'))
+  if (idx >= 20) return cleaned.slice(0, idx + 1).trim()
+  return cleaned
+}
+
 export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps) {
   const bgUrl = service.image?.url && getStrapiMedia(service.image.url)
+  const heroCopy = completeSentences(service.heroSubtitle || '')
 
   return (
     <section className="relative overflow-hidden min-h-[320px] md:min-h-[380px] flex items-center">
@@ -47,9 +57,9 @@ export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps)
         <h1 className="text-[32px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] tracking-tight mb-4 font-serif">
           {service.heroTitle || service.title}
         </h1>
-        {service.heroSubtitle && (
+        {heroCopy && (
           <p className="text-[15px] md:text-[17px] text-white/80 leading-relaxed max-w-2xl">
-            {service.heroSubtitle}
+            {heroCopy}
           </p>
         )}
       </div>

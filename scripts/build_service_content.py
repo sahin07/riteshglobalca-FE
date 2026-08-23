@@ -22,7 +22,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 EXCEL = WORKSPACE / "Copy of Ritesh Arora and Associates_Web Dev Task Breakdown.xlsx"
-DOCS = [WORKSPACE / f"Content RA Assosciates {i}.docx" for i in range(1, 5)]
+def doc_paths() -> list[Path]:
+    paths: list[Path] = []
+    for i in range(1, 11):
+        path = WORKSPACE / f"Content RA Assosciates {i}.docx"
+        if path.exists():
+            paths.append(path)
+    return paths
+
+
+DOCS = doc_paths() or [WORKSPACE / f"Content RA Assosciates {i}.docx" for i in range(1, 6)]
 OUT_DIR = ROOT / "data"
 NSM = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 NSR = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
@@ -409,7 +418,7 @@ PROCESS_HEADINGS = {
 }
 PROCESS_SKIP = {"step", "our approach"}
 STEP_NUM = re.compile(r"^step\s+\d+\s*[:\.]?\s*", re.I)
-FEATURE_SECTION_HEADING = re.compile(r"^our .+ services$", re.I)
+FEATURE_SECTION_HEADING = re.compile(r"^our .+ services(?: include)?\.?$", re.I)
 PROCESS_CLOSING_PREFIXES = (
     "why choose",
     "supporting ",
@@ -420,6 +429,8 @@ PROCESS_CLOSING_PREFIXES = (
     "comprehensive support",
     "seamless ",
     "simplifying ",
+    "keeping ",
+    "ensuring ",
 )
 
 
@@ -452,6 +463,10 @@ def normalize_step_title(text: str) -> str:
     return STEP_NUM.sub("", text or "").strip() or text
 
 
+def is_benefits_heading(text: str) -> bool:
+    return (text or "").strip().lower() in ("benefits", "key benefits")
+
+
 def is_card_section_heading(text: str) -> bool:
     """Headings for sections rendered as feature-grid cards."""
     stripped = (text or "").strip()
@@ -464,7 +479,9 @@ def is_card_section_heading(text: str) -> bool:
         return False
     if lower.startswith("business entities covered"):
         return True
-    return bool(FEATURE_SECTION_HEADING.match(stripped))
+    if is_benefits_heading(stripped):
+        return False
+    return bool(FEATURE_SECTION_HEADING.match(stripped)) or lower.startswith("our ") and "services include" in lower
 
 
 def is_feature_section_heading(text: str) -> bool:
@@ -529,6 +546,7 @@ def extract_feature_sections(paras: list[dict]) -> list[dict]:
                 or is_card_section_heading(current)
                 or lower.startswith("why choose")
                 or lower.startswith("documents commonly")
+                or is_benefits_heading(current)
                 or current.startswith("---")
                 or NUM.match(current)
             ):
@@ -656,6 +674,7 @@ def _skip_card_section(paras: list[dict], i: int) -> int:
             or is_card_section_heading(current)
             or lower.startswith("why choose")
             or lower.startswith("documents commonly")
+            or is_benefits_heading(current)
             or current.startswith("---")
             or NUM.match(current)
         ):
@@ -893,7 +912,7 @@ def attach_copy(tree: dict, copy: dict[str, dict]) -> tuple[dict, dict]:
 
     gaps = {
         "strategy": "tabs-on-parent",
-        "copyCoveredThrough": "Word docs cover India practice through RERA 1.9.2.3. Missing: rest of RERA 1.9.3-1.9.6, Loan Syndication 1.10, Valuation 1.11, EPFO/Labour 1.12, and all Global Practice 2.x.",
+        "copyCoveredThrough": "Word docs 1-5 cover all India practice (through 1.12). Missing: all International Practice 2.x (89 services). Add Content RA Assosciates 6.docx when ready.",
         "servicesWithCopy": len(present),
         "servicesMissingCopy": len(missing),
         "missing": missing,
@@ -914,7 +933,13 @@ def build_doc_copy(doc_num: int) -> dict[str, dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build service tree and Word copy JSON")
-    parser.add_argument("--doc", type=int, choices=[1, 2, 3, 4], help="Build copy JSON for one doc only")
+    available = [i for i in range(1, 11) if doc_path(i).exists()]
+    parser.add_argument(
+        "--doc",
+        type=int,
+        choices=available or [1, 2, 3, 4, 5],
+        help="Build copy JSON for one doc only",
+    )
     args = parser.parse_args()
 
     OUT_DIR.mkdir(exist_ok=True)

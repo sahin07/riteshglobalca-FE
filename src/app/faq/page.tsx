@@ -40,7 +40,7 @@ export default async function FAQPage() {
     },
     {
       question: 'How do I start working with Ritesh Arora & Associates?',
-      answer: 'You can get in touch with us by filling out the contact form on our contact page, emailing us at info@ritesh-arora.com, or calling our office. We will schedule an initial consultation to understand your requirements.'
+      answer: 'You can get in touch with us by filling out the contact form on our contact page, emailing us at admin@riteshglobalca.com, or calling our office. We will schedule an initial consultation to understand your requirements.'
     }
   ]
 

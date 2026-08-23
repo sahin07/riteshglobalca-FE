@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { ContactHero } from '@/components/ContactHero'
 import { ContactContent } from '@/components/ContactContent'
 import { fetchContactPageData } from '@/data/strapi'
+import { resolveContactDetails } from '@/lib/contactDetails'
 
 // Dynamically generate SEO Metadata using the CMS SEO fields
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,22 +38,24 @@ export default async function ContactPage() {
     );
   }
 
+  const contactDetails = resolveContactDetails(cmsData)
+
   const heroProps = {
-    title: cmsData.bannerTitle,
-    description: cmsData.bannerSubtitle
-  };
+    title: contactDetails.bannerTitle,
+    description: contactDetails.bannerSubtitle,
+  }
 
   const contentProps = {
-    officeAddressTitle: cmsData.officeAddressTitle,
-    officeAddress: cmsData.officeAddress,
-    contactDetailsTitle: cmsData.contactDetailsTitle,
-    email: cmsData.email,
-    phone: cmsData.phone,
-    officeHoursTitle: cmsData.officeHoursTitle,
-    officeHours: cmsData.officeHours,
-    formTitle: cmsData.formTitle,
-    formDescription: cmsData.formDescription
-  };
+    officeAddressTitle: contactDetails.officeAddressTitle,
+    officeAddress: contactDetails.officeAddress,
+    contactDetailsTitle: contactDetails.contactDetailsTitle,
+    email: contactDetails.email,
+    phone: contactDetails.phone,
+    officeHoursTitle: contactDetails.officeHoursTitle,
+    officeHours: contactDetails.officeHours,
+    formTitle: contactDetails.formTitle,
+    formDescription: contactDetails.formDescription,
+  }
 
   return (
     <>

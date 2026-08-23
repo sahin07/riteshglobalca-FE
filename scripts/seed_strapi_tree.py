@@ -344,7 +344,7 @@ def service_payload(svc: dict, sub_doc: str | None) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Seed Strapi service tree and copy")
-    parser.add_argument("--doc", type=int, choices=[1, 2, 3, 4], help="Seed only services from doc-N-copy.json")
+    parser.add_argument("--doc", type=int, choices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], help="Seed only services from doc-N-copy.json")
     parser.add_argument(
         "--missing",
         action="store_true",

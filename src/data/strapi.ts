@@ -148,8 +148,8 @@ export async function fetchContactPageData() {
 
   try {
     const response = await fetch(`${baseUrl}/api/contact?${populateQuery}`, {
-      next: { revalidate: 60 }
-    });
+      cache: 'no-store',
+    })
 
     if (!response.ok) {
       console.error('Failed to fetch contact page data from Strapi:', response.statusText);

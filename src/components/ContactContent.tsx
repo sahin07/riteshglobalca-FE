@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useRef } from 'react'
 import { Button } from './Button'
+import { OfficeMapEmbed } from './OfficeMapEmbed'
 
 export interface ContactContentProps {
     officeAddressTitle: string
@@ -130,18 +131,7 @@ export function ContactContent({
 
                     {/* Left Column: Info & Map */}
                     <div className="space-y-8">
-                        {/* Map Placeholder */}
-                        <div className="w-full h-80 bg-slate-200 rounded-xl overflow-hidden shadow-sm relative border border-slate-300">
-                            <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-                                {/* Simulating a map view */}
-                                <div className="text-center">
-                                    <svg className="w-12 h-12 mx-auto mb-2 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                                    </svg>
-                                    Map Preview (Delhi / Noida)
-                                </div>
-                            </div>
-                        </div>
+                        <OfficeMapEmbed />
 
                         <div className="space-y-6">
                             <div>

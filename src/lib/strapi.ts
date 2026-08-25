@@ -3,7 +3,19 @@ import {
   isHiddenCategorySlug,
   isHiddenServiceSlug,
   isHiddenSubcategorySlug,
-} from './hideDocs123';
+} from './hideDocs123'
+import {
+  isEmptyContentServiceSlug,
+  isEmptyContentSubcategorySlug,
+} from './emptyContent'
+
+function shouldHideService(slug?: string | null) {
+  return isHiddenServiceSlug(slug) || isEmptyContentServiceSlug(slug)
+}
+
+function shouldHideSubcategory(slug?: string | null) {
+  return isHiddenSubcategorySlug(slug) || isEmptyContentSubcategorySlug(slug)
+};
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1338';
 
@@ -253,7 +265,7 @@ export async function getServiceCategories(): Promise<StrapiServiceCategory[]> {
 export async function getServiceSubcategories(): Promise<StrapiServiceSubcategory[]> {
   try {
     const rows = await fetchAllPages('/api/service-subcategories?populate[category][fields][0]=title&populate[category][fields][1]=slug');
-    return rows.filter((row) => !isHiddenSubcategorySlug(row.slug));
+    return rows.filter((row) => !shouldHideSubcategory(row.slug));
   } catch (error) {
     console.error('Error fetching subcategories:', error);
     return [];
@@ -266,7 +278,7 @@ export async function getServices(): Promise<StrapiService[]> {
     const rows = await fetchAllPages(
       '/api/services?fields[0]=title&fields[1]=slug&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=title&populate[subcategory][fields][2]=slug'
     );
-    return rows.filter((row) => !isHiddenServiceSlug(row.slug));
+    return rows.filter((row) => !shouldHideService(row.slug));
   } catch (error) {
     console.error('Error fetching services:', error);
     return [];
@@ -359,7 +371,7 @@ export async function getAboutPage(): Promise<StrapiAboutPage | null> {
 }
 
 export async function getServiceBySlug(slug: string): Promise<StrapiService | null> {
-  if (isHiddenServiceSlug(slug)) {
+  if (shouldHideService(slug)) {
     return null;
   }
   try {
@@ -489,7 +501,7 @@ export async function getServicesPage(): Promise<StrapiServicesPage | null> {
     const json = await res.json();
     const page = json.data || null;
     if (page?.services) {
-      page.services = page.services.filter((row: { slug?: string }) => !isHiddenServiceSlug(row.slug));
+      page.services = page.services.filter((row: { slug?: string }) => !shouldHideService(row.slug));
     }
     return page;
   } catch (error) {

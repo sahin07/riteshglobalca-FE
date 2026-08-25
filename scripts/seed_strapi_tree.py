@@ -98,6 +98,20 @@ class Strapi:
         time.sleep(0.05)
         return rec or {}
 
+    def delete(self, plural: str, existing: dict[str, dict], slug: str) -> bool:
+        row = existing.get(slug)
+        if not row:
+            return False
+        doc_id = row.get("documentId") or row.get("id")
+        try:
+            self.request("DELETE", f"/api/{plural}/{doc_id}")
+            existing.pop(slug, None)
+            time.sleep(0.05)
+            return True
+        except Exception as exc:
+            print(f"  delete fail {plural} {slug}: {exc}")
+            return False
+
 
 def index_by_slug(rows: list[dict]) -> dict[str, dict]:
     by_slug: dict[str, dict] = {}
@@ -130,6 +144,21 @@ def is_likely_process_description(text: str) -> bool:
 def pair_process_steps(steps: list) -> list[dict]:
     if not steps:
         return []
+
+    junk_titles = {"stage", "step", "our approach", "approach"}
+
+    def keep(title: str, description: str = "") -> bool:
+        t = (title or "").strip()
+        d = (description or "").strip()
+        if not t:
+            return False
+        lower = t.lower()
+        if lower in junk_titles:
+            return False
+        if not d and (len(t) > 55 or lower.startswith(("building", "ensuring", "why "))):
+            return False
+        return True
+
     if isinstance(steps[0], dict):
         return [
             {
@@ -137,7 +166,7 @@ def pair_process_steps(steps: list) -> list[dict]:
                 "description": (step.get("description") or "").strip(),
             }
             for step in steps
-            if (step.get("title") or "").strip()
+            if keep(step.get("title") or "", step.get("description") or "")
         ]
 
     flat = [str(step).strip() for step in steps if str(step).strip()]
@@ -151,7 +180,8 @@ def pair_process_steps(steps: list) -> list[dict]:
             i += 2
         else:
             i += 1
-        paired.append({"title": title, "description": description})
+        if keep(title, description):
+            paired.append({"title": title, "description": description})
     return paired
 
 

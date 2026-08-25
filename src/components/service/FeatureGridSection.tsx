@@ -123,10 +123,12 @@ function EntityCoverageTable({ cards, columnLabel }: { cards: any[]; columnLabel
 }
 
 export function FeatureGridSection({ block, gridIndex }: FeatureGridSectionProps) {
-  const cards = block.cards || []
+  const cards = (block.cards || []).filter((card: any) => String(card?.title || '').trim())
   const title = block.section_title || block.sectionTitle || ''
   const subtitle = block.section_subtitle || block.sectionSubtitle || ''
   const useTableLayout = isCoverageTableSection(title, gridIndex)
+
+  if (cards.length === 0) return null
 
   return (
     <div className="mb-12">

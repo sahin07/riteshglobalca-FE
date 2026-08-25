@@ -13,7 +13,21 @@ export function ProcessSection({ block }: ProcessSectionProps) {
 
   if (tabs.length === 0) return null
 
-  const steps = tabs[activeTabIdx]?.steps || []
+  const rawSteps = tabs[activeTabIdx]?.steps || []
+  const steps = rawSteps.filter((step: any) => {
+    const title = String(step?.title || '').trim()
+    const description = String(step?.description || '').trim()
+    if (!title) return false
+    const lower = title.toLowerCase()
+    if (['stage', 'step', 'our approach', 'approach'].includes(lower)) return false
+    // Closing marketing lines with no description
+    if (!description && (title.length > 55 || /^(building|ensuring|why)\b/i.test(title))) {
+      return false
+    }
+    return true
+  })
+
+  if (steps.length === 0) return null
 
   return (
     <div className="mb-14">

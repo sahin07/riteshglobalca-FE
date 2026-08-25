@@ -416,7 +416,7 @@ PROCESS_HEADINGS = {
     "our gst registration process",
     "our gst return filing process",
 }
-PROCESS_SKIP = {"step", "our approach"}
+PROCESS_SKIP = {"step", "our approach", "stage", "approach"}
 STEP_NUM = re.compile(r"^step\s+\d+\s*[:\.]?\s*", re.I)
 FEATURE_SECTION_HEADING = re.compile(r"^our .+ services(?: include)?\.?$", re.I)
 PROCESS_CLOSING_PREFIXES = (
@@ -912,7 +912,7 @@ def attach_copy(tree: dict, copy: dict[str, dict]) -> tuple[dict, dict]:
 
     gaps = {
         "strategy": "tabs-on-parent",
-        "copyCoveredThrough": "Word docs 1-5 cover all India practice (through 1.12). Missing: all International Practice 2.x (89 services). Add Content RA Assosciates 6.docx when ready.",
+        "copyCoveredThrough": "Word docs 1-6 cover India Practice (1.x) and International/Global Practice (2.x).",
         "servicesWithCopy": len(present),
         "servicesMissingCopy": len(missing),
         "missing": missing,

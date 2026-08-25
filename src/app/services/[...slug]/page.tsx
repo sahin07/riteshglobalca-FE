@@ -39,6 +39,10 @@ import {
   isHiddenServiceSlug,
   isHiddenSubcategorySlug,
 } from '@/lib/hideDocs123'
+import {
+  isEmptyContentServiceSlug,
+  isEmptyContentSubcategorySlug,
+} from '@/lib/emptyContent'
 
 interface PageProps {
   params: { slug: string[] }
@@ -80,13 +84,13 @@ async function resolvePath(segments: string[]) {
     const category = findCategory(tree.categories, b, mainModule.id)
     if (!category || isHiddenCategorySlug(category.slug)) return null
     const subcategory = findSubcategory(tree.subcategories, c, category.id)
-    if (!subcategory || isHiddenSubcategorySlug(subcategory.slug)) return null
+    if (!subcategory || isHiddenSubcategorySlug(subcategory.slug) || isEmptyContentSubcategorySlug(subcategory.slug)) return null
     return { kind: 'subcategory' as const, module: mainModule, category, subcategory, tree }
   }
 
   if (segments.length === 4) {
     const service = await getServiceBySlug(d)
-    if (!service || isHiddenServiceSlug(service.slug)) return null
+    if (!service || isHiddenServiceSlug(service.slug) || isEmptyContentServiceSlug(service.slug)) return null
     return { kind: 'service' as const, service, tree }
   }
 

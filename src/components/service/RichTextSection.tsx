@@ -50,7 +50,7 @@ function HeaderCards({ sections }: { sections: { title: string; body: string }[]
       {sections.map((section) => (
         <div
           key={section.title}
-          className="header-card overflow-hidden rounded-xl border-2 border-[#0b293d] bg-white"
+          className="header-card overflow-hidden rounded-xl border-2 border-[#0b293d] bg-white shadow-lg"
         >
           <div className="bg-[#F19020] px-5 py-3.5 text-center">
             <h3 className="text-[16px] font-bold leading-snug text-white md:text-[18px]">

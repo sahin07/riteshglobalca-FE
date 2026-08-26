@@ -2,14 +2,20 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { NewsletterCTA } from '@/components/NewsletterCTA'
 import { cleanMarkdown } from '@/lib/markdown'
 import { getBlogPostBySlug, getBlogPosts, getStrapiMedia } from '@/lib/strapi'
+import { HIDE_BLOGS } from '@/lib/hideBlogs'
 
 export default function BlogPostDetailPage({ params }: { params: any }) {
+  if (HIDE_BLOGS) {
+    notFound()
+  }
+
   const [commentsList, setCommentsList] = useState<any[]>([])
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')

@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import { getStrapiMedia } from '@/lib/strapi'
+import { HIDE_BLOGS } from '@/lib/hideBlogs'
 
 interface RelatedBlogsSectionProps {
   blogs?: any[]
 }
 
 export function RelatedBlogsSection({ blogs }: RelatedBlogsSectionProps) {
+  if (HIDE_BLOGS) return null
   if (!blogs || blogs.length === 0) return null
 
   return (

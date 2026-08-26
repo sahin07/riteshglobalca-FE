@@ -76,7 +76,7 @@ export function SharedFAQ({
                 <div
                   className={clsx(
                     'overflow-hidden bg-[#f8f9fa] transition-all duration-300',
-                    open ? 'max-h-64 rounded-b-2xl opacity-100' : 'max-h-0 opacity-0'
+                    open ? 'max-h-[480px] rounded-b-2xl opacity-100' : 'max-h-0 opacity-0'
                   )}
                 >
                   <p className="px-5 py-4 text-[14px] leading-relaxed text-slate-600">{faq.answer}</p>

@@ -8,11 +8,11 @@ import { FeatureGridSection } from '@/components/service/FeatureGridSection'
 import { TabbedTableSection } from '@/components/service/TabbedTableSection'
 import { ProcessSection } from '@/components/service/ProcessSection'
 import { ContactCtaSection } from '@/components/service/ContactCtaSection'
-import { ServiceFaqAccordion } from '@/components/service/ServiceFaqAccordion'
 import { RelatedBlogsSection } from '@/components/service/RelatedBlogsSection'
 import { RichTextSection } from '@/components/service/RichTextSection'
 import { TabbedRichTextSection } from '@/components/service/TabbedRichTextSection'
 import { ServiceSidebar } from '@/components/service/ServiceSidebar'
+import { SharedFAQ, SharedFaqItem } from '@/components/shared/SharedFAQ'
 import {
   getMainModules,
   getServiceBySlug,
@@ -132,12 +132,22 @@ function ServiceDetail({
   service,
   crumbs,
   siblingServices = [],
+  sharedFaqs = [],
 }: {
   service: StrapiService
   crumbs?: { label: string; href?: string }[]
   siblingServices?: { title: string; href: string }[]
+  sharedFaqs?: SharedFaqItem[]
 }) {
   const blocks = service.contentBlocks || []
+  const serviceFaqs: SharedFaqItem[] = (service.faqs || [])
+    .map((f: any) => ({
+      question: f.question || '',
+      answer: f.answer || '',
+    }))
+    .filter((f: SharedFaqItem) => f.question && f.answer)
+  const faqItems = serviceFaqs.length > 0 ? serviceFaqs : sharedFaqs
+
   return (
     <main className="min-h-screen flex flex-col bg-white">
       <ServiceHeroSection service={service} crumbs={crumbs} />
@@ -200,9 +210,6 @@ function ServiceDetail({
               }
             })
             })()}
-            {service.faqs && service.faqs.length > 0 && (
-              <ServiceFaqAccordion faqs={service.faqs} />
-            )}
           </div>
 
           {/* Sidebar */}
@@ -215,6 +222,7 @@ function ServiceDetail({
         </div>
       </div>
 
+      <SharedFAQ items={faqItems} />
       <RelatedBlogsSection blogs={service.relatedBlogs} />
     </main>
   )
@@ -262,7 +270,14 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
             }),
           }))
       : []
-    return <ServiceDetail service={resolved.service} crumbs={crumbs} siblingServices={siblingServices} />
+    return (
+      <ServiceDetail
+        service={resolved.service}
+        crumbs={crumbs}
+        siblingServices={siblingServices}
+        sharedFaqs={shared.faqs}
+      />
+    )
   }
 
   if (resolved.kind === 'module') {

@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { Button } from '@/components/Button'
 import { fetchHomepageData, getStrapiUrl, fetchContactPageData } from '@/data/strapi'
 import { resolveContactDetails } from '@/lib/contactDetails'
+import { HIDE_BLOGS } from '@/lib/hideBlogs'
 
 // Dynamically generate SEO Metadata using the CMS SEO fields
 export async function generateMetadata(): Promise<Metadata> {
@@ -167,7 +168,9 @@ export default async function Page() {
         <AboutHome {...aboutProps} />
 
         {/* Insights Section */}
-        <InsightsHome title={insightsTitle} subTitle={insightsSubtitle} updates={insightsData} />
+        {!HIDE_BLOGS && (
+          <InsightsHome title={insightsTitle} subTitle={insightsSubtitle} updates={insightsData} />
+        )}
 
         {/* Testimonials Section */}
         <section className="py-20 bg-slate-50">

@@ -2,6 +2,8 @@ import { getBlogPosts, getStrapiMedia } from '@/lib/strapi'
 import { InsightsHero } from '@/components/InsightsHero'
 import { NewsletterCTA } from '@/components/NewsletterCTA'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { HIDE_BLOGS } from '@/lib/hideBlogs'
 
 export const metadata = {
   title: 'Blog | Ritesh Arora & Associates',
@@ -9,6 +11,8 @@ export const metadata = {
 }
 
 export default async function InsightsPage() {
+  if (HIDE_BLOGS) notFound()
+
   const allPosts = await getBlogPosts()
 
   const defaultImages = [

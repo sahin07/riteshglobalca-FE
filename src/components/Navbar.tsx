@@ -287,6 +287,7 @@ import { useState } from 'react'
 import { StrapiService, StrapiServiceCategory, StrapiMainModule, StrapiServiceSubcategory, StrapiBlogPost, StrapiHeader, getStrapiMedia } from '@/lib/strapi'
 import { DesktopPracticeNav } from '@/components/PracticeMegaNav'
 import { moduleHref, serviceHref } from '@/lib/serviceHierarchy'
+import { HIDE_BLOGS, isBlogNavLink } from '@/lib/hideBlogs'
 
 export function Navbar({
   mainModules = [],
@@ -323,7 +324,10 @@ export function Navbar({
   // ── Process header links to include FAQ ──────────────────────────────────
   const processedNavLinks = (() => {
     if (!header?.navLinks || header.navLinks.length === 0) return null
-    const links = [...header.navLinks]
+    let links = [...header.navLinks]
+    if (HIDE_BLOGS) {
+      links = links.filter(l => !isBlogNavLink(l.label, l.url))
+    }
     const hasFaq = links.some(l => l.url === '/faq' || l.label.toLowerCase() === 'faq')
     if (!hasFaq) {
       const contactIdx = links.findIndex(l => l.label.toLowerCase() === 'contact')
@@ -338,7 +342,10 @@ export function Navbar({
 
   // ── Search Logic ──────────────────────────────────────────────────────────
   const filteredServices = searchQuery.trim() === '' ? [] : safeServices.filter(s => s.title.toLowerCase().includes(searchQuery.toLowerCase()))
-  const filteredBlogs = searchQuery.trim() === '' ? [] : blogs.filter(b => b.title.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredBlogs =
+    HIDE_BLOGS || searchQuery.trim() === ''
+      ? []
+      : blogs.filter(b => b.title.toLowerCase().includes(searchQuery.toLowerCase()))
   const hasSearchResults = filteredServices.length > 0 || filteredBlogs.length > 0
 
   const toggleMobileModule = (id: number) => {
@@ -485,7 +492,9 @@ export function Navbar({
                 services={safeServices}
               />
 
-              <Link href="/blog" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Blog</Link>
+              {!HIDE_BLOGS && (
+                <Link href="/blog" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Blog</Link>
+              )}
               <Link href="/pricing" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Pricing</Link>
               <Link href="/careers" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Careers</Link>
               <Link href="/faq" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">FAQ</Link>
@@ -605,7 +614,9 @@ export function Navbar({
                   onToggleSubcategory={toggleMobileSubcategory}
                   onClose={() => setOpen(false)}
                 />
-                <MobileNavLink href="/blog" label="Blog" onClick={() => setOpen(false)} />
+                {!HIDE_BLOGS && (
+                  <MobileNavLink href="/blog" label="Blog" onClick={() => setOpen(false)} />
+                )}
                 <MobileNavLink href="/pricing" label="Pricing" onClick={() => setOpen(false)} />
                 <MobileNavLink href="/careers" label="Careers" onClick={() => setOpen(false)} />
                 <MobileNavLink href="/faq" label="FAQ" onClick={() => setOpen(false)} />

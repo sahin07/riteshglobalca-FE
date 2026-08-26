@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import { StrapiFooter } from '@/lib/strapi'
+import { HIDE_BLOGS, isBlogNavLink } from '@/lib/hideBlogs'
+
+function filterFooterLinks(links?: { id: number; label: string; url: string }[]) {
+  if (!links) return links
+  if (!HIDE_BLOGS) return links
+  return links.filter(l => !isBlogNavLink(l.label, l.url))
+}
 
 export function Footer({ className, footer }: { className?: string, footer?: StrapiFooter | null }) {
   const brandName = footer?.brandName || 'Ritesh Arora & Associates';
@@ -8,8 +15,9 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
   const facebookUrl = footer?.facebookUrl || '#';
   const instagramUrl = footer?.instagramUrl || '#';
   const twitterUrl = footer?.twitterUrl || '#';
-  console.log('footer?.resourcesLinks===', footer
-  )
+  const quickLinks = filterFooterLinks(footer?.quickLinks)
+  const resourcesLinks = filterFooterLinks(footer?.resourcesLinks)
+  const servicesLinks = filterFooterLinks(footer?.servicesLinks)
   return (
     <footer className={clsx('bg-[#0b293d] py-16', className)}>
       <div className="container-prose px-4 max-w-6xl mx-auto">
@@ -43,8 +51,8 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           <div className="md:col-span-2 lg:col-span-2 lg:pl-6">
             <h4 className="text-white font-medium text-[15px] mb-5">Quick Links</h4>
             <ul className="space-y-3.5">
-              {(footer?.quickLinks && footer.quickLinks.length > 0) ? (
-                footer.quickLinks.map(link => (
+              {(quickLinks && quickLinks.length > 0) ? (
+                quickLinks.map(link => (
                   <li key={link.id}><Link className="text-[14px] text-slate-300 hover:text-white transition-colors font-light" href={link.url}>{link.label}</Link></li>
                 ))
               ) : (
@@ -63,8 +71,8 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           <div className="md:col-span-3 lg:col-span-3 lg:pl-6">
             <h4 className="text-white font-medium text-[15px] mb-5">Resources</h4>
             <ul className="space-y-3.5">
-              {(footer?.resourcesLinks && footer.resourcesLinks.length > 0) ? (
-                footer.resourcesLinks.map(link => (
+              {(resourcesLinks && resourcesLinks.length > 0) ? (
+                resourcesLinks.map(link => (
                   <li key={link.id}><Link className="text-[14px] text-slate-300 hover:text-white transition-colors font-light" href={link.url}>{link.label}</Link></li>
                 ))
               ) : (
@@ -83,8 +91,8 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           <div className="md:col-span-3 lg:col-span-3">
             <h4 className="text-white font-medium text-[15px] mb-5">Services</h4>
             <ul className="space-y-3.5">
-              {(footer?.servicesLinks && footer.servicesLinks.length > 0) ? (
-                footer.servicesLinks.map(link => (
+              {(servicesLinks && servicesLinks.length > 0) ? (
+                servicesLinks.map(link => (
                   <li key={link.id}><Link className="text-[14px] text-slate-300 hover:text-white transition-colors font-light" href={link.url}>{link.label}</Link></li>
                 ))
               ) : (

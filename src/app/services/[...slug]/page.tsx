@@ -21,6 +21,7 @@ import {
   getServices,
   StrapiService,
 } from '@/lib/strapi'
+import { getSharedServicesSections } from '@/lib/sharedServicesSections'
 import {
   categoryHref,
   categoriesForModule,
@@ -220,7 +221,10 @@ function ServiceDetail({
 }
 
 export default async function ServiceHierarchyPage({ params }: PageProps) {
-  const resolved = await resolvePath(params.slug)
+  const [resolved, shared] = await Promise.all([
+    resolvePath(params.slug),
+    getSharedServicesSections(),
+  ])
   if (!resolved) notFound()
 
   if (resolved.kind === 'service') {
@@ -273,8 +277,13 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         links={cats.map((cat) => ({
           title: cat.title,
           href: categoryHref(resolved.module.slug, cat.slug),
-          description: cat.intro,
+          description: cat.intro || cat.description || `Explore ${cat.title} services.`,
         }))}
+        gridTitle={`${resolved.module.title} Categories`}
+        gridSubtitle="Select a category to view related service groups."
+        testimonials={shared.testimonials}
+        faqs={shared.faqs}
+        newsletter={shared.newsletter}
       />
     )
   }
@@ -295,8 +304,13 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         links={subs.map((sub) => ({
           title: sub.title,
           href: subcategoryHref(resolved.module.slug, resolved.category.slug, sub.slug),
-          description: sub.intro,
+          description: sub.intro || sub.description || `Explore ${sub.title}.`,
         }))}
+        gridTitle={`${resolved.category.title} Groups`}
+        gridSubtitle="Select a service group to continue."
+        testimonials={shared.testimonials}
+        faqs={shared.faqs}
+        newsletter={shared.newsletter}
       />
     )
   }
@@ -323,6 +337,11 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         }),
         description: srv.heroSubtitle || srv.introDescription || srv.shortDescription,
       }))}
+      gridTitle={`${resolved.subcategory.title} Services`}
+      gridSubtitle="Select a service to view full details."
+      testimonials={shared.testimonials}
+      faqs={shared.faqs}
+      newsletter={shared.newsletter}
     />
   )
 }

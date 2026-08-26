@@ -1,37 +1,78 @@
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
 import { ServiceHero } from '@/components/ServiceHero'
-import { ServiceGrid } from '@/components/ServiceGrid'
-import { ServiceTestimonials } from '@/components/ServiceTestimonials'
-import { ServiceFAQ } from '@/components/ServiceFAQ'
-import { ServiceContact } from '@/components/ServiceContact'
-import { FloatingChat } from '@/components/FloatingChat'
-import { getServicesPage, getStrapiMedia } from '@/lib/strapi'
+import { ServicesCardsGrid } from '@/components/shared/ServicesCardsGrid'
+import { SharedTestimonials } from '@/components/shared/SharedTestimonials'
+import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
+import { SharedFAQ } from '@/components/shared/SharedFAQ'
+import { getMainModules, getServicesPage, getStrapiMedia } from '@/lib/strapi'
+import { getSharedServicesSections } from '@/lib/sharedServicesSections'
+import { moduleHref } from '@/lib/serviceHierarchy'
 
 export const metadata = {
   title: 'Services | Ritesh Arora & Associates',
-  description: 'Expert CA services including Incorporation, GST, Tax Advisory, and Audits.'
+  description: 'Expert CA services including Incorporation, GST, Tax Advisory, and Audits.',
 }
 
 export default async function ServicesPage() {
-  const pageData = await getServicesPage();
+  const [pageData, modules, shared] = await Promise.all([
+    getServicesPage(),
+    getMainModules(),
+    getSharedServicesSections(),
+  ])
+
+  const moduleCards = modules.map((mod) => ({
+    title: mod.title,
+    description:
+      mod.intro ||
+      mod.description ||
+      `Explore ${mod.title} services and compliance support.`,
+    href: moduleHref(mod.slug),
+  }))
+
+  const fallbackCards = [
+    {
+      title: 'India Practice',
+      description: 'GST, direct tax, MCA compliances, audits, and end-to-end India business support.',
+      href: '/services/india-practice',
+    },
+    {
+      title: 'International Practice',
+      description: 'Cross-border tax, transfer pricing, global setup, and international advisory.',
+      href: '/services/international-practice',
+    },
+  ]
+
+  const cards = moduleCards.length > 0 ? moduleCards : fallbackCards
+
   return (
-    <>
-      <main className="bg-slate-50 min-h-screen flex flex-col">
-        <ServiceHero
-          title={pageData?.heroTitle}
-          subtitle={pageData?.heroSubtitle}
-          backgroundImage={getStrapiMedia(pageData?.heroBackgroundImage?.url)}
-          primaryButtonText={pageData?.primaryButtonText}
-          primaryButtonLink={pageData?.primaryButtonLink}
-          secondaryButtonText={pageData?.secondaryButtonText}
-          secondaryButtonLink={pageData?.secondaryButtonLink}
-        />
-        <ServiceGrid services={pageData?.services || []} />
-        <ServiceTestimonials testimonials={pageData?.testimonials || []} />
-        <ServiceFAQ faqs={pageData?.faqs || []} />
-      </main>
-    </>
+    <main className="flex min-h-screen flex-col bg-white">
+      <ServiceHero
+        title={pageData?.heroTitle || 'Our Professional CA Services'}
+        subtitle={
+          pageData?.heroSubtitle ||
+          'Expert guidance delivered with accuracy, transparency, and long-term value.'
+        }
+        backgroundImage={getStrapiMedia(pageData?.heroBackgroundImage?.url)}
+        primaryButtonText={pageData?.primaryButtonText || 'Book free consultation'}
+        primaryButtonLink={pageData?.primaryButtonLink || '/contact'}
+        secondaryButtonText={pageData?.secondaryButtonText || 'Download Brochure'}
+        secondaryButtonLink={pageData?.secondaryButtonLink || '/contact'}
+        crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
+      />
+
+      <ServicesCardsGrid
+        title="Our Core Services"
+        subtitle="Choose a practice area to explore our full service catalogue."
+        items={cards}
+      />
+
+      <SharedTestimonials items={shared.testimonials} />
+      <SharedFAQ items={shared.faqs} />
+      <SharedNewsletter
+        title={shared.newsletter.title}
+        description={shared.newsletter.description}
+        placeholder={shared.newsletter.placeholder}
+        buttonText={shared.newsletter.buttonText}
+      />
+    </main>
   )
 }
-

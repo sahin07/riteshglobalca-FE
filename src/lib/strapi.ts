@@ -489,7 +489,7 @@ export async function getServiceBySlug(slug: string): Promise<StrapiService | nu
 
 export async function getServicesPage(): Promise<StrapiServicesPage | null> {
   try {
-    const res = await fetch(`${STRAPI_URL}/api/services-page?populate[heroBackgroundImage]=true&populate[services][populate]=*&populate[testimonials]=*&populate[faqs]=*`, {
+    const res = await fetch(`${STRAPI_URL}/api/services-page?populate[heroBackgroundImage]=true&populate[services][populate]=*&populate[testimonials][populate]=*&populate[faqs]=*`, {
       next: { revalidate: 60 },
     });
 

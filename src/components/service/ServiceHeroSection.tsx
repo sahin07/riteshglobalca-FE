@@ -40,7 +40,7 @@ export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps)
       <div className="relative w-full max-w-[1400px] mx-auto px-4 lg:px-8 py-20 md:py-24">
         {/* Breadcrumbs */}
         {crumbs && crumbs.length > 0 && (
-          <nav className="flex flex-wrap items-center gap-1.5 text-[12px] uppercase tracking-wider text-white/60 mb-5">
+          <nav className="flex flex-wrap items-center gap-1.5 text-[12px] capitalize tracking-wide text-white/60 mb-5">
             {crumbs.map((crumb, i) => (
               <span key={`${crumb.label}-${i}`} className="flex items-center gap-1.5">
                 {i > 0 && <span className="text-white/30">/</span>}

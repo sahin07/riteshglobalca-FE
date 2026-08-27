@@ -282,7 +282,7 @@
 // }
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { StrapiService, StrapiServiceCategory, StrapiMainModule, StrapiServiceSubcategory, StrapiBlogPost, StrapiHeader, getStrapiMedia } from '@/lib/strapi'
 import { DesktopPracticeNav } from '@/components/PracticeMegaNav'
@@ -308,7 +308,48 @@ export function Navbar({
 
   // ── Search State ──────────────────────────────────────────────────────────
   const [searchQuery, setSearchQuery] = useState('')
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+
+  useEffect(() => {
+    if (!isSearchOpen) return
+    const focusTimer = window.setTimeout(() => {
+      document.querySelector<HTMLInputElement>('[data-search-input]')?.focus()
+    }, 0)
+    const onPointerDown = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null
+      if (target?.closest('[data-search-ui]')) return
+      setIsSearchOpen(false)
+      setIsSearchFocused(false)
+      setSearchQuery('')
+    }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsSearchOpen(false)
+        setIsSearchFocused(false)
+        setSearchQuery('')
+      }
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.clearTimeout(focusTimer)
+      document.removeEventListener('mousedown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isSearchOpen])
+
+  const closeSearch = () => {
+    setIsSearchOpen(false)
+    setIsSearchFocused(false)
+    setSearchQuery('')
+  }
+
+  const openSearch = () => {
+    setOpen(false)
+    setIsSearchOpen(true)
+    setIsSearchFocused(true)
+  }
 
   // ── Mobile accordion state ────────────────────────────────────────────────
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
@@ -392,59 +433,238 @@ export function Navbar({
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden text-brand-dark p-2 hover:bg-gray-200 rounded-md transition-colors ml-auto"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? (
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile: search icon + menu button */}
+        <div className="lg:hidden flex items-center gap-1 ml-auto" data-search-ui>
+          <button
+            type="button"
+            className="text-brand-dark p-2 hover:bg-gray-100 rounded-md transition-colors"
+            onClick={() => (isSearchOpen ? closeSearch() : openSearch())}
+            aria-label={isSearchOpen ? 'Close search' : 'Open search'}
+            aria-expanded={isSearchOpen}
+          >
+            {isSearchOpen ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.75" />
+                <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
+          <img
+            src="/images/ca-india.jpg"
+            alt="CA India"
+            className="h-8 w-auto object-contain mx-1"
+          />
+          <button
+            className="text-brand-dark p-2 hover:bg-gray-100 rounded-md transition-colors"
+            onClick={() => {
+              closeSearch()
+              setOpen(!open)
+            }}
+            aria-label="Toggle menu"
+          >
+            {open ? (
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
+        </div>
 
-        {/* Desktop: Search */}
-        <div className="hidden lg:flex items-center flex-1 max-w-[180px] xl:max-w-[300px] 2xl:max-w-[400px] ml-6 xl:ml-12 relative">
-          <div className="relative w-full">
-            <svg width="18" height="18" viewBox="0 0 24 24" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+        {/* Desktop: Nav links + search — secondary links keep width so opening search does not shift the menu */}
+        <div className="hidden lg:flex items-center self-stretch ml-auto gap-3 xl:gap-5 2xl:gap-6">
+          <nav className="flex items-center self-stretch gap-3 xl:gap-6 2xl:gap-8">
+            {(() => {
+              const links = processedNavLinks && processedNavLinks.length > 0
+                ? processedNavLinks
+                : [
+                    { id: 1, label: 'Home', url: '/' },
+                    { id: 2, label: 'About', url: '/about' },
+                    { id: 3, label: 'Services', url: '/services' },
+                    { id: 4, label: 'Insights', url: '/insights' },
+                    ...(!HIDE_BLOGS ? [{ id: 5, label: 'Blog', url: '/blog' }] : []),
+                    { id: 6, label: 'Careers', url: '/careers' },
+                    { id: 7, label: 'FAQ', url: '/faq' },
+                    { id: 8, label: 'Contact', url: '/contact' },
+                  ]
+              const isPrimary = (label: string) => {
+                const l = label.toLowerCase()
+                return l === 'home' || l === 'about' || l === 'services'
+              }
+              const primary = links.filter(l => isPrimary(l.label || ''))
+              const secondary = links.filter(l => !isPrimary(l.label || ''))
+
+              const renderLink = (link: { id?: number; label: string; url: string }, idx: number, keyPrefix: string) => {
+                if ((link.label || '').toLowerCase() === 'services') {
+                  return (
+                    <DesktopPracticeNav
+                      key={`${keyPrefix}-${idx}`}
+                      modules={safeMainModules}
+                      categories={safeCategories}
+                      subcategories={safeSubcategories}
+                      services={safeServices}
+                    />
+                  )
+                }
+                return (
+                  <Link
+                    key={`${keyPrefix}-${idx}`}
+                    href={link.url}
+                    className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px] whitespace-nowrap"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              }
+
+              return (
+                <>
+                  {primary.map((link, idx) => renderLink(link, idx, 'prim'))}
+                  <div className="relative flex items-center self-stretch gap-3 xl:gap-6 2xl:gap-8 min-h-[42px]">
+                    <div
+                      className={`flex items-center gap-3 xl:gap-6 2xl:gap-8 ${
+                        isSearchOpen ? 'invisible pointer-events-none' : ''
+                      }`}
+                      aria-hidden={isSearchOpen || undefined}
+                    >
+                      {secondary.map((link, idx) => renderLink(link, idx, 'sec'))}
+                    </div>
+
+                    {isSearchOpen && (
+                      <div className="absolute inset-0 z-20 flex items-center bg-white" data-search-ui>
+                        <div className="relative w-full">
+                          <div className="relative rounded-full bg-white border border-gray-300 overflow-hidden">
+                            <svg width="18" height="18" viewBox="0 0 24 24" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none z-10">
+                              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                              <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            </svg>
+                            <input
+                              data-search-input
+                              type="text"
+                              placeholder="Search pages..."
+                              value={searchQuery}
+                              onChange={(e) => setSearchQuery(e.target.value)}
+                              onFocus={() => setIsSearchFocused(true)}
+                              className="w-full h-[42px] pl-12 pr-4 bg-white text-sm text-brand-dark placeholder-gray-400 focus:outline-none"
+                            />
+                          </div>
+
+                          {isSearchFocused && searchQuery.trim() !== '' && (
+                            <div
+                              className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-100 shadow-xl rounded-xl max-h-[400px] overflow-y-auto p-2 z-[70]"
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
+                              {filteredServices.length > 0 && (
+                                <div className="mb-3">
+                                  <div className="px-3 py-1.5 text-[11px] font-bold text-gray-400 tracking-wider uppercase">Services</div>
+                                  {filteredServices.map(srv => (
+                                    <Link
+                                      key={`srv-${srv.id}`}
+                                      href={`/services/${srv.slug}`}
+                                      onClick={closeSearch}
+                                      className="block px-3 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md transition-colors"
+                                    >
+                                      {srv.title}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                              {filteredBlogs.length > 0 && (
+                                <div className="mb-3">
+                                  <div className="px-3 py-1.5 text-[11px] font-bold text-gray-400 tracking-wider uppercase">Blogs</div>
+                                  {filteredBlogs.map(blog => (
+                                    <Link
+                                      key={`blog-${blog.id}`}
+                                      href={`/blog/${blog.slug}`}
+                                      onClick={closeSearch}
+                                      className="block px-3 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md transition-colors"
+                                    >
+                                      {blog.title}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                              {!hasSearchResults && (
+                                <div className="px-3 py-4 text-sm text-gray-500 text-center">No results found</div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )
+            })()}
+          </nav>
+
+          <div className="relative flex items-center gap-2 xl:gap-3 shrink-0" data-search-ui>
+            <button
+              type="button"
+              onClick={() => (isSearchOpen ? closeSearch() : openSearch())}
+              className={`p-2.5 rounded-full transition-colors ${
+                isSearchOpen
+                  ? 'bg-brand-orange/10 text-brand-orange'
+                  : 'text-slate-600 hover:bg-gray-100 hover:text-brand-dark'
+              }`}
+              aria-label={isSearchOpen ? 'Close search' : 'Open search'}
+              aria-expanded={isSearchOpen}
+            >
+              {isSearchOpen ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.75" />
+                  <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+            <img
+              src="/images/ca-india.jpg"
+              alt="CA India"
+              className="h-10 w-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile search panel */}
+      {isSearchOpen && (
+        <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-3 shadow-sm" data-search-ui>
+          <div className="relative">
+            <svg width="18" height="18" viewBox="0 0 24 24" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
               <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
               <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <input
+              data-search-input
               type="text"
-              placeholder="Pages..."
+              placeholder="Search pages..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onFocus={() => setIsSearchFocused(true)}
-              onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
-              className="w-full h-[42px] pl-12 pr-4 bg-transparent border border-gray-400 rounded-full text-sm text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-shadow"
+              className="w-full h-11 pl-12 pr-4 bg-transparent border border-gray-300 rounded-full text-sm text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange"
             />
           </div>
-
-          {/* Desktop Search Results Dropdown */}
-          {isSearchFocused && searchQuery.trim() !== '' && (
-            <div
-              className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 shadow-xl rounded-xl max-h-[400px] overflow-y-auto z-[60] p-2"
-              onMouseDown={(e) => e.preventDefault()}
-            >
+          {searchQuery.trim() !== '' && (
+            <div className="mt-3 bg-white border border-gray-100 rounded-lg p-2 shadow-sm max-h-[300px] overflow-y-auto">
               {filteredServices.length > 0 && (
-                <div className="mb-3">
-                  <div className="px-3 py-1.5 text-[11px] font-bold text-gray-400 tracking-wider uppercase">Services</div>
+                <div className="mb-2">
+                  <div className="px-2 py-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider">Services</div>
                   {filteredServices.map(srv => (
                     <Link
-                      key={`srv-${srv.id}`}
+                      key={`m-top-srv-${srv.id}`}
                       href={`/services/${srv.slug}`}
-                      onClick={() => {
-                        setSearchQuery('');
-                        setIsSearchFocused(false);
-                      }}
-                      className="block px-3 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md transition-colors"
+                      onClick={closeSearch}
+                      className="block px-2 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md"
                     >
                       {srv.title}
                     </Link>
@@ -452,17 +672,14 @@ export function Navbar({
                 </div>
               )}
               {filteredBlogs.length > 0 && (
-                <div className="mb-3">
-                  <div className="px-3 py-1.5 text-[11px] font-bold text-gray-400 tracking-wider uppercase">Blogs</div>
+                <div className="mb-2">
+                  <div className="px-2 py-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider">Blogs</div>
                   {filteredBlogs.map(blog => (
                     <Link
-                      key={`blog-${blog.id}`}
+                      key={`m-top-blog-${blog.id}`}
                       href={`/blog/${blog.slug}`}
-                      onClick={() => {
-                        setSearchQuery('');
-                        setIsSearchFocused(false);
-                      }}
-                      className="block px-3 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md transition-colors"
+                      onClick={closeSearch}
+                      className="block px-2 py-2 text-[14px] text-gray-700 hover:bg-orange-50 hover:text-brand-orange rounded-md"
                     >
                       {blog.title}
                     </Link>
@@ -470,120 +687,17 @@ export function Navbar({
                 </div>
               )}
               {!hasSearchResults && (
-                <div className="px-3 py-4 text-sm text-gray-500 text-center">No results found</div>
+                <div className="px-2 py-3 text-sm text-gray-500 text-center">No results found</div>
               )}
             </div>
           )}
         </div>
-
-        {/* Desktop: Nav links */}
-        <nav className="hidden lg:flex items-center self-stretch gap-3 xl:gap-6 2xl:gap-8 ml-auto mr-6 xl:mr-12">
-          {processedNavLinks && processedNavLinks.length > 0 ? (
-            processedNavLinks.map((link, idx) => {
-              if (link.label.toLowerCase() === 'services') {
-                return (
-                  <DesktopPracticeNav
-                    key={`desk-nav-${idx}`}
-                    modules={safeMainModules}
-                    categories={safeCategories}
-                    subcategories={safeSubcategories}
-                    services={safeServices}
-                  />
-                )
-              }
-              return (
-                <Link key={`desk-nav-${idx}`} href={link.url} className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">
-                  {link.label}
-                </Link>
-              )
-            })
-          ) : (
-            <>
-              <Link href="/" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Home</Link>
-              <Link href="/about" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">About</Link>
-              <DesktopPracticeNav
-                modules={safeMainModules}
-                categories={safeCategories}
-                subcategories={safeSubcategories}
-                services={safeServices}
-              />
-
-              <Link href="/insights" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Insights</Link>
-              {!HIDE_BLOGS && (
-                <Link href="/blog" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Blog</Link>
-              )}
-              <Link href="/careers" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Careers</Link>
-              <Link href="/faq" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">FAQ</Link>
-              <Link href="/contact" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Contact</Link>
-            </>
-          )}
-        </nav>
-      </div>
+      )}
 
       {/* ── Mobile menu ──────────────────────────────────────────────────────── */}
       {open && (
         <div className="lg:hidden bg-[#f8f9fa] border-t border-gray-200 shadow-lg absolute w-full left-0 max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 flex flex-col gap-1">
-
-            {/* Mobile search */}
-            <div className="relative w-full mb-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
-                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Pages..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-10 pl-12 pr-4 bg-transparent border border-gray-400 rounded-full text-sm text-brand-dark placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange"
-              />
-            </div>
-
-            {/* Mobile Search Results */}
-            {searchQuery.trim() !== '' && (
-              <div className="mb-4 bg-white border border-gray-100 rounded-lg p-2 shadow-sm max-h-[300px] overflow-y-auto">
-                {filteredServices.length > 0 && (
-                  <div className="mb-2">
-                    <div className="px-2 py-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider">Services</div>
-                    {filteredServices.map(srv => (
-                      <Link
-                        key={`m-srv-${srv.id}`}
-                        href={`/services/${srv.slug}`}
-                        onClick={() => {
-                          setOpen(false);
-                          setSearchQuery('');
-                        }}
-                        className="block px-2 py-1.5 text-[14px] text-gray-700 hover:text-brand-orange"
-                      >
-                        {srv.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-                {filteredBlogs.length > 0 && (
-                  <div className="mb-2">
-                    <div className="px-2 py-1 text-[11px] font-bold text-gray-400 uppercase tracking-wider">Blogs</div>
-                    {filteredBlogs.map(blog => (
-                      <Link
-                        key={`m-blog-${blog.id}`}
-                        href={`/blog/${blog.slug}`}
-                        onClick={() => {
-                          setOpen(false);
-                          setSearchQuery('');
-                        }}
-                        className="block px-2 py-1.5 text-[14px] text-gray-700 hover:text-brand-orange"
-                      >
-                        {blog.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-                {!hasSearchResults && (
-                  <div className="px-2 py-3 text-sm text-gray-500 text-center">No results found</div>
-                )}
-              </div>
-            )}
 
             {processedNavLinks && processedNavLinks.length > 0 ? (
               processedNavLinks.map((link, idx) => {

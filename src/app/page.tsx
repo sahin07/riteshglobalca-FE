@@ -78,10 +78,10 @@ export default async function Page() {
     : undefined;
 
   // 4. Map Photo Gallery images from Strapi if available
-  const trustedByTitle = cmsData?.trustedByTitle || 'Snapshots of our Work';
+  const trustedByTitle = cmsData?.trustedByTitle || 'Our Work. Our Presence. Our Journey.';
   const trustedBySubtitle =
     cmsData?.trustedBySubtitle ||
-    'Our Work. Our Presence. Our Journey. A glimpse into our professional engagements, knowledge initiatives, client interactions and milestones.';
+    'A glimpse into our professional engagements, knowledge initiatives, client interactions and milestones.';
   const galleryImagesData = cmsData?.trustedByLogos && cmsData.trustedByLogos.length > 0
     ? cmsData.trustedByLogos.map((l: any) => ({
       caption: l.alternativeText || l.name || undefined,

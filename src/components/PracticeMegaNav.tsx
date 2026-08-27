@@ -91,7 +91,7 @@ export function DesktopPracticeNav({
       <Link
         href="/services"
         onClick={closeMenu}
-        className={`relative z-[70] flex h-full items-center gap-1 text-[14px] xl:text-[15px] transition-colors ${menuOpen ? 'text-brand-dark' : 'text-slate-600'}`}
+        className={`relative flex h-full items-center gap-1 text-[14px] xl:text-[15px] transition-colors ${menuOpen ? 'z-[70] text-brand-dark' : 'z-10 text-slate-600'}`}
       >
         Services
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${menuOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>

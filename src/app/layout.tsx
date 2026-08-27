@@ -5,7 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { FloatingChat } from '@/components/FloatingChat'
 import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
-import { getServices, getMainModules, getServiceCategories, getServiceSubcategories, getBlogPosts, getHeader, getFooter, getStrapiMedia, getBlogSubscribe } from '@/lib/strapi'
+import { getServices, getMainModules, getServiceCategories, getServiceSubcategories, getBlogPosts, getHeader, getFooter, getBlogSubscribe } from '@/lib/strapi'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -86,7 +86,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
         */}
         <div className="">
-          <Footer footer={footer} logoUrl={getStrapiMedia(header?.logo?.url) || '/logo.png'} />
+          <Footer footer={footer} />
         </div>
         <FloatingChat />
       </body>

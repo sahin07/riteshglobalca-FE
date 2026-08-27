@@ -9,7 +9,7 @@ function filterFooterLinks(links?: { id: number; label: string; url: string }[])
   return links.filter(l => !isBlogNavLink(l.label, l.url))
 }
 
-export function Footer({ className, footer, logoUrl }: { className?: string, footer?: StrapiFooter | null, logoUrl?: string | null }) {
+export function Footer({ className, footer }: { className?: string, footer?: StrapiFooter | null }) {
   const brandName = footer?.brandName || 'Ritesh Arora & Associates';
   const description = footer?.description || 'We support founders, professionals, and businesses with reliable tax filing, GST, company registration, and ongoing compliance services.';
   const socialOrDefault = (value: string | undefined, fallback: string) =>
@@ -34,16 +34,13 @@ export function Footer({ className, footer, logoUrl }: { className?: string, foo
 
           {/* Brand & Description */}
           <div className="md:col-span-4 lg:col-span-4">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-5">
               <img
-                src={logoUrl || "/logo.png"}
+                src="/images/Asset%2017@4x.png"
                 alt={brandName}
-                className="h-16 w-auto brightness-0 invert"
+                className="h-16 md:h-20 w-auto max-w-[220px] object-contain"
               />
             </Link>
-            <h3 className="text-white text-[20px] md:text-[22px] font-medium mb-3">
-              {brandName}
-            </h3>
             <p className="text-slate-300 italic font-light text-[14px] leading-relaxed max-w-[340px] mb-6">
               {description}
             </p>
@@ -134,7 +131,8 @@ export function Footer({ className, footer, logoUrl }: { className?: string, foo
             {`© ${new Date().getFullYear()} ${brandName}. All rights reserved.`}
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-slate-400 font-light">
-            <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/insights" className="hover:text-white transition-colors">Insights</Link>
           </div>

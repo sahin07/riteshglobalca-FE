@@ -109,7 +109,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                       <img
                         src={selectedMember.image}
                         alt={selectedMember.name || 'Team Member'}
-                        className="h-full w-full select-none object-cover object-[center_28%]"
+                        className="h-full w-full select-none object-cover object-[center_12%]"
                       />
                     </div>
 
@@ -246,7 +246,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                 <img
                   src={m.image}
                   alt={m.name || 'Team Member'}
-                  className="h-full w-full select-none object-cover object-[center_28%] transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full select-none object-cover object-[center_12%] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 via-transparent to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
                   <span className="flex items-center gap-1.5 text-sm font-semibold text-white">

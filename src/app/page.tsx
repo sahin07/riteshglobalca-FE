@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
-import { ServiceCard } from '@/components/ServiceCard'
+import { ServiceCardsSlider } from '@/components/ServiceCardsSlider'
 import { Stats } from '@/components/Stats'
 import { Testimonials } from '@/components/Testimonials'
 import { PhotoGallery } from '@/components/PhotoGallery'
@@ -136,17 +136,7 @@ export default async function Page() {
           subtitle={servicesSubtitle}
           className="bg-white py-20"
         >
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesData?.map((service: any, index: number) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                href={service.href}
-                image={service.image}
-              />
-            ))}
-          </div>
+          <ServiceCardsSlider services={servicesData || []} />
           <div className="mt-12 flex justify-center">
             <Link href="/services">
               <Button variant="primary" className="bg-brand-orange hover:bg-orange-600 text-white font-bold px-10 h-12 shadow-md">

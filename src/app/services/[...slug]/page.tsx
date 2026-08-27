@@ -299,7 +299,6 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         gridSubtitle="Select a category to view related service groups."
         testimonials={shared.testimonials}
         faqs={shared.faqs}
-        newsletter={shared.newsletter}
       />
     )
   }
@@ -326,7 +325,6 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         gridSubtitle="Select a service group to continue."
         testimonials={shared.testimonials}
         faqs={shared.faqs}
-        newsletter={shared.newsletter}
       />
     )
   }
@@ -357,7 +355,6 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
       gridSubtitle="Select a service to view full details."
       testimonials={shared.testimonials}
       faqs={shared.faqs}
-      newsletter={shared.newsletter}
     />
   )
 }

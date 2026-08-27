@@ -4,7 +4,8 @@ import '../styles/globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { FloatingChat } from '@/components/FloatingChat'
-import { getServices, getMainModules, getServiceCategories, getServiceSubcategories, getBlogPosts, getHeader, getFooter } from '@/lib/strapi'
+import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
+import { getServices, getMainModules, getServiceCategories, getServiceSubcategories, getBlogPosts, getHeader, getFooter, getStrapiMedia, getBlogSubscribe } from '@/lib/strapi'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -51,7 +52,7 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const [mainModules, categories, subcategories, services, blogs, header, footer] = await Promise.all([
+  const [mainModules, categories, subcategories, services, blogs, header, footer, subscribe] = await Promise.all([
     getMainModules(),
     getServiceCategories(),
     getServiceSubcategories(),
@@ -59,6 +60,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     getBlogPosts(),
     getHeader(),
     getFooter(),
+    getBlogSubscribe(),
   ])
 
   return (
@@ -75,8 +77,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
         </div>
         {children}
+        {/* Temporarily hidden site-wide newsletter
+        <SharedNewsletter
+          title={subscribe?.subscribeTitle}
+          description={subscribe?.subscribeDisclaimer}
+          placeholder={subscribe?.subscribePlaceholder}
+          buttonText={subscribe?.subscribeButtonText}
+        />
+        */}
         <div className="">
-          <Footer footer={footer} />
+          <Footer footer={footer} logoUrl={getStrapiMedia(header?.logo?.url) || '/logo.png'} />
         </div>
         <FloatingChat />
       </body>

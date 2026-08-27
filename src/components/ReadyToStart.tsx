@@ -10,14 +10,11 @@ export interface ReadyToStartProps {
 
 export function ReadyToStart({ title, subtitle, buttonText, buttonLink = '/contact' }: ReadyToStartProps) {
   return (
-    <section className="relative overflow-hidden bg-[#0f283d] py-20 text-center">
+    <section className="relative overflow-hidden bg-[#0b293d] py-20 text-center">
       {/* Radial background effect */}
-      <div 
-        className="absolute inset-0 opacity-80" 
-        style={{ 
-          backgroundImage: "repeating-conic-gradient(from 0deg at 50% 10%, rgba(255,255,255,0.03) 0deg 2deg, transparent 2deg 4deg)" 
-        }} 
-      />
+      {/* Insights-style hero gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
 
       <div className="relative container-prose">
         <h2 className="text-3xl md:text-3xl font-bold text-white mb-4">{title}</h2>

@@ -37,12 +37,9 @@ export function NewsletterCTA() {
     return (
         <section className="relative py-12 md:py-16 bg-[#0a2e3b] overflow-hidden border-t border-slate-800">
             {/* Background Pattern: Sunburst radiating from the bottom center */}
-            <div
-                className="absolute inset-0 opacity-90"
-                style={{
-                    backgroundImage: "repeating-conic-gradient(from 270deg at 50% 130%, rgba(255,255,255,0.04) 0deg 1.5deg, transparent 1.5deg 3deg)"
-                }}
-            />
+            {/* Insights-style hero gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
 
             <div className="relative z-10 max-w-6xl mx-auto px-4">
                 {/* Heading */}

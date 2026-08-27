@@ -328,6 +328,22 @@ export function Navbar({
     if (HIDE_BLOGS) {
       links = links.filter(l => !isBlogNavLink(l.label, l.url))
     }
+    // Replace Pricing with Insights in the main menu
+    links = links.map(l => {
+      const label = (l.label || '').toLowerCase()
+      const url = (l.url || '').toLowerCase()
+      if (label === 'pricing' || url.includes('/pricing')) {
+        return { ...l, label: 'Insights', url: '/insights' }
+      }
+      return l
+    })
+    const hasInsights = links.some(l => l.url === '/insights' || (l.label || '').toLowerCase() === 'insights')
+    if (!hasInsights) {
+      const careersIdx = links.findIndex(l => (l.label || '').toLowerCase() === 'careers' || (l.url || '').includes('/careers'))
+      const insightsLink = { id: 998, label: 'Insights', url: '/insights' }
+      if (careersIdx !== -1) links.splice(careersIdx, 0, insightsLink)
+      else links.push(insightsLink)
+    }
     const hasFaq = links.some(l => l.url === '/faq' || l.label.toLowerCase() === 'faq')
     if (!hasFaq) {
       const contactIdx = links.findIndex(l => l.label.toLowerCase() === 'contact')
@@ -492,10 +508,10 @@ export function Navbar({
                 services={safeServices}
               />
 
+              <Link href="/insights" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Insights</Link>
               {!HIDE_BLOGS && (
                 <Link href="/blog" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Blog</Link>
               )}
-              <Link href="/pricing" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Pricing</Link>
               <Link href="/careers" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Careers</Link>
               <Link href="/faq" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">FAQ</Link>
               <Link href="/contact" className="text-slate-600 hover:text-brand-dark transition-colors text-[14px] xl:text-[15px]">Contact</Link>
@@ -617,7 +633,7 @@ export function Navbar({
                 {!HIDE_BLOGS && (
                   <MobileNavLink href="/blog" label="Blog" onClick={() => setOpen(false)} />
                 )}
-                <MobileNavLink href="/pricing" label="Pricing" onClick={() => setOpen(false)} />
+                <MobileNavLink href="/insights" label="Insights" onClick={() => setOpen(false)} />
                 <MobileNavLink href="/careers" label="Careers" onClick={() => setOpen(false)} />
                 <MobileNavLink href="/faq" label="FAQ" onClick={() => setOpen(false)} />
                 <MobileNavLink href="/contact" label="Contact" onClick={() => setOpen(false)} />

@@ -1,7 +1,6 @@
 import { ServiceHero } from '@/components/ServiceHero'
 import { ServicesCardsGrid } from '@/components/shared/ServicesCardsGrid'
 import { SharedTestimonials } from '@/components/shared/SharedTestimonials'
-import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
 import { SharedFAQ } from '@/components/shared/SharedFAQ'
 import { getMainModules, getServicesPage, getStrapiMedia } from '@/lib/strapi'
 import { getSharedServicesSections } from '@/lib/sharedServicesSections'
@@ -67,12 +66,6 @@ export default async function ServicesPage() {
 
       <SharedTestimonials items={shared.testimonials} />
       <SharedFAQ items={shared.faqs} />
-      <SharedNewsletter
-        title={shared.newsletter.title}
-        description={shared.newsletter.description}
-        placeholder={shared.newsletter.placeholder}
-        buttonText={shared.newsletter.buttonText}
-      />
     </main>
   )
 }

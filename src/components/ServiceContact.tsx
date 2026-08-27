@@ -123,14 +123,11 @@ export function ServiceContact({
     }
 
     return (
-        <section className="relative py-20 md:py-24 bg-brand-dark overflow-hidden text-left">
+        <section className="relative py-20 md:py-24 bg-[#0b293d] overflow-hidden text-left">
             {/* Background Pattern: Sunburst */}
-            <div
-                className="absolute inset-0 opacity-80"
-                style={{
-                    backgroundImage: "repeating-conic-gradient(from 0deg at 50% 10%, rgba(255,255,255,0.03) 0deg 2deg, transparent 2deg 4deg)"
-                }}
-            />
+            {/* Insights-style hero gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
 
             <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

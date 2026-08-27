@@ -167,8 +167,8 @@ function PracticeMegaMenu({
       <div className={`fixed left-1/2 -translate-x-1/2 top-[6.5rem] z-50 w-[min(1080px,calc(100vw-2rem))] transition-opacity duration-200 ease-out ${open ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'}`}>
         <div className="bg-white border border-t-0 border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
           <div className="grid grid-cols-4">
-            <MegaColumn label="Practice">
-              {modules.length === 0 && <MegaEmpty text="No practices" />}
+            <MegaColumn label="Practice Areas">
+              {modules.length === 0 && <MegaEmpty text="No practice areas" />}
               {modules.map((mod) => {
                 const isActive = activeModuleId === mod.id
                 return (
@@ -186,8 +186,8 @@ function PracticeMegaMenu({
               })}
             </MegaColumn>
 
-            <MegaColumn label="Families">
-              {categories.length === 0 && <MegaEmpty text="No families" />}
+            <MegaColumn label="Service Lines">
+              {categories.length === 0 && <MegaEmpty text="No service lines" />}
               {categories.map((cat) => {
                 const isActive = activeCategoryId === cat.id
                 return (
@@ -205,8 +205,8 @@ function PracticeMegaMenu({
               })}
             </MegaColumn>
 
-            <MegaColumn label="Groups">
-              {subcategories.length === 0 && <MegaEmpty text="No groups" />}
+            <MegaColumn label="Service Categories">
+              {subcategories.length === 0 && <MegaEmpty text="No service categories" />}
               {subcategories.map((sub) => {
                 const isActive = activeSubcategoryId === sub.id
                 return (

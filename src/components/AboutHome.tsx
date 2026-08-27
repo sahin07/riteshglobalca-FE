@@ -29,14 +29,11 @@ export function AboutHome({
   const points = rightPoints && rightPoints.length > 0 ? rightPoints : [];
 
   return (
-    <section className="bg-brand-dark py-16 md:py-24 text-white relative overflow-hidden">
+    <section className="bg-[#0b293d] py-16 md:py-24 text-white relative overflow-hidden">
       {/* Background Pattern: Sunburst */}
-      <div
-        className="absolute inset-0 opacity-80"
-        style={{
-          backgroundImage: "repeating-conic-gradient(from 0deg at 50% 10%, rgba(255,255,255,0.03) 0deg 2deg, transparent 2deg 4deg)"
-        }}
-      />
+      {/* Insights-style hero gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
 
       <div className="container-prose relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">

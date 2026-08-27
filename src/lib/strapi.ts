@@ -581,6 +581,8 @@ export interface StrapiFooter {
   facebookUrl?: string;
   instagramUrl?: string;
   twitterUrl?: string;
+  youtubeUrl?: string;
+  threadsUrl?: string;
   quickLinks?: StrapiLink[];
   servicesLinks?: StrapiLink[];
   resourcesLinks?: StrapiLink[];

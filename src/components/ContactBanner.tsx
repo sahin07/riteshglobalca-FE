@@ -10,14 +10,11 @@ export interface ContactBannerProps {
 
 export function ContactBanner({ title, subtitle, buttonText, buttonLink }: ContactBannerProps) {
   return (
-    <section className="relative py-8 md:py-20 bg-brand-dark overflow-hidden">
+    <section className="relative py-8 md:py-20 bg-[#0b293d] overflow-hidden">
       {/* Background Pattern: Sunburst */}
-      <div 
-        className="absolute inset-0 opacity-80" 
-        style={{ 
-          backgroundImage: "repeating-conic-gradient(from 0deg at 50% 10%, rgba(255,255,255,0.03) 0deg 2deg, transparent 2deg 4deg)" 
-        }} 
-      />
+      {/* Insights-style hero gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
 
       <div className="relative z-10 container-prose text-center px-4">
         <h2 className="text-[28px] md:text-[36px] font-bold tracking-wide text-white mb-4">

@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import { ServicesCardsGrid, ServiceCardItem } from '@/components/shared/ServicesCardsGrid'
 import { SharedTestimonials, SharedTestimonialItem } from '@/components/shared/SharedTestimonials'
-import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
 import { SharedFAQ, SharedFaqItem } from '@/components/shared/SharedFAQ'
-import type { SharedNewsletterData } from '@/lib/sharedServicesSections'
 
 type Crumb = { label: string; href?: string }
 
@@ -18,7 +16,6 @@ export function TaxonomyLanding({
   gridSubtitle,
   testimonials = [],
   faqs = [],
-  newsletter,
 }: {
   eyebrow?: string
   title: string
@@ -30,7 +27,6 @@ export function TaxonomyLanding({
   gridSubtitle?: string
   testimonials?: SharedTestimonialItem[]
   faqs?: SharedFaqItem[]
-  newsletter?: SharedNewsletterData
 }) {
   return (
     <main className="min-h-screen bg-white">
@@ -82,12 +78,6 @@ export function TaxonomyLanding({
 
       <SharedTestimonials items={testimonials} />
       <SharedFAQ items={faqs} />
-      <SharedNewsletter
-        title={newsletter?.title}
-        description={newsletter?.description}
-        placeholder={newsletter?.placeholder}
-        buttonText={newsletter?.buttonText}
-      />
-    </main>
+</main>
   )
 }

@@ -1,6 +1,5 @@
 import { getBlogPosts, getStrapiMedia } from '@/lib/strapi'
 import { InsightsHero } from '@/components/InsightsHero'
-import { NewsletterCTA } from '@/components/NewsletterCTA'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { HIDE_BLOGS } from '@/lib/hideBlogs'
@@ -92,7 +91,6 @@ export default async function InsightsPage() {
         </div>
       </section>
 
-      <NewsletterCTA />
     </main>
   )
 }

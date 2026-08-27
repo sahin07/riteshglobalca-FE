@@ -46,15 +46,16 @@ export default async function Page() {
   const contactDetails = resolveContactDetails(contactCmsData);
 
   // 1. Map Hero component properties
-  const heroProps = cmsData ? {
-    title: cmsData.heroTitle,
-    description: cmsData.heroDescription,
-    primaryButtonText: cmsData.heroPrimaryButtonText,
-    primaryButtonLink: cmsData.heroPrimaryButtonLink,
-    secondaryButtonText: cmsData.heroSecondaryButtonText,
-    secondaryButtonLink: cmsData.heroSecondaryButtonLink,
-    backgroundImage: cmsData.heroImage ? getStrapiUrl(cmsData.heroImage.url) : undefined
-  } : undefined;
+  const heroProps = {
+    title: 'Built for Growth. Backed by Integrity.',
+    description:
+      'Your trusted multidisciplinary partner for audit, taxation, and corporate advisory. We provide Comprehensive CA services, from compliance to strategic advisory, tailored for businesses and professionals.',
+    primaryButtonText: cmsData?.heroPrimaryButtonText,
+    primaryButtonLink: cmsData?.heroPrimaryButtonLink,
+    secondaryButtonText: cmsData?.heroSecondaryButtonText,
+    secondaryButtonLink: cmsData?.heroSecondaryButtonLink,
+    backgroundImage: '/images/home-hero.jpg',
+  };
 
   // 2. Map Services section and items
   const servicesTitle = cmsData?.servicesTitle;

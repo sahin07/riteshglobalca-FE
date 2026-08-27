@@ -17,12 +17,12 @@ export function OurStory({ title, content, imageUrl }: OurStoryProps) {
                             <><p key={index}>{para}</p> <br /></>
                         ))}
                     </div>
-                    <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-slate-100 shadow-xl">
+                    <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-xl">
                         {imageUrl && (
                             <img
                                 src={imageUrl}
                                 alt={title}
-                                className="w-full h-full object-cover object-center"
+                                className="absolute inset-0 w-full h-full object-cover object-center"
                             />
                         )}
                     </div>

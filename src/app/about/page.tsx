@@ -40,7 +40,7 @@ export default async function AboutPage() {
       <AboutHero
         title={about.heroTitle}
         description={about.heroDescription}
-        backgroundImageUrl={about.heroBackgroundImage?.url ? getStrapiMedia(about.heroBackgroundImage.url) as string : undefined}
+        backgroundImageUrl="/images/about-team.jpg"
         primaryButtonText={about.heroPrimaryButtonText}
         primaryButtonLink={about.heroPrimaryButtonLink}
         secondaryButtonText={about.heroSecondaryButtonText}
@@ -51,7 +51,7 @@ export default async function AboutPage() {
         <OurStory
           title={about.storyTitle}
           content={about.storyContent}
-          imageUrl={about.storyImage?.url ? getStrapiMedia(about.storyImage.url) as string : undefined}
+          imageUrl="https://riteshglobalca.com/strapi/uploads/Whats_App_Image_2026_08_27_at_14_13_22_a6f3c813ad.jpeg"
         />
       )}
 

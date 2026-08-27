@@ -1,0 +1,2762 @@
+{
+  "seed": 27,
+  "imageCount": 24,
+  "serviceCount": 369,
+  "assigned": 369,
+  "failed": 0,
+  "images": [
+    {
+      "id": 35,
+      "documentId": "nc9scnhjd6nzfem3bxqn5h29",
+      "name": "Amendment in LLP Agreement.jpg",
+      "url": "/uploads/Amendment_in_LLP_Agreement_2d9786ac81.jpg",
+      "source": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "id": 36,
+      "documentId": "h2llm22rudck8wwomtpxqm9m",
+      "name": "Annual Return Certification.jpg",
+      "url": "/uploads/Annual_Return_Certification_6fcace2ace.jpg",
+      "source": "Annual Return Certification.jpg"
+    },
+    {
+      "id": 37,
+      "documentId": "i2held0gkisbb0ggd7m2yxu3",
+      "name": "Appointment Resignation of Auditor.jpg",
+      "url": "/uploads/Appointment_Resignation_of_Auditor_6d4bc9a15b.jpg",
+      "source": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "id": 38,
+      "documentId": "ua13gpr0nqcbxfb6xibnkuit",
+      "name": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "url": "/uploads/BEN_2_and_DIR_3_KYC_Filings_638dd1ebc4.jpg",
+      "source": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "id": 39,
+      "documentId": "zpmhuwqoeckfsrgct16b6gym",
+      "name": "Change in Capital Structure.jpg",
+      "url": "/uploads/Change_in_Capital_Structure_7c67c46e52.jpg",
+      "source": "Change in Capital Structure.jpg"
+    },
+    {
+      "id": 40,
+      "documentId": "frrku719xr1jw9q1q9h3ndtu",
+      "name": "Change in Directors Designated Partners.jpg",
+      "url": "/uploads/Change_in_Directors_Designated_Partners_60acf66d2d.jpg",
+      "source": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "id": 41,
+      "documentId": "vppj3w35yzbfddcrbdki8f93",
+      "name": "Change in Object Clause MOA AOA.jpg",
+      "url": "/uploads/Change_in_Object_Clause_MOA_AOA_cfaa11897f.jpg",
+      "source": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "id": 42,
+      "documentId": "cr0qmmik9uxfthkcslq1bjpu",
+      "name": "Change in Registered Office.jpg",
+      "url": "/uploads/Change_in_Registered_Office_5048a0b4d1.jpg",
+      "source": "Change in Registered Office.jpg"
+    },
+    {
+      "id": 43,
+      "documentId": "vsniv51d4utejoey8a8nfv09",
+      "name": "Company Incorporation.jpg",
+      "url": "/uploads/Company_Incorporation_1cc6004f3e.jpg",
+      "source": "Company Incorporation.jpg"
+    },
+    {
+      "id": 44,
+      "documentId": "uv079nvtymb52f8enn3w3s9a",
+      "name": "Conversion of Firm  LLP Company.jpg",
+      "url": "/uploads/Conversion_of_Firm_LLP_Company_f302caaf23.jpg",
+      "source": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "id": 45,
+      "documentId": "af5pqdlxz6i6qpkentql96hy",
+      "name": "Cost Audit & Cost Records Filing.jpg",
+      "url": "/uploads/Cost_Audit_and_Cost_Records_Filing_0a387e0d78.jpg",
+      "source": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "id": 46,
+      "documentId": "x7wrchrfkm1r8qc40vw4hqbj",
+      "name": "CSR Filings.jpg",
+      "url": "/uploads/CSR_Filings_4a2dd4cbfc.jpg",
+      "source": "CSR Filings.jpg"
+    },
+    {
+      "id": 47,
+      "documentId": "josk2koe1btimtcctimk091v",
+      "name": "Dormant Company Registration.jpg",
+      "url": "/uploads/Dormant_Company_Registration_e71c1faf2f.jpg",
+      "source": "Dormant Company Registration.jpg"
+    },
+    {
+      "id": 48,
+      "documentId": "a6ex960bqtsuh31s3u4e56zz",
+      "name": "Filing of Financials in XBRL.jpg",
+      "url": "/uploads/Filing_of_Financials_in_XBRL_b1d1234004.jpg",
+      "source": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "id": 49,
+      "documentId": "gv879n9ua24nuyguhvkt16df",
+      "name": "LLP Incorporation.jpg",
+      "url": "/uploads/LLP_Incorporation_3fd84cbb85.jpg",
+      "source": "LLP Incorporation.jpg"
+    },
+    {
+      "id": 50,
+      "documentId": "jfhaids1hm81rkj66oq1gz0x",
+      "name": "Maintenance of Statutory Registers.jpg",
+      "url": "/uploads/Maintenance_of_Statutory_Registers_96307837e5.jpg",
+      "source": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "id": 51,
+      "documentId": "m4mrobl52nkyu6fw7qsglvat",
+      "name": "MSME & DPT-3 Filings.jpg",
+      "url": "/uploads/MSME_and_DPT_3_Filings_5b3e959423.jpg",
+      "source": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "id": 52,
+      "documentId": "q0mes52bzmtl44xfhylk9yy3",
+      "name": "PAS-6 Reconciliation of Share Capital.jpg",
+      "url": "/uploads/PAS_6_Reconciliation_of_Share_Capital_01a8cf8ac5.jpg",
+      "source": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "id": 53,
+      "documentId": "he2wlkzr82rvf1888mbuuptq",
+      "name": "Post Incorporation Compliances.jpg",
+      "url": "/uploads/Post_Incorporation_Compliances_9976e3ab6f.jpg",
+      "source": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "id": 54,
+      "documentId": "u9ja8ufj8zvv6zyruea5zz96",
+      "name": "Preparation of Minutes and Resolutions.jpg",
+      "url": "/uploads/Preparation_of_Minutes_and_Resolutions_53de7d3167.jpg",
+      "source": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "id": 55,
+      "documentId": "y362ryk004ov4chjotvi0tnd",
+      "name": "Revival of Struck-off Company.jpg",
+      "url": "/uploads/Revival_of_Struck_off_Company_804b1097bf.jpg",
+      "source": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "id": 56,
+      "documentId": "dkp6mb8xrlfbwm6owvpkv0kf",
+      "name": "Secretarial Audit.jpg",
+      "url": "/uploads/Secretarial_Audit_aff9b8d85d.jpg",
+      "source": "Secretarial Audit.jpg"
+    },
+    {
+      "id": 57,
+      "documentId": "e803yvg9bf06bsyh6expy675",
+      "name": "Section 248 Services.jpg",
+      "url": "/uploads/Section_248_Services_e088ff4452.jpg",
+      "source": "Section 248 Services.jpg"
+    },
+    {
+      "id": 58,
+      "documentId": "dzzyxjnmvx0oyk3qoe5tq041",
+      "name": "Shifting of Registered Office from one ROC to another.jpg",
+      "url": "/uploads/Shifting_of_Registered_Office_from_one_ROC_to_another_f2d9d762fe.jpg",
+      "source": "Shifting of Registered Office from one ROC to another.jpg"
+    }
+  ],
+  "assignments": [
+    {
+      "serviceSlug": "1-9-2-1-rera-legal-documentation-support",
+      "serviceTitle": "RERA Legal Documentation Support",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-3-1-2-deal-structuring-and-valuation",
+      "serviceTitle": "Deal Structuring and Valuation",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-7-2-5-post-listing-regulatory-reporting-requirements",
+      "serviceTitle": "Post-Listing Regulatory & Reporting Requirements",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-10-6-4-financial-restructuring-turnaround-management",
+      "serviceTitle": "Financial Restructuring & Turnaround Management",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-9-3-4-compliance-for-real-estate-agents",
+      "serviceTitle": "Compliance for Real Estate Agents",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-2-scenario-sensitivity-analysis",
+      "serviceTitle": "Scenario & Sensitivity Analysis",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-7-3-1-private-placement-preferential-issue-advisory",
+      "serviceTitle": "Private Placement & Preferential Issue Advisory",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-5-6-3-funding-compliance",
+      "serviceTitle": "Funding Compliance",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-3-8-1-csr-audit-impact-assessment",
+      "serviceTitle": "CSR Audit & Impact Assessment",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-3-6-3-legal-compliance-due-diligence",
+      "serviceTitle": "Legal & Compliance Due Diligence",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-5-5-2-legal-secretarial-due-diligence",
+      "serviceTitle": "Legal & Secretarial Due Diligence",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-8-5-4-periodic-legal-financial-health-review",
+      "serviceTitle": "Periodic Legal & Financial Health Review",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-7-1-4-financial-due-diligence-restatement-of-financials",
+      "serviceTitle": "Financial Due Diligence & Restatement of Financials",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "2-1-1-5-beps-base-erosion-and-profit-shifting-compliance-support",
+      "serviceTitle": "BEPS (Base Erosion and Profit Shifting) Compliance Support",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-12-1-3-professional-tax-pt-registration",
+      "serviceTitle": "Professional Tax (PT) Registration",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-10-5-1-coordination-for-disbursement",
+      "serviceTitle": "Coordination for Disbursement",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-3-6-1-financial-due-diligence",
+      "serviceTitle": "Financial Due Diligence",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "2-2-1-1-local-file-master-file-country-by-country-report-preparation",
+      "serviceTitle": "Local File, Master File & Country-by-Country Report Preparation",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-12-1-4-labour-welfare-fund-lwf-registration",
+      "serviceTitle": "Labour Welfare Fund (LWF) Registration",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-9-5-3-assistance-in-refund-penalty-proceedings",
+      "serviceTitle": "Assistance in Refund / Penalty Proceedings",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "2-6-3-3-internal-financial-controls-ifc-design-review",
+      "serviceTitle": "Internal Financial Controls (IFC) Design & Review",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "2-1-3-1-representation-before-tax-authorities",
+      "serviceTitle": "Representation before Tax Authorities",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-8-2-3-payroll-hr-compliance",
+      "serviceTitle": "Payroll & HR Compliance",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "2-3-1-3-spa-ssa-review-advisory",
+      "serviceTitle": "SPA/SSA Review & Advisory",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-2-2-3-capital-gains-planning",
+      "serviceTitle": "Capital Gains Planning",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-6-4-3-support-in-debt-equity-venture-capital-transactions",
+      "serviceTitle": "Support in Debt, Equity & Venture Capital Transactions",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-8-3-1-pitch-deck-preparation",
+      "serviceTitle": "Pitch Deck Preparation",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-1-1-4-litigation-support-services",
+      "serviceTitle": "Litigation Support Services",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-2-4-1-tax-due-diligence",
+      "serviceTitle": "Tax Due Diligence",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-6-5-1-multi-entity-and-multi-currency-consolidation",
+      "serviceTitle": "Multi-Entity and Multi-Currency Consolidation",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-5-msme-dpt-3-filings",
+      "serviceTitle": "MSME & DPT-3 Filings",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-2-3-2-drafting-defense-of-tp-documentation-before-authorities",
+      "serviceTitle": "Drafting & Defense of TP Documentation before Authorities",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-3-8-4-social-responsibility-governance-review",
+      "serviceTitle": "Social Responsibility & Governance Review",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-2-3-3-advance-pricing-agreements-apa-safe-harbour-advisory",
+      "serviceTitle": "Advance Pricing Agreements (APA) & Safe Harbour Advisory",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-8-2-1-statutory-registrations",
+      "serviceTitle": "Statutory Registrations",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-5-4-2-fairness-opinion-share-swap-ratio",
+      "serviceTitle": "Fairness Opinion & Share Swap Ratio",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-3-2-1-internal-control-evaluation-reporting",
+      "serviceTitle": "Internal Control Evaluation & Reporting",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-5-1-2-incorporation-registration",
+      "serviceTitle": "Incorporation & Registration",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-9-5-1-representation-before-rera-authority-tribunal",
+      "serviceTitle": "Representation before RERA Authority / Tribunal",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-2-4-3-equalisation-levy-compliance",
+      "serviceTitle": "Equalisation Levy Compliance",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "gst-registration-services",
+      "serviceTitle": "GST Registration Services",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "2-5-1-3-global-holding-company-structuring-for-tax-efficiency",
+      "serviceTitle": "Global Holding Company Structuring for Tax Efficiency",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "2-6-2-5-pricing-strategy-and-profitability-analytics",
+      "serviceTitle": "Pricing Strategy and Profitability Analytics",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-7-1-1-ipo-feasibility-study-and-eligibility-assessment",
+      "serviceTitle": "IPO Feasibility Study and Eligibility Assessment",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-12-2-2-esic-monthly-return-filing",
+      "serviceTitle": "ESIC Monthly Return Filing",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-8-4-4-legal-documentation-contracts",
+      "serviceTitle": "Legal Documentation & Contracts",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "2-5-2-1-economic-substance-regulation-esr-compliance",
+      "serviceTitle": "Economic Substance Regulation (ESR) Compliance",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-12-1-5-shops-establishment-registration",
+      "serviceTitle": "Shops & Establishment Registration",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-12-5-3-form-5a-form-6a-and-other-returns",
+      "serviceTitle": "Form 5A, Form 6A, and Other Returns",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-2-3-1-support-during-tp-audits-assessments",
+      "serviceTitle": "Support during TP Audits & Assessments",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-1-2-4-customs-audit-investigation-support",
+      "serviceTitle": "Customs Audit & Investigation Support",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "2-6-2-4-departmental-performance-variance-analysis",
+      "serviceTitle": "Departmental Performance & Variance Analysis",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-8-1-1-dpiit-recognition-under-startup-india",
+      "serviceTitle": "DPIIT Recognition under Startup India",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-6-3-4-risk-management-framework-implementation",
+      "serviceTitle": "Risk Management Framework Implementation",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-1-3-3-assistance-during-international-tax-audits-investigations",
+      "serviceTitle": "Assistance during International Tax Audits & Investigations",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-4-3-5-virtual-office-nominee-director-resident-agent-services",
+      "serviceTitle": "Virtual Office, Nominee Director & Resident Agent Services",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-2-2-1-personal-tax-planning",
+      "serviceTitle": "Personal Tax Planning",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-5-3-5-assistance-in-local-partner-arrangements-sponsorship",
+      "serviceTitle": "Assistance in Local Partner Arrangements & Sponsorship",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-3-6-2-vendor-due-diligence",
+      "serviceTitle": "Vendor Due Diligence",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-2-3-vat-registration-compliance-filing-uae-gcc",
+      "serviceTitle": "VAT Registration, Compliance & Filing (UAE & GCC)",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-6-ben-2-dir-3-kyc-filings",
+      "serviceTitle": "BEN-2 & DIR-3 KYC Filings",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-12-3-4-new-joinee-exit-formalities",
+      "serviceTitle": "New Joinee & Exit Formalities",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-10-6-1-lease-hire-purchase-finance",
+      "serviceTitle": "Lease & Hire Purchase Finance",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-10-2-2-preparation-of-cma-data-financial-projections",
+      "serviceTitle": "Preparation of CMA Data & Financial Projections",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "2-3-1-1-financial-tax-due-diligence",
+      "serviceTitle": "Financial & Tax Due Diligence",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-5-3-1-fdi-odi-reporting",
+      "serviceTitle": "FDI & ODI Reporting",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-1-valuation-as-per-companies-act-2013",
+      "serviceTitle": "Valuation as per Companies Act, 2013",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-3-8-2-esg-compliance-sustainability-reporting",
+      "serviceTitle": "ESG Compliance & Sustainability Reporting",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-2-revenue-turnover-audit",
+      "serviceTitle": "Revenue / Turnover Audit",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-9-2-2-preparation-of-project-disclosure-documents",
+      "serviceTitle": "Preparation of Project Disclosure Documents",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-9-4-3-fund-utilization-withdrawal-certification",
+      "serviceTitle": "Fund Utilization & Withdrawal Certification",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "2-4-3-2-local-accounting-payroll-setup",
+      "serviceTitle": "Local Accounting & Payroll Setup",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-6-4-1-fundraising-strategy-investor-deck-preparation",
+      "serviceTitle": "Fundraising Strategy & Investor Deck Preparation",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-2-2-4-transfer-pricing-policy-formulation",
+      "serviceTitle": "Transfer Pricing Policy Formulation",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "2-6-3-2-corporate-governance-reporting-audit-coordination",
+      "serviceTitle": "Corporate Governance Reporting & Audit Coordination",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-5-2-2-conversion-of-entities",
+      "serviceTitle": "Conversion of Entities",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-4-certification-of-net-worth-capital",
+      "serviceTitle": "Certification of Net Worth / Capital",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-6-2-2-cost-optimization-and-margin-improvement-analysis",
+      "serviceTitle": "Cost Optimization and Margin Improvement Analysis",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-1-1-4-controlled-foreign-company-cfc-gaar-advisory",
+      "serviceTitle": "Controlled Foreign Company (CFC) & GAAR Advisory",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-3-7-1-limited-review-report",
+      "serviceTitle": "Limited Review Report",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-10-5-3-credit-rating-advisory",
+      "serviceTitle": "Credit Rating Advisory",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-5-3-3-liaison-branch-office-setup",
+      "serviceTitle": "Liaison / Branch Office Setup",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-9-5-2-drafting-filing-of-rera-complaints",
+      "serviceTitle": "Drafting & Filing of RERA Complaints",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-1-2-difc-adgm-setup-regulatory-advisory",
+      "serviceTitle": "DIFC & ADGM Setup & Regulatory Advisory",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-11-5-2-esop-pool-structuring",
+      "serviceTitle": "ESOP Pool Structuring",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-11-3-2-business-plan-review",
+      "serviceTitle": "Business Plan Review",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-7-4-5-assistance-in-further-public-offers-fpos-and-delisting-procedures",
+      "serviceTitle": "Assistance in Further Public Offers (FPOs) and Delisting Procedures",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-10-1-3-project-costing-budget-estimation",
+      "serviceTitle": "Project Costing & Budget Estimation",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-5-5-3-deal-structuring-advisory",
+      "serviceTitle": "Deal Structuring Advisory",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-9-6-1-monitoring-of-rera-compliance-calendar",
+      "serviceTitle": "Monitoring of RERA Compliance Calendar",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-2-3-2-appeals-before-cit-a",
+      "serviceTitle": "Appeals before CIT(A)",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-7-1-5-business-valuation-pre-ipo-investor-structuring",
+      "serviceTitle": "Business Valuation & Pre-IPO Investor Structuring",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "2-6-5-5-global-expansion-planning-tax-efficient-structuring",
+      "serviceTitle": "Global Expansion Planning & Tax-Efficient Structuring",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-12-2-1-epf-monthly-return-filing-ecr",
+      "serviceTitle": "EPF Monthly Return Filing (ECR)",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-2-7-4-audit-under-presumptive-taxation",
+      "serviceTitle": "Audit under Presumptive Taxation",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-2-1-3-advance-tax-computation",
+      "serviceTitle": "Advance Tax Computation",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-6-1-3-opc-annual-filings",
+      "serviceTitle": "OPC – Annual Filings",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-6-appointment-resignation-of-auditor",
+      "serviceTitle": "Appointment / Resignation of Auditor",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-5-4-1-business-valuation",
+      "serviceTitle": "Business Valuation",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-2-5-2-presumptive-taxation-sec-44ad-44ada-44ae",
+      "serviceTitle": "Presumptive Taxation (Sec 44AD/44ADA/44AE)",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-8-2-2-accounting-bookkeeping-setup",
+      "serviceTitle": "Accounting & Bookkeeping Setup",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-5-5-1-financial-due-diligence",
+      "serviceTitle": "Financial Due Diligence",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-7-4-2-compliance-with-corporate-governance-insider-trading-regulations",
+      "serviceTitle": "Compliance with Corporate Governance & Insider Trading Regulations",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-6-5-2-dormant-company-registration",
+      "serviceTitle": "Dormant Company Registration",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-2-4-4-tds-on-non-resident-payments",
+      "serviceTitle": "TDS on Non-resident Payments",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-4-3-1-annual-filings",
+      "serviceTitle": "Annual Filings",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-12-4-4-audit-assistance-by-labour-authorities",
+      "serviceTitle": "Audit Assistance by Labour Authorities",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-3-3-investor-visa-residency-pro-services",
+      "serviceTitle": "Investor Visa, Residency & PRO Services",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-8-1-2-msme-udyam-registration",
+      "serviceTitle": "MSME / Udyam Registration",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-11-5-1-cap-table-management",
+      "serviceTitle": "Cap Table Management",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-8-6-3-state-startup-policy-support",
+      "serviceTitle": "State Startup Policy Support",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-10-1-2-financial-feasibility-study",
+      "serviceTitle": "Financial Feasibility Study",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-7-2-3-liaison-with-lead-managers-legal-advisors-merchant-bankers",
+      "serviceTitle": "Liaison with Lead Managers, Legal Advisors & Merchant Bankers",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "2-3-2-4-capital-restructuring-and-fund-raising-support",
+      "serviceTitle": "Capital Restructuring and Fund-Raising Support",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "2-4-1-4-liaison-office-branch-office-setup-for-indian-entities-abroad",
+      "serviceTitle": "Liaison Office / Branch Office Setup for Indian Entities Abroad",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-3-1-5-statutory-certifications",
+      "serviceTitle": "Statutory Certifications",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-3-5-4-labour-statutory-compliance-audit",
+      "serviceTitle": "Labour & Statutory Compliance Audit",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-1-2-3-customs-filings-documentation",
+      "serviceTitle": "Customs Filings & Documentation",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-2-change-in-registered-office",
+      "serviceTitle": "Change in Registered Office",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "2-6-2-1-annual-operating-plan-aop-long-term-financial-planning",
+      "serviceTitle": "Annual Operating Plan (AOP) & Long-Term Financial Planning",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-4-2-5-global-accounting-statutory-audit-support",
+      "serviceTitle": "Global Accounting & Statutory Audit Support",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-1-3-2-drafting-submission-of-reassessment-appeal-documents",
+      "serviceTitle": "Drafting & Submission of Reassessment/Appeal Documents",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-12-5-4-labour-welfare-fund-annual-return",
+      "serviceTitle": "Labour Welfare Fund Annual Return",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-3-7-2-agreed-upon-procedures-aup",
+      "serviceTitle": "Agreed Upon Procedures (AUP)",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-6-3-1-company-incorporation",
+      "serviceTitle": "Company Incorporation",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-3-6-4-fraud-investigation-forensic-review",
+      "serviceTitle": "Fraud Investigation & Forensic Review",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-4-5-3-budgeting-variance-analysis",
+      "serviceTitle": "Budgeting & Variance Analysis",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-11-3-4-support-in-term-sheet-share-swap-ratios",
+      "serviceTitle": "Support in Term Sheet & Share Swap Ratios",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-6-3-2-llp-incorporation",
+      "serviceTitle": "LLP Incorporation",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-9-1-3-amendments-in-rera-registration",
+      "serviceTitle": "Amendments in RERA Registration",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-2-6-2-gift-tax-clubbing-provisions",
+      "serviceTitle": "Gift Tax & Clubbing Provisions",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-2-2-1-pricing-model-design-for-intercompany-transactions",
+      "serviceTitle": "Pricing Model Design for Intercompany Transactions",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-6-1-2-llp-annual-filings",
+      "serviceTitle": "LLP – Annual Filings",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-2-3-4-rectification-revision-refunds",
+      "serviceTitle": "Rectification, Revision & Refunds",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-10-4-1-preparation-of-appraisal-note-for-banks",
+      "serviceTitle": "Preparation of Appraisal Note for Banks",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-6-6-2-cost-audit-cost-records-filing",
+      "serviceTitle": "Cost Audit & Cost Records Filing",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "2-3-2-1-valuation-under-companies-act-fema-income-tax-act",
+      "serviceTitle": "Valuation under Companies Act, FEMA & Income Tax Act",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-8-2-4-roc-mca-filings",
+      "serviceTitle": "ROC / MCA Filings",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-2-2-4-expatriate-nri-taxation",
+      "serviceTitle": "Expatriate & NRI Taxation",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-9-2-3-project-extension-renewal-application",
+      "serviceTitle": "Project Extension / Renewal Application",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-6-esop-sweat-equity-valuation",
+      "serviceTitle": "ESOP / Sweat Equity Valuation",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-4-4-1-chart-of-accounts-design",
+      "serviceTitle": "Chart of Accounts Design",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-9-4-2-engineer-architect-certificate",
+      "serviceTitle": "Engineer / Architect Certificate",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-12-1-2-esic-registration",
+      "serviceTitle": "ESIC Registration",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-4-2-3-employee-reimbursements-audit",
+      "serviceTitle": "Employee Reimbursements Audit",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-8-1-3-startup-india-benefits-advisory",
+      "serviceTitle": "Startup India Benefits Advisory",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-8-3-3-investor-documentation-due-diligence",
+      "serviceTitle": "Investor Documentation & Due Diligence",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-12-4-2-compliance-gap-analysis",
+      "serviceTitle": "Compliance Gap Analysis",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-4-5-1-preparation-of-financial-statements",
+      "serviceTitle": "Preparation of Financial Statements",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-1-1-2-return-filing-service",
+      "serviceTitle": "Return Filing Service",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-11-4-1-valuation-for-fema-odi-fdi-transactions",
+      "serviceTitle": "Valuation for FEMA / ODI / FDI Transactions",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-2-2-2-intragroup-service-charge-structuring",
+      "serviceTitle": "Intragroup Service Charge Structuring",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-1-1-mainland-free-zone-offshore-company-formation",
+      "serviceTitle": "Mainland, Free Zone & Offshore Company Formation",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-3-3-4-business-process-re-engineering-audit",
+      "serviceTitle": "Business Process Re-engineering Audit",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-2-preparation-of-minutes-and-resolutions",
+      "serviceTitle": "Preparation of Minutes and Resolutions",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-3-3-preparation-of-information-memorandum",
+      "serviceTitle": "Preparation of Information Memorandum",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "2-6-4-2-financial-due-diligence-data-room-preparation",
+      "serviceTitle": "Financial Due Diligence & Data Room Preparation",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-12-1-1-epf-registration",
+      "serviceTitle": "EPF Registration",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-8-5-2-virtual-cfo-services",
+      "serviceTitle": "Virtual CFO Services",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-12-6-4-labour-law-licensing-renewal",
+      "serviceTitle": "Labour Law Licensing & Renewal",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-7-1-3-capital-structuring-and-pre-ipo-restructuring-advisory",
+      "serviceTitle": "Capital Structuring and Pre-IPO Restructuring Advisory",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-2-3-5-faceless-assessment-appeal-assistance",
+      "serviceTitle": "Faceless Assessment & Appeal Assistance",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-3-3-2-corporate-governance-review",
+      "serviceTitle": "Corporate Governance Review",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-6-6-3-csr-filings",
+      "serviceTitle": "CSR Filings",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "2-5-3-1-accounting-audit-tax-support",
+      "serviceTitle": "Accounting, Audit & Tax Support",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-3-forensic-audit",
+      "serviceTitle": "Forensic Audit",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "gst-registration-and-filing",
+      "serviceTitle": "GST Registration & Filing",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-12-6-2-sexual-harassment-posh-compliance",
+      "serviceTitle": "Sexual Harassment (POSH) Compliance",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-1-2-2-foreign-tax-credit-computation-optimization",
+      "serviceTitle": "Foreign Tax Credit Computation & Optimization",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-6-5-1-closure-under-section-248",
+      "serviceTitle": "Closure under Section 248",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-10-5-2-post-sanction-compliance",
+      "serviceTitle": "Post-Sanction Compliance",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-7-2-4-compliance-with-companies-act-fema-tax-regulations",
+      "serviceTitle": "Compliance with Companies Act, FEMA & Tax Regulations",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-2-1-2-tds-tcs-compliance",
+      "serviceTitle": "TDS/TCS Compliance",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-6-1-1-companies-annual-filings",
+      "serviceTitle": "Companies – Annual Filings",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-3-2-3-sop-audit",
+      "serviceTitle": "SOP Audit",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-1-1-5-gst-refunds",
+      "serviceTitle": "GST Refunds",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-6-6-4-pas-6-reconciliation-of-share-capital",
+      "serviceTitle": "PAS-6 Reconciliation of Share Capital",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-12-6-5-hr-statutory-compliance-outsourcing",
+      "serviceTitle": "HR & Statutory Compliance Outsourcing",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-10-2-3-consortium-multiple-banking-arrangements",
+      "serviceTitle": "Consortium / Multiple Banking Arrangements",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-5-1-1-entity-selection-advisory",
+      "serviceTitle": "Entity Selection Advisory",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-2-3-3-representation-before-itat-hc-sc",
+      "serviceTitle": "Representation before ITAT, HC, SC",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-5-3-2-ecb-overseas-investments",
+      "serviceTitle": "ECB & Overseas Investments",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-10-5-4-restructuring-cdr-advisory",
+      "serviceTitle": "Restructuring & CDR Advisory",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-2-5-4-angel-tax-compliance",
+      "serviceTitle": "Angel Tax Compliance",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "2-4-3-1-corporate-bank-account-opening-in-global-jurisdictions",
+      "serviceTitle": "Corporate Bank Account Opening in Global Jurisdictions",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-4-1-2-finalization-of-accounts",
+      "serviceTitle": "Finalization of Accounts",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-4-2-2-statutory-deductions-filings",
+      "serviceTitle": "Statutory Deductions & Filings",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-10-2-4-loan-renewal-enhancement-assistance",
+      "serviceTitle": "Loan Renewal & Enhancement Assistance",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-3-5-3-audit-under-income-tax-and-other-laws",
+      "serviceTitle": "Audit under Income Tax and Other Laws",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-4-startup-valuation",
+      "serviceTitle": "Startup Valuation",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "2-6-1-2-monthly-mis-financial-dashboards-kpi-reporting",
+      "serviceTitle": "Monthly MIS, Financial Dashboards & KPI Reporting",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-9-4-1-rera-audit-by-chartered-accountant",
+      "serviceTitle": "RERA Audit by Chartered Accountant",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-3-1-4-integration-and-post-deal-support",
+      "serviceTitle": "Integration and Post-Deal Support",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-7-4-1-quarterly-and-annual-financial-reporting-support",
+      "serviceTitle": "Quarterly and Annual Financial Reporting Support",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-5-change-in-object-clause-moa-aoa",
+      "serviceTitle": "Change in Object Clause / MOA / AOA",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "2-3-2-3-start-up-valuations-esop-structuring",
+      "serviceTitle": "Start-up Valuations & ESOP Structuring",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-11-4-4-fairness-opinion-reports",
+      "serviceTitle": "Fairness Opinion Reports",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-2-1-4-income-computation-disclosure-standards-icds",
+      "serviceTitle": "Income Computation & Disclosure Standards (ICDS)",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-3-3-1-cash-flow-modelling-sensitivity-analysis",
+      "serviceTitle": "Cash Flow Modelling & Sensitivity Analysis",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-12-5-1-maintenance-of-statutory-registers",
+      "serviceTitle": "Maintenance of Statutory Registers",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-4-3-3-xbrl-filing",
+      "serviceTitle": "XBRL Filing",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-10-1-1-preparation-of-detailed-project-report-dpr",
+      "serviceTitle": "Preparation of Detailed Project Report (DPR)",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-9-1-1-rera-registration-for-builders-developers",
+      "serviceTitle": "RERA Registration for Builders / Developers",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-2-7-3-audit-of-trusts-ngos",
+      "serviceTitle": "Audit of Trusts/NGOs",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "2-1-1-1-tax-residency-and-permanent-establishment-pe-analysis",
+      "serviceTitle": "Tax Residency and Permanent Establishment (PE) Analysis",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-3-3-3-performance-and-productivity-audit",
+      "serviceTitle": "Performance and Productivity Audit",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "2-1-2-3-global-income-disclosure-compliance",
+      "serviceTitle": "Global Income Disclosure & Compliance",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "2-5-2-4-anti-money-laundering-aml-counter-financing-of-terrorism-cft-advisory",
+      "serviceTitle": "Anti-Money Laundering (AML) & Counter Financing of Terrorism (CFT) Advisory",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-10-1-4-term-loan-working-capital-assessment",
+      "serviceTitle": "Term Loan & Working Capital Assessment",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-5-6-2-esop-cap-table-advisory",
+      "serviceTitle": "ESOP & Cap Table Advisory",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-1-stock-audit",
+      "serviceTitle": "Stock Audit",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-4-amendment-in-llp-agreement",
+      "serviceTitle": "Amendment in LLP Agreement",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-6-6-1-filing-of-financials-in-xbrl",
+      "serviceTitle": "Filing of Financials in XBRL",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-4-1-3-virtual-outsourced-accounting",
+      "serviceTitle": "Virtual / Outsourced Accounting",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-3-1-2-audit-under-llp-act",
+      "serviceTitle": "Audit under LLP Act",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-6-3-3-conversion-of-firm-llp-company",
+      "serviceTitle": "Conversion of Firm / LLP / Company",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-8-3-2-financial-projection-valuation",
+      "serviceTitle": "Financial Projection & Valuation",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-4-1-1-company-formation-in-singapore-mauritius-uk-usa-other-jurisdictions",
+      "serviceTitle": "Company Formation in Singapore, Mauritius, UK, USA & Other Jurisdictions",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-3-7-4-independent-assurance-reports",
+      "serviceTitle": "Independent Assurance Reports",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-4-6-3-compliance-calendar-alerts",
+      "serviceTitle": "Compliance Calendar & Alerts",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-7-3-3-qualified-institutional-placement-qip-advisory",
+      "serviceTitle": "Qualified Institutional Placement (QIP) Advisory",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-2-valuation-as-per-income-tax-act",
+      "serviceTitle": "Valuation as per Income Tax Act",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-4-1-3-entity-structuring-for-start-ups-funds-family-offices",
+      "serviceTitle": "Entity Structuring for Start-ups, Funds & Family Offices",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-6-3-5-liaison-with-auditors-legal-tax-teams",
+      "serviceTitle": "Liaison with Auditors, Legal & Tax Teams",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-6-comparable-company-transaction-valuation",
+      "serviceTitle": "Comparable Company / Transaction Valuation",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-1-1-2-double-taxation-avoidance-agreements-dtaa-planning",
+      "serviceTitle": "Double Taxation Avoidance Agreements (DTAA) Planning",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-3-change-in-capital-structure",
+      "serviceTitle": "Change in Capital Structure",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-2-6-3-succession-estate-planning",
+      "serviceTitle": "Succession & Estate Planning",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-6-compliance-certification",
+      "serviceTitle": "Compliance Certification",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-3-8-3-green-environmental-audit",
+      "serviceTitle": "Green / Environmental Audit",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-2-3-1-assessment-proceedings",
+      "serviceTitle": "Assessment Proceedings",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-10-4-4-monitoring-of-end-use-of-funds",
+      "serviceTitle": "Monitoring of End Use of Funds",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-4-project-feasibility-viability-modelling",
+      "serviceTitle": "Project Feasibility & Viability Modelling",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "2-1-2-4-cross-border-investments-structuring",
+      "serviceTitle": "Cross-border Investments Structuring",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-1-2-5-customs-litigation-representation",
+      "serviceTitle": "Customs Litigation & Representation",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "2-4-1-2-comparison-of-jurisdictions-for-holding-or-trading-structures",
+      "serviceTitle": "Comparison of Jurisdictions for Holding or Trading Structures",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-12-2-4-lwf-periodic-compliance",
+      "serviceTitle": "LWF Periodic Compliance",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "2-6-1-3-budgeting-forecasting-cash-flow-management",
+      "serviceTitle": "Budgeting, Forecasting & Cash Flow Management",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-10-3-1-assistance-under-cgtmse-scheme",
+      "serviceTitle": "Assistance under CGTMSE Scheme",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-5-2-1-mergers-demergers-amalgamations",
+      "serviceTitle": "Mergers, Demergers & Amalgamations",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-3-2-2-fairness-opinions-impairment-testing",
+      "serviceTitle": "Fairness Opinions & Impairment Testing",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-4-3-2-event-based-compliances",
+      "serviceTitle": "Event Based Compliances",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-9-3-3-uploading-of-project-progress-details",
+      "serviceTitle": "Uploading of Project Progress Details",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-10-3-4-nabard-sidbi-nsic-funding-assistance",
+      "serviceTitle": "NABARD / SIDBI / NSIC Funding Assistance",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-12-2-5-contractor-labour-compliance",
+      "serviceTitle": "Contractor Labour Compliance",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-12-3-2-employee-record-maintenance",
+      "serviceTitle": "Employee Record Maintenance",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-1-1-3-repatriation-strategy-withholding-tax-management",
+      "serviceTitle": "Repatriation Strategy & Withholding Tax Management",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-3-2-4-internal-financial-controls-ifc-audit",
+      "serviceTitle": "Internal Financial Controls (IFC) Audit",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-7-4-4-1nvestor-relations-market-communication-support",
+      "serviceTitle": "1nvestor Relations & Market Communication Support",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-1-1-3-gst-advisory-service",
+      "serviceTitle": "GST Advisory Service",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-9-3-1-quarterly-compliance-filing",
+      "serviceTitle": "Quarterly Compliance Filing",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-2-2-3-ip-valuation-royalty-rate-analysis",
+      "serviceTitle": "IP Valuation & Royalty Rate Analysis",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-12-2-3-professional-tax-return-filing",
+      "serviceTitle": "Professional Tax Return Filing",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "2-5-1-5-assistance-in-drafting-moa-aoa-corporate-documentation",
+      "serviceTitle": "Assistance in Drafting MOA/AOA & Corporate Documentation",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-3-valuation-under-fema-rbi-regulations",
+      "serviceTitle": "Valuation under FEMA / RBI Regulations",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-4-6-1-secretarial-compliance-review",
+      "serviceTitle": "Secretarial Compliance Review",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-12-4-1-labour-law-audit",
+      "serviceTitle": "Labour Law Audit",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "2-4-2-3-double-taxation-avoidance-agreement-dtaa-planning",
+      "serviceTitle": "Double Taxation Avoidance Agreement (DTAA) Planning",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-10-2-5-preparation-of-bankable-business-plan",
+      "serviceTitle": "Preparation of Bankable Business Plan",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-10-4-2-vetting-of-loan-documentation",
+      "serviceTitle": "Vetting of Loan Documentation",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-2-2-2-corporate-tax-advisory",
+      "serviceTitle": "Corporate Tax Advisory",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-3-2-5-process-compliance-review",
+      "serviceTitle": "Process & Compliance Review",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-7-3-2-rights-issue-bonus-issue-structuring",
+      "serviceTitle": "Rights Issue & Bonus Issue Structuring",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-5-1-3-post-incorporation-compliances",
+      "serviceTitle": "Post Incorporation Compliances",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-6-4-4-business-valuation-and-cap-table-management",
+      "serviceTitle": "Business Valuation and Cap Table Management",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-1-2-5-expatriate-taxation-and-compensation-structuring",
+      "serviceTitle": "Expatriate Taxation and Compensation Structuring",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-1-1-1-registration-service",
+      "serviceTitle": "Registration Service",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-3-5-2-gst-audit-reconciliation-gstr-9c",
+      "serviceTitle": "GST Audit / Reconciliation (GSTR-9C)",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "2-6-1-4-strategic-decision-support-scenario-planning",
+      "serviceTitle": "Strategic Decision Support & Scenario Planning",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-5-6-1-pitch-deck-financial-projection",
+      "serviceTitle": "Pitch Deck & Financial Projection",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-12-6-1-gratuity-bonus-compliance",
+      "serviceTitle": "Gratuity & Bonus Compliance",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-2-1-1-income-tax-return-filing",
+      "serviceTitle": "Income Tax Return Filing",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-3-5-1-tax-audit-under-section-44ab",
+      "serviceTitle": "Tax Audit under Section 44AB",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-12-3-1-payroll-processing-statutory-deductions",
+      "serviceTitle": "Payroll Processing & Statutory Deductions",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-7-2-1-sebi-stock-exchange-compliance-support",
+      "serviceTitle": "SEBI & Stock Exchange Compliance Support",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-5-discounted-cash-flow-dcf-valuation",
+      "serviceTitle": "Discounted Cash Flow (DCF) Valuation",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-1-preparation-of-dynamic-financial-models",
+      "serviceTitle": "Preparation of Dynamic Financial Models",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-7-3-4-debt-listing-convertible-instrument-structuring-ncds-ccds-ocds",
+      "serviceTitle": "Debt Listing & Convertible Instrument Structuring (NCDs, CCDs, OCDs)",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-3-1-3-audit-of-co-operative-societies",
+      "serviceTitle": "Audit of Co-operative Societies",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "2-6-5-3-ifrs-ind-as-reporting-conversion",
+      "serviceTitle": "IFRS & IND AS Reporting Conversion",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "2-4-3-3-global-vat-gst-registration-and-filings",
+      "serviceTitle": "Global VAT/GST Registration and Filings",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-3-4-5-project-utilization-grant-certification",
+      "serviceTitle": "Project Utilization / Grant Certification",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-8-5-1-startup-compliance-calendar-setup",
+      "serviceTitle": "Startup Compliance Calendar Setup",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-9-6-3-handholding-for-new-projects",
+      "serviceTitle": "Handholding for New Projects",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-2-5-1-pan-tan-registration",
+      "serviceTitle": "PAN & TAN Registration",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-8-4-3-esop-structuring-cap-table-advisory",
+      "serviceTitle": "ESOP Structuring & Cap Table Advisory",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-8-4-1-section-80-iac-tax-exemption-application",
+      "serviceTitle": "Section 80-IAC Tax Exemption Application",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-3-2-2-risk-assessment-mitigation-audit",
+      "serviceTitle": "Risk Assessment & Mitigation Audit",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-1-2-1-country-by-country-reporting-cbcr-master-file-preparation",
+      "serviceTitle": "Country-by-Country Reporting (CbCR) & Master File Preparation",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-11-5-3-investor-reporting-dashboard",
+      "serviceTitle": "Investor Reporting Dashboard",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-5-4-3-financial-modelling",
+      "serviceTitle": "Financial Modelling",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "2-4-2-4-repatriation-strategy-profit-distribution-planning",
+      "serviceTitle": "Repatriation Strategy & Profit Distribution Planning",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-1-maintenance-of-statutory-registers",
+      "serviceTitle": "Maintenance of Statutory Registers",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-2-1-4-intercompany-agreement-drafting-review",
+      "serviceTitle": "Intercompany Agreement Drafting & Review",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-2-5-3-startup-india-recognition-tax-exemptions",
+      "serviceTitle": "Startup India Recognition & Tax Exemptions",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-12-3-3-leave-attendance-registers",
+      "serviceTitle": "Leave & Attendance Registers",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-8-6-4-incubation-accelerator-tie-ups",
+      "serviceTitle": "Incubation & Accelerator Tie-ups",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-11-4-5-net-worth-nav-valuation",
+      "serviceTitle": "Net Worth & NAV Valuation",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-4-5-2-review-under-ind-as-ifrs",
+      "serviceTitle": "Review under Ind AS / IFRS",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-4-2-1-fema-rbi-compliances-for-overseas-investments",
+      "serviceTitle": "FEMA & RBI Compliances for Overseas Investments",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-4-2-1-payroll-processing",
+      "serviceTitle": "Payroll Processing",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-9-1-2-rera-registration-for-agents",
+      "serviceTitle": "RERA Registration for Agents",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "2-6-1-1-end-to-end-finance-function-management",
+      "serviceTitle": "End-to-End Finance Function Management",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-8-6-2-credit-guarantee-cgtmse-scheme",
+      "serviceTitle": "Credit Guarantee & CGTMSE Scheme",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-11-3-1-financial-due-diligence",
+      "serviceTitle": "Financial Due Diligence",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-10-6-2-ecb-foreign-loan-advisory",
+      "serviceTitle": "ECB & Foreign Loan Advisory",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-7-4-3-esop-structuring-and-implementation",
+      "serviceTitle": "ESOP Structuring and Implementation",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "2-6-5-4-treasury-forex-management",
+      "serviceTitle": "Treasury & Forex Management",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-10-3-2-pmegp-stand-up-india-mudra-loan-advisory",
+      "serviceTitle": "PMEGP / Stand-Up India / Mudra Loan Advisory",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "2-2-1-3-benchmarking-analysis-using-indian-global-databases",
+      "serviceTitle": "Benchmarking Analysis using Indian & Global Databases",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "2-6-3-1-statutory-compliance-management-direct-indirect-regulatory",
+      "serviceTitle": "Statutory Compliance Management (Direct, Indirect & Regulatory)",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-8-5-3-secretarial-board-support",
+      "serviceTitle": "Secretarial & Board Support",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "2-4-2-2-outbound-investment-structuring-for-indian-residents",
+      "serviceTitle": "Outbound Investment Structuring for Indian Residents",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-11-1-5-valuation-for-mergers-demergers-amalgamations",
+      "serviceTitle": "Valuation for Mergers, Demergers & Amalgamations",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-1-2-2-customs-duty-optimisation",
+      "serviceTitle": "Customs Duty Optimisation",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-4-4-3-mis-management-reporting",
+      "serviceTitle": "MIS & Management Reporting",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "2-6-1-5-board-level-financial-presentations-and-review",
+      "serviceTitle": "Board-Level Financial Presentations and Review",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-1-4-corporate-bank-account-assistance-kyc-documentation",
+      "serviceTitle": "Corporate Bank Account Assistance & KYC Documentation",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-6-5-3-revival-of-struck-off-company",
+      "serviceTitle": "Revival of Struck-off Company",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-4-1-1-maintenance-of-books-of-accounts",
+      "serviceTitle": "Maintenance of Books of Accounts",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-11-2-3-cash-flow-fund-flow-modelling",
+      "serviceTitle": "Cash Flow & Fund Flow Modelling",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-4-4-2-erp-tally-zoho-implementation",
+      "serviceTitle": "ERP / Tally / Zoho Implementation",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-3-1-4-audit-of-trusts-educational-institutions",
+      "serviceTitle": "Audit of Trusts / Educational Institutions",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-12-5-2-annual-return-under-labour-laws",
+      "serviceTitle": "Annual Return under Labour Laws",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "1-2-2-5-transaction-restructuring-advisory",
+      "serviceTitle": "Transaction & Restructuring Advisory",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "1-7-3-5-fundraising-strategy-investor-pitch-documentation",
+      "serviceTitle": "Fundraising Strategy & Investor Pitch Documentation",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-9-6-2-advisory-on-rera-law-updates",
+      "serviceTitle": "Advisory on RERA Law Updates",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-3-3-1-efficiency-and-cost-optimization-audit",
+      "serviceTitle": "Efficiency and Cost Optimization Audit",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-3-7-5-certification-for-government-grants",
+      "serviceTitle": "Certification for Government Grants",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-12-4-3-advisory-on-applicability-of-labour-laws",
+      "serviceTitle": "Advisory on Applicability of Labour Laws",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-1-change-in-directors-designated-partners",
+      "serviceTitle": "Change in Directors / Designated Partners",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "2-6-2-3-business-modelling-sensitivity-analysis",
+      "serviceTitle": "Business Modelling & Sensitivity Analysis",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-8-4-2-capital-gains-exemption-advisory",
+      "serviceTitle": "Capital Gains Exemption Advisory",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "2-3-3-3-pitch-deck-information-memorandum-assistance",
+      "serviceTitle": "Pitch Deck & Information Memorandum Assistance",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-3-7-3-review-under-ssae-sa",
+      "serviceTitle": "Review under SSAE / SA",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "2-6-4-5-investor-reporting-periodic-review-support",
+      "serviceTitle": "Investor Reporting & Periodic Review Support",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-11-4-2-valuation-for-insolvency-bankruptcy-ibc",
+      "serviceTitle": "Valuation for Insolvency & Bankruptcy (IBC)",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "2-5-2-2-ultimate-beneficial-ownership-ubo-reporting",
+      "serviceTitle": "Ultimate Beneficial Ownership (UBO) Reporting",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-1-2-1-customs-advisory-compliance",
+      "serviceTitle": "Customs Advisory & Compliance",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-8-6-1-startup-india-seed-fund-scheme-sisfs",
+      "serviceTitle": "Startup India Seed Fund Scheme (SISFS)",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-10-6-3-private-equity-venture-debt-advisory",
+      "serviceTitle": "Private Equity / Venture Debt Advisory",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-3-4-cross-border-repatriation-structuring",
+      "serviceTitle": "Cross-border Repatriation & Structuring",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "1-2-4-2-international-taxation",
+      "serviceTitle": "International Taxation",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-10-3-3-interest-subsidy-capital-subsidy-assistance",
+      "serviceTitle": "Interest Subsidy / Capital Subsidy Assistance",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-10-4-3-compliance-with-pre-disbursement-conditions",
+      "serviceTitle": "Compliance with Pre-Disbursement Conditions",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "2-3-3-2-business-plan-preparation-for-investors",
+      "serviceTitle": "Business Plan Preparation for Investors",
+      "imageId": 52,
+      "imageName": "PAS-6 Reconciliation of Share Capital.jpg",
+      "sourceFile": "PAS-6 Reconciliation of Share Capital.jpg"
+    },
+    {
+      "serviceSlug": "1-3-1-1-statutory-audit-under-companies-act-2013",
+      "serviceTitle": "Statutory Audit under Companies Act, 2013",
+      "imageId": 46,
+      "imageName": "CSR Filings.jpg",
+      "sourceFile": "CSR Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-3-2-virtual-cfo-compliance-management",
+      "serviceTitle": "Virtual CFO & Compliance Management",
+      "imageId": 36,
+      "imageName": "Annual Return Certification.jpg",
+      "sourceFile": "Annual Return Certification.jpg"
+    },
+    {
+      "serviceSlug": "2-2-1-2-functional-asset-risk-far-analysis",
+      "serviceTitle": "Functional, Asset & Risk (FAR) Analysis",
+      "imageId": 58,
+      "imageName": "Shifting of Registered Office from one ROC to another.jpg",
+      "sourceFile": "Shifting of Registered Office from one ROC to another.jpg"
+    },
+    {
+      "serviceSlug": "2-4-3-4-secretarial-legal-compliance-management",
+      "serviceTitle": "Secretarial & Legal Compliance Management",
+      "imageId": 50,
+      "imageName": "Maintenance of Statutory Registers.jpg",
+      "sourceFile": "Maintenance of Statutory Registers.jpg"
+    },
+    {
+      "serviceSlug": "1-2-7-1-tax-audit-under-section-44ab",
+      "serviceTitle": "Tax Audit under Section 44AB",
+      "imageId": 41,
+      "imageName": "Change in Object Clause MOA AOA.jpg",
+      "sourceFile": "Change in Object Clause MOA AOA.jpg"
+    },
+    {
+      "serviceSlug": "1-11-5-4-investment-readiness-assessment",
+      "serviceTitle": "Investment Readiness Assessment",
+      "imageId": 56,
+      "imageName": "Secretarial Audit.jpg",
+      "sourceFile": "Secretarial Audit.jpg"
+    },
+    {
+      "serviceSlug": "1-6-2-7-shifting-of-registered-office-from-one-roc-to-another",
+      "serviceTitle": "Shifting of Registered Office from one ROC to another",
+      "imageId": 45,
+      "imageName": "Cost Audit & Cost Records Filing.jpg",
+      "sourceFile": "Cost Audit & Cost Records Filing.jpg"
+    },
+    {
+      "serviceSlug": "1-6-3-4-post-incorporation-compliances",
+      "serviceTitle": "Post Incorporation Compliances",
+      "imageId": 54,
+      "imageName": "Preparation of Minutes and Resolutions.jpg",
+      "sourceFile": "Preparation of Minutes and Resolutions.jpg"
+    },
+    {
+      "serviceSlug": "1-4-6-2-statutory-register-maintenance",
+      "serviceTitle": "Statutory Register Maintenance",
+      "imageId": 53,
+      "imageName": "Post Incorporation Compliances.jpg",
+      "sourceFile": "Post Incorporation Compliances.jpg"
+    },
+    {
+      "serviceSlug": "1-10-2-1-debt-syndication-from-banks-fis",
+      "serviceTitle": "Debt Syndication from Banks / FIs",
+      "imageId": 47,
+      "imageName": "Dormant Company Registration.jpg",
+      "sourceFile": "Dormant Company Registration.jpg"
+    },
+    {
+      "serviceSlug": "1-9-3-2-annual-compliance-form-filing",
+      "serviceTitle": "Annual Compliance & Form Filing",
+      "imageId": 57,
+      "imageName": "Section 248 Services.jpg",
+      "sourceFile": "Section 248 Services.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-3-annual-return-certification",
+      "serviceTitle": "Annual Return Certification",
+      "imageId": 55,
+      "imageName": "Revival of Struck-off Company.jpg",
+      "sourceFile": "Revival of Struck-off Company.jpg"
+    },
+    {
+      "serviceSlug": "1-8-3-4-angel-vc-funding-compliance",
+      "serviceTitle": "Angel & VC Funding Compliance",
+      "imageId": 48,
+      "imageName": "Filing of Financials in XBRL.jpg",
+      "sourceFile": "Filing of Financials in XBRL.jpg"
+    },
+    {
+      "serviceSlug": "1-12-6-3-factories-act-compliance",
+      "serviceTitle": "Factories Act Compliance",
+      "imageId": 37,
+      "imageName": "Appointment Resignation of Auditor.jpg",
+      "sourceFile": "Appointment Resignation of Auditor.jpg"
+    },
+    {
+      "serviceSlug": "1-6-4-4-secretarial-audit",
+      "serviceTitle": "Secretarial Audit",
+      "imageId": 35,
+      "imageName": "Amendment in LLP Agreement.jpg",
+      "sourceFile": "Amendment in LLP Agreement.jpg"
+    },
+    {
+      "serviceSlug": "1-2-6-1-huf-creation-management",
+      "serviceTitle": "HUF Creation & Management",
+      "imageId": 42,
+      "imageName": "Change in Registered Office.jpg",
+      "sourceFile": "Change in Registered Office.jpg"
+    },
+    {
+      "serviceSlug": "1-2-7-2-reporting-under-form-3ca-3cb-3cd",
+      "serviceTitle": "Reporting under Form 3CA/3CB/3CD",
+      "imageId": 39,
+      "imageName": "Change in Capital Structure.jpg",
+      "sourceFile": "Change in Capital Structure.jpg"
+    },
+    {
+      "serviceSlug": "1-5-2-3-capital-reduction-buyback-advisory",
+      "serviceTitle": "Capital Reduction / Buyback Advisory",
+      "imageId": 44,
+      "imageName": "Conversion of Firm  LLP Company.jpg",
+      "sourceFile": "Conversion of Firm  LLP Company.jpg"
+    },
+    {
+      "serviceSlug": "1-7-2-2-assistance-in-drafting-and-reviewing-draft-red-herring-prospectus-drhp",
+      "serviceTitle": "Assistance in Drafting and Reviewing Draft Red Herring Prospectus (DRHP)",
+      "imageId": 51,
+      "imageName": "MSME & DPT-3 Filings.jpg",
+      "sourceFile": "MSME & DPT-3 Filings.jpg"
+    },
+    {
+      "serviceSlug": "1-7-1-2-evaluation-of-listing-options-main-board-sme-exchange-international-listing",
+      "serviceTitle": "Evaluation of Listing Options – Main Board / SME Exchange / International Listing",
+      "imageId": 40,
+      "imageName": "Change in Directors Designated Partners.jpg",
+      "sourceFile": "Change in Directors Designated Partners.jpg"
+    },
+    {
+      "serviceSlug": "2-6-5-2-compliance-coordination-across-jurisdictions",
+      "serviceTitle": "Compliance Coordination Across Jurisdictions",
+      "imageId": 43,
+      "imageName": "Company Incorporation.jpg",
+      "sourceFile": "Company Incorporation.jpg"
+    },
+    {
+      "serviceSlug": "1-11-4-3-valuation-for-purchase-price-allocation-ppa",
+      "serviceTitle": "Valuation for Purchase Price Allocation (PPA)",
+      "imageId": 38,
+      "imageName": "BEN-2 & DIR-3 KYC Filings.jpg",
+      "sourceFile": "BEN-2 & DIR-3 KYC Filings.jpg"
+    },
+    {
+      "serviceSlug": "2-5-2-5-annual-audit-accounting-compliance",
+      "serviceTitle": "Annual Audit & Accounting Compliance",
+      "imageId": 49,
+      "imageName": "LLP Incorporation.jpg",
+      "sourceFile": "LLP Incorporation.jpg"
+    }
+  ]
+}

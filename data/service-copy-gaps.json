@@ -1,28 +1,7 @@
 {
   "strategy": "tabs-on-parent",
-  "copyCoveredThrough": "Word docs 1-6 cover India Practice (1.x) and International/Global Practice (2.x).",
-  "servicesWithCopy": 362,
-  "servicesMissingCopy": 5,
-  "missing": [
-    {
-      "code": "2.5.1.1",
-      "title": "Mainland, Free Zone & Offshore Company Formation"
-    },
-    {
-      "code": "2.5.1.2",
-      "title": "DIFC & ADGM Setup & Regulatory Advisory"
-    },
-    {
-      "code": "2.5.1.3",
-      "title": "Global Holding Company Structuring for Tax Efficiency"
-    },
-    {
-      "code": "2.5.1.4",
-      "title": "Corporate Bank Account Assistance & KYC Documentation"
-    },
-    {
-      "code": "2.5.1.5",
-      "title": "Assistance in Drafting MOA/AOA & Corporate Documentation"
-    }
-  ]
+  "copyCoveredThrough": "Word docs 1-6 cover India Practice (1.x) and International/Global Practice (2.x). UAE SERVICES.docx covers 2.5.1.1\u20132.5.1.5.",
+  "servicesWithCopy": 367,
+  "servicesMissingCopy": 0,
+  "missing": []
 }

@@ -38,7 +38,13 @@ export function TeamGrid({ members }: TeamGridProps) {
   return (
     <>
       {/* Grid of Partner Cards */}
-      <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+      <div
+        className={
+          members.length <= 2
+            ? 'grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4'
+            : 'grid md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4'
+        }
+      >
         {members.map((m, index) => {
           // Safely extract expertise list
           let expertiseList: string[] = []

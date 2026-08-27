@@ -19,6 +19,7 @@ import {
   getServiceCategories,
   getServiceSubcategories,
   getServices,
+  getStrapiMedia,
   StrapiService,
 } from '@/lib/strapi'
 import { getSharedServicesSections } from '@/lib/sharedServicesSections'
@@ -162,7 +163,7 @@ function ServiceDetail({
             <div className="rounded-2xl overflow-hidden mb-10">
               {service.image?.url ? (
                 <img
-                  src={service.image.url}
+                  src={getStrapiMedia(service.image.url) || service.image.url}
                   alt={service.title}
                   className="w-full h-[300px] md:h-[380px] object-cover rounded-2xl"
                 />

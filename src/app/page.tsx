@@ -80,7 +80,7 @@ export default async function Page() {
   const trustedByTitle = cmsData?.trustedByTitle || 'Snapshots of our Work';
   const trustedBySubtitle =
     cmsData?.trustedBySubtitle ||
-    'Glance through the recent launch of our book GST Gavel by CA Ritesh Arora';
+    'Our Work. Our Presence. Our Journey. A glimpse into our professional engagements, knowledge initiatives, client interactions and milestones.';
   const galleryImagesData = cmsData?.trustedByLogos && cmsData.trustedByLogos.length > 0
     ? cmsData.trustedByLogos.map((l: any) => ({
       caption: l.alternativeText || l.name || undefined,

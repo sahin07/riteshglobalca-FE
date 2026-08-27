@@ -1,7 +1,7 @@
 import emptyLists from './empty-services.json'
 
-const emptyServiceSlugs = new Set(emptyLists.services)
-const emptySubcategorySlugs = new Set(emptyLists.subcategories)
+const emptyServiceSlugs = new Set<string>(emptyLists.services as string[])
+const emptySubcategorySlugs = new Set<string>(emptyLists.subcategories as string[])
 
 /** Hide taxonomy/services that have no Word-doc copy yet. */
 export function isEmptyContentServiceSlug(slug?: string | null) {

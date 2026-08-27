@@ -77,8 +77,10 @@ export default async function Page() {
     : undefined;
 
   // 4. Map Photo Gallery images from Strapi if available
-  const trustedByTitle = cmsData?.trustedByTitle;
-  const trustedBySubtitle = cmsData?.trustedBySubtitle;
+  const trustedByTitle = cmsData?.trustedByTitle || 'Snapshots of our Work';
+  const trustedBySubtitle =
+    cmsData?.trustedBySubtitle ||
+    'Glance through the recent launch of our book GST Gavel by CA Ritesh Arora';
   const galleryImagesData = cmsData?.trustedByLogos && cmsData.trustedByLogos.length > 0
     ? cmsData.trustedByLogos.map((l: any) => ({
       caption: l.alternativeText || l.name || undefined,

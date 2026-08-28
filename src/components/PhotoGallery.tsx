@@ -17,7 +17,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
   const galleryItems = images && images.length > 0 ? images : []
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [startIndex, setStartIndex] = useState(0)
-  const [visibleItems, setVisibleItems] = useState(4)
+  const [visibleItems, setVisibleItems] = useState(3)
   const [isPaused, setIsPaused] = useState(false)
 
   const canSlide = galleryItems.length > visibleItems
@@ -43,9 +43,8 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) setVisibleItems(4)
-      else if (window.innerWidth >= 768) setVisibleItems(3)
-      else if (window.innerWidth >= 640) setVisibleItems(2)
+      if (window.innerWidth >= 1024) setVisibleItems(3)
+      else if (window.innerWidth >= 768) setVisibleItems(2)
       else setVisibleItems(1)
     }
 
@@ -96,7 +95,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
 
   return (
     <section className="overflow-hidden bg-slate-50 py-16">
-      <div className="container-prose relative mx-auto max-w-6xl px-4">
+      <div className="relative mx-auto w-full max-w-screen-2xl px-4 md:px-8 lg:px-12">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">{title}</h2>
           {subtitle && (
@@ -127,12 +126,12 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
                   <button
                     type="button"
                     onClick={() => setLightboxIndex(idx)}
-                    className="group relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="group relative aspect-[5/4] w-full cursor-pointer overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
                     <img
                       src={item.url}
                       alt={item.caption || `Trusted logo ${idx + 1}`}
-                      className="h-full w-full select-none object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full select-none object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </button>
                 </div>

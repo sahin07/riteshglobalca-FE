@@ -56,7 +56,7 @@ export function ServiceCardsSlider({ services = [] }: { services?: CoreServiceIt
 
   return (
     <div
-      className="relative w-full px-10 sm:px-12"
+      className="relative w-full px-8 sm:px-10 md:px-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

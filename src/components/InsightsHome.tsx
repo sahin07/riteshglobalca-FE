@@ -24,14 +24,14 @@ export function InsightsHome({
   const items = updates && updates
 
   return (
-    <section className="py-20 md:py-24 bg-[#f8f9fa]">
+    <section className="py-12 sm:py-16 md:py-24 bg-[#f8f9fa]">
       <div className="container-prose max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-[40px] font-bold text-brand-dark tracking-wide">{title}</h2>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-brand-dark tracking-wide">{title}</h2>
           <p className='mt-2 text-slate-700 text-[15px]'>{subTitle}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
           {items?.map((post, idx) => (
             <div key={idx} className="flex flex-col group">
               {/* Image */}

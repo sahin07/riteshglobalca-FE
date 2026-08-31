@@ -285,8 +285,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 import { StrapiService, StrapiServiceCategory, StrapiMainModule, StrapiServiceSubcategory, StrapiBlogPost, StrapiHeader, getStrapiMedia } from '@/lib/strapi'
-import { DesktopPracticeNav } from '@/components/PracticeMegaNav'
-import { moduleHref, serviceHref } from '@/lib/serviceHierarchy'
+import { DesktopPracticeNav, MobileServicesSlideNav } from '@/components/PracticeMegaNav'
 import { HIDE_BLOGS, isBlogNavLink } from '@/lib/hideBlogs'
 
 export function Navbar({
@@ -351,11 +350,13 @@ export function Navbar({
     setIsSearchFocused(true)
   }
 
-  // ── Mobile accordion state ────────────────────────────────────────────────
+  // ── Mobile services slide state ───────────────────────────────────────────
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const [mobileActiveModuleId, setMobileActiveModuleId] = useState<number | null>(null)
-  const [mobileActiveCategoryId, setMobileActiveCategoryId] = useState<number | null>(null)
-  const [mobileActiveSubcategoryId, setMobileActiveSubcategoryId] = useState<number | null>(null)
+
+  const closeMobileMenu = () => {
+    setOpen(false)
+    setMobileServicesOpen(false)
+  }
 
   const safeMainModules = mainModules
   const safeCategories = categories
@@ -405,30 +406,17 @@ export function Navbar({
       : blogs.filter(b => b.title.toLowerCase().includes(searchQuery.toLowerCase()))
   const hasSearchResults = filteredServices.length > 0 || filteredBlogs.length > 0
 
-  const toggleMobileModule = (id: number) => {
-    setMobileActiveModuleId(prev => prev === id ? null : id)
-    setMobileActiveCategoryId(null)
-    setMobileActiveSubcategoryId(null)
-  }
-  const toggleMobileCategory = (id: number) => {
-    setMobileActiveCategoryId(prev => prev === id ? null : id)
-    setMobileActiveSubcategoryId(null)
-  }
-  const toggleMobileSubcategory = (id: number) => {
-    setMobileActiveSubcategoryId(prev => prev === id ? null : id)
-  }
-
   return (
     <header className="fixed w-full top-0 z-[60] bg-[#ffffff] border-b border-gray-200 shadow-sm has-[.services-menu.is-open]:border-b-white has-[.services-menu.is-open]:shadow-none">
-      <div className="relative max-w-[1400px] mx-auto py-3 flex items-center justify-between px-4 lg:px-8">
+      <div className="relative max-w-[1400px] mx-auto py-2 sm:py-3 flex items-center justify-between px-4 lg:px-8">
 
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex flex-col items-center">
             {header?.logo?.url ? (
-              <img src={getStrapiMedia(header.logo.url) || "/logo.png"} alt="Logo" className="h-20 w-auto" />
+              <img src={getStrapiMedia(header.logo.url) || "/logo.png"} alt="Logo" className="h-12 sm:h-16 lg:h-20 w-auto max-w-[180px] sm:max-w-none" />
             ) : (
-              <img src="/logo.png" alt="Logo" className="h-20 w-auto" />
+              <img src="/logo.png" alt="Logo" className="h-12 sm:h-16 lg:h-20 w-auto max-w-[180px] sm:max-w-none" />
             )}
           </Link>
         </div>
@@ -462,7 +450,8 @@ export function Navbar({
             className="text-brand-dark p-2 hover:bg-gray-100 rounded-md transition-colors"
             onClick={() => {
               closeSearch()
-              setOpen(!open)
+              if (open) closeMobileMenu()
+              else setOpen(true)
             }}
             aria-label="Toggle menu"
           >
@@ -696,63 +685,56 @@ export function Navbar({
 
       {/* ── Mobile menu ──────────────────────────────────────────────────────── */}
       {open && (
-        <div className="lg:hidden bg-[#f8f9fa] border-t border-gray-200 shadow-lg absolute w-full left-0 max-h-[80vh] overflow-y-auto">
-          <div className="px-4 py-4 flex flex-col gap-1">
-
-            {processedNavLinks && processedNavLinks.length > 0 ? (
-              processedNavLinks.map((link, idx) => {
-                if (link.label.toLowerCase() === 'services') {
-                  return (
-                    <MobileServicesAccordion
-                      key={`m-nav-${idx}`}
-                      modules={safeMainModules}
-                      categories={safeCategories}
-                      subcategories={safeSubcategories}
-                      services={safeServices}
-                      servicesOpen={mobileServicesOpen}
-                      onToggleServices={() => setMobileServicesOpen(prev => !prev)}
-                      activeModuleId={mobileActiveModuleId}
-                      activeCategoryId={mobileActiveCategoryId}
-                      activeSubcategoryId={mobileActiveSubcategoryId}
-                      onToggleModule={toggleMobileModule}
-                      onToggleCategory={toggleMobileCategory}
-                      onToggleSubcategory={toggleMobileSubcategory}
-                      onClose={() => setOpen(false)}
-                    />
-                  )
-                }
-                return (
-                  <MobileNavLink key={`m-nav-${idx}`} href={link.url} label={link.label} onClick={() => setOpen(false)} />
-                )
-              })
-            ) : (
-              <>
-                <MobileNavLink href="/" label="Home" onClick={() => setOpen(false)} />
-                <MobileNavLink href="/about" label="About" onClick={() => setOpen(false)} />
-                <MobileServicesAccordion
-                  modules={safeMainModules}
-                  categories={safeCategories}
-                  subcategories={safeSubcategories}
-                  services={safeServices}
-                  servicesOpen={mobileServicesOpen}
-                  onToggleServices={() => setMobileServicesOpen(prev => !prev)}
-                  activeModuleId={mobileActiveModuleId}
-                  activeCategoryId={mobileActiveCategoryId}
-                  activeSubcategoryId={mobileActiveSubcategoryId}
-                  onToggleModule={toggleMobileModule}
-                  onToggleCategory={toggleMobileCategory}
-                  onToggleSubcategory={toggleMobileSubcategory}
-                  onClose={() => setOpen(false)}
-                />
-                {!HIDE_BLOGS && (
-                  <MobileNavLink href="/blog" label="Blog" onClick={() => setOpen(false)} />
+        <div className="lg:hidden bg-[#f8f9fa] border-t border-gray-200 shadow-lg absolute w-full left-0 overflow-hidden">
+          <div
+            className="flex w-[200%] transition-transform duration-300 ease-out"
+            style={{ transform: mobileServicesOpen ? 'translateX(-50%)' : 'translateX(0)' }}
+          >
+            {/* Main nav panel */}
+            <div className="w-1/2 shrink-0 max-h-[80vh] overflow-y-auto">
+              <div className="px-4 py-4 flex flex-col gap-1">
+                {processedNavLinks && processedNavLinks.length > 0 ? (
+                  processedNavLinks.map((link, idx) => {
+                    if (link.label.toLowerCase() === 'services') {
+                      return (
+                        <MobileServicesNavTrigger
+                          key={`m-nav-${idx}`}
+                          onOpen={() => setMobileServicesOpen(true)}
+                        />
+                      )
+                    }
+                    return (
+                      <MobileNavLink key={`m-nav-${idx}`} href={link.url} label={link.label} onClick={closeMobileMenu} />
+                    )
+                  })
+                ) : (
+                  <>
+                    <MobileNavLink href="/" label="Home" onClick={closeMobileMenu} />
+                    <MobileNavLink href="/about" label="About" onClick={closeMobileMenu} />
+                    <MobileServicesNavTrigger onOpen={() => setMobileServicesOpen(true)} />
+                    {!HIDE_BLOGS && (
+                      <MobileNavLink href="/blog" label="Blog" onClick={closeMobileMenu} />
+                    )}
+                    <MobileNavLink href="/insights" label="Insights" onClick={closeMobileMenu} />
+                    <MobileNavLink href="/careers" label="Careers" onClick={closeMobileMenu} />
+                    <MobileNavLink href="/faq" label="FAQ" onClick={closeMobileMenu} />
+                    <MobileNavLink href="/contact" label="Contact" onClick={closeMobileMenu} />
+                  </>
                 )}
-                <MobileNavLink href="/insights" label="Insights" onClick={() => setOpen(false)} />
-                <MobileNavLink href="/careers" label="Careers" onClick={() => setOpen(false)} />
-                <MobileNavLink href="/faq" label="FAQ" onClick={() => setOpen(false)} />
-                <MobileNavLink href="/contact" label="Contact" onClick={() => setOpen(false)} />
-              </>
-            )}
+              </div>
+            </div>
+
+            {/* Services slide panel */}
+            <div className="w-1/2 shrink-0 max-h-[80vh] overflow-hidden">
+              <MobileServicesSlideNav
+                modules={safeMainModules}
+                categories={safeCategories}
+                subcategories={safeSubcategories}
+                services={safeServices}
+                onBack={() => setMobileServicesOpen(false)}
+                onClose={closeMobileMenu}
+              />
+            </div>
           </div>
         </div>
       )}
@@ -772,106 +754,17 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
   )
 }
 
-function MobileServicesAccordion({
-  modules,
-  categories,
-  subcategories,
-  services,
-  servicesOpen,
-  onToggleServices,
-  activeModuleId,
-  activeCategoryId,
-  activeSubcategoryId,
-  onToggleModule,
-  onToggleCategory,
-  onToggleSubcategory,
-  onClose,
-}: {
-  modules: StrapiMainModule[]
-  categories: StrapiServiceCategory[]
-  subcategories: StrapiServiceSubcategory[]
-  services: StrapiService[]
-  servicesOpen: boolean
-  onToggleServices: () => void
-  activeModuleId: number | null
-  activeCategoryId: number | null
-  activeSubcategoryId: number | null
-  onToggleModule: (id: number) => void
-  onToggleCategory: (id: number) => void
-  onToggleSubcategory: (id: number) => void
-  onClose: () => void
-}) {
+function MobileServicesNavTrigger({ onOpen }: { onOpen: () => void }) {
   return (
-    <div className="border-b border-gray-100">
-      <button
-        onClick={onToggleServices}
-        className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-slate-600 hover:text-brand-dark"
-      >
-        <Link href="/services" onClick={e => { e.stopPropagation(); onClose() }} className="hover:text-[#F19020]">Services</Link>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>
-      </button>
-      {servicesOpen && (
-        <div className="pb-2">
-          {modules.map((module) => {
-            const isModuleOpen = activeModuleId === module.id
-            const moduleCats = categories.filter(c => c.mainModule?.id === module.id)
-            return (
-              <div key={module.id} className="ml-2 border-l-2 border-gray-200">
-                <button
-                  onClick={() => onToggleModule(module.id)}
-                  className={`w-full flex items-center justify-between pl-4 pr-2 py-2.5 text-[14px] font-medium ${isModuleOpen ? 'text-[#003B49]' : 'text-slate-600'}`}
-                >
-                  <Link href={moduleHref(module.slug)} onClick={e => { e.stopPropagation(); onClose() }} className="text-left flex-1 hover:text-[#F19020]">{module.title}</Link>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${isModuleOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>
-                </button>
-                {isModuleOpen && (
-                  <div className="pb-1">
-                    {moduleCats.length === 0 && <p className="pl-4 py-2 text-[13px] text-gray-400 italic">No families</p>}
-                    {moduleCats.map(cat => {
-                      const isCatOpen = activeCategoryId === cat.id
-                      const catSubs = subcategories.filter(s => s.category?.id === cat.id)
-                      return (
-                        <div key={cat.id} className="ml-3 border-l-2 border-gray-100">
-                          <button onClick={() => onToggleCategory(cat.id)} className={`w-full flex items-center justify-between pl-4 pr-2 py-2.5 text-[13px] font-medium ${isCatOpen ? 'text-[#e53e3e]' : 'text-gray-500'}`}>
-                            <Link href={`/services/${module.slug}/${cat.slug}`} onClick={e => { e.stopPropagation(); onClose() }} className="text-left flex-1">{cat.title}</Link>
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${isCatOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>
-                          </button>
-                          {isCatOpen && (
-                            <div className="ml-3">
-                              {catSubs.map(sub => {
-                                const isSubOpen = activeSubcategoryId === sub.id
-                                const subServices = services.filter(s => s.subcategory?.id === sub.id)
-                                return (
-                                  <div key={sub.id}>
-                                    <button onClick={() => onToggleSubcategory(sub.id)} className={`w-full flex items-center justify-between pl-4 pr-2 py-2 text-[13px] ${isSubOpen ? 'text-[#e53e3e] font-medium' : 'text-gray-500'}`}>
-                                      <Link href={`/services/${module.slug}/${cat.slug}/${sub.slug}`} onClick={e => { e.stopPropagation(); onClose() }} className="text-left flex-1">{sub.title}</Link>
-                                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${isSubOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>
-                                    </button>
-                                    {isSubOpen && (
-                                      <div className="ml-3 pb-1">
-                                        {subServices.map(srv => (
-                                          <Link key={srv.id} href={serviceHref(srv.slug, { moduleSlug: module.slug, categorySlug: cat.slug, subcategorySlug: sub.slug })} onClick={onClose} className="flex items-center pl-4 pr-2 py-2 text-[13px] text-gray-500 hover:text-[#F19020]">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-[#F19020] mr-2.5 flex-shrink-0" />
-                                            {srv.title}
-                                          </Link>
-                                        ))}
-                                      </div>
-                                    )}
-                                  </div>
-                                )
-                              })}
-                            </div>
-                          )}
-                        </div>
-                      )
-                    })}
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-      )}
-    </div>
+    <button
+      type="button"
+      onClick={onOpen}
+      className="w-full flex items-center justify-between px-2 py-3 text-[15px] font-medium text-slate-600 hover:text-brand-dark border-b border-gray-100 transition-colors"
+    >
+      <span>Services</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
   )
 }

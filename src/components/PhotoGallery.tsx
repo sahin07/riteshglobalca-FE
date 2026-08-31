@@ -94,10 +94,10 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
   if (galleryItems.length === 0) return null
 
   return (
-    <section className="overflow-hidden bg-slate-50 py-16">
+    <section className="overflow-hidden bg-slate-50 py-12 sm:py-16">
       <div className="relative mx-auto w-full max-w-screen-2xl px-4 md:px-8 lg:px-12">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">{title}</h2>
+        <div className="mb-8 sm:mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-dark md:text-4xl">{title}</h2>
           {subtitle && (
             <p className="mx-auto mt-3 max-w-2xl font-light leading-relaxed text-slate-600">
               {subtitle}
@@ -106,7 +106,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
         </div>
 
         <div
-          className="relative w-full px-10 sm:px-12"
+          className="relative w-full px-8 sm:px-10 md:px-12"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >

@@ -29,7 +29,7 @@ export function AboutHome({
   const points = rightPoints && rightPoints.length > 0 ? rightPoints : [];
 
   return (
-    <section className="bg-[#0b293d] py-16 md:py-24 text-white relative overflow-hidden">
+    <section className="bg-[#0b293d] py-12 sm:py-16 md:py-24 text-white relative overflow-hidden">
       {/* Background Pattern: Sunburst */}
       {/* Insights-style hero gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
@@ -37,13 +37,13 @@ export function AboutHome({
 
       <div className="container-prose relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-wide">{sectionTitle}</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">{sectionTitle}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 items-stretch">
           {/* Left Card */}
-          <div className="bg-white rounded-xl p-8 md:p-10 shadow-xl flex flex-col h-full border-t-[6px] border-transparent">
-            <h3 className="text-[22px] md:text-[26px] font-bold mb-4 text-brand-dark leading-tight">
+          <div className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-xl flex flex-col h-full border-t-[6px] border-transparent">
+            <h3 className="text-lg sm:text-[22px] md:text-[26px] font-bold mb-4 text-brand-dark leading-tight">
               {leftTitle}
             </h3>
             <p className="text-slate-600 text-[15px] leading-relaxed mb-8 flex-1">
@@ -61,8 +61,8 @@ export function AboutHome({
           </div>
 
           {/* Right Card: Why Choose Us */}
-          <div className="bg-white rounded-xl p-8 md:p-10 shadow-xl flex flex-col h-full border-t-[6px] border-transparent">
-            <h3 className="text-[22px] md:text-[26px] font-bold mb-6 text-brand-dark leading-tight">
+          <div className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-xl flex flex-col h-full border-t-[6px] border-transparent">
+            <h3 className="text-lg sm:text-[22px] md:text-[26px] font-bold mb-6 text-brand-dark leading-tight">
               {rightTitle}
             </h3>
             <ul className="space-y-4">

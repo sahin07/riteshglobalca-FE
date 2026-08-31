@@ -22,7 +22,7 @@ export function AboutHero({
 }: AboutHeroProps) {
   return (
     // Locked to banner asset ratio 1920×800 so the image fits without crop
-    <section className="relative -mt-28 w-full aspect-[1920/800] overflow-hidden bg-[#0b293d]">
+    <section className="relative header-overlap w-full min-h-[420px] sm:min-h-[460px] md:min-h-0 md:aspect-[1920/800] overflow-hidden bg-[#0b293d]">
       {backgroundImageUrl && (
         <>
           <img
@@ -35,7 +35,7 @@ export function AboutHero({
       )}
 
       <div className="absolute inset-0 z-10 flex items-center">
-        <div className="w-full max-w-[1400px] mx-auto px-4 lg:px-8 pt-20 sm:pt-24 text-left">
+        <div className="w-full max-w-[1400px] mx-auto px-4 lg:px-8 pt-16 sm:pt-20 md:pt-24 text-left">
           <div className="max-w-3xl">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight sm:leading-snug">
               {title}

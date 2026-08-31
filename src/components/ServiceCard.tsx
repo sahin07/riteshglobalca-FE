@@ -11,7 +11,7 @@ export function ServiceCard({ title, description, href = '#', image }: Props) {
   return (
     <div className="group rounded-lg overflow-hidden bg-[#063047] flex flex-col h-full shadow-lg">
       {/* Image Placeholder */}
-      <div className="h-48 w-full bg-blue-100 relative">
+      <div className="h-40 sm:h-48 w-full bg-blue-100 relative">
         {image ? (
           <img
             src={image}
@@ -25,8 +25,8 @@ export function ServiceCard({ title, description, href = '#', image }: Props) {
         )}
       </div>
 
-      <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <div className="p-4 sm:p-6 flex-1 flex flex-col">
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{title}</h3>
         <p className="text-white/70 text-sm mb-6 flex-grow leading-relaxed">{description}</p>
         <Link href={href} className="inline-flex items-center text-brand-orange hover:text-orange-300 font-semibold text-sm transition-colors uppercase tracking-wider">
           Read More...

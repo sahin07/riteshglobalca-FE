@@ -25,7 +25,7 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
   const resourcesLinks = filterFooterLinks(footer?.resourcesLinks)
   const servicesLinks = filterFooterLinks(footer?.servicesLinks)
   return (
-    <footer className={clsx('relative overflow-hidden bg-[#0b293d] py-16', className)}>
+    <footer className={clsx('relative overflow-hidden bg-[#0b293d] py-10 sm:py-12 md:py-16', className)}>
       {/* Same gradient used on Insights / home navy sections */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(241,144,32,0.18)_0%,_transparent_50%)]" />
@@ -33,18 +33,18 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16">
 
           {/* Brand & Description */}
-          <div className="md:col-span-4 lg:col-span-4">
+          <div className="md:col-span-4 lg:col-span-4 text-center md:text-left">
             <Link href="/" className="inline-block mb-5">
               <img
                 src="/images/Asset%2017@4x.png"
                 alt={brandName}
-                className="h-16 md:h-20 w-auto max-w-[220px] object-contain"
+                className="h-16 md:h-20 w-auto max-w-[220px] object-contain mx-auto md:mx-0"
               />
             </Link>
-            <p className="text-slate-300 italic font-light text-[14px] leading-relaxed max-w-[340px] mb-6">
+            <p className="text-slate-300 italic font-light text-[14px] leading-relaxed max-w-[340px] mb-6 mx-auto md:mx-0">
               {description}
             </p>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
               <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={socialLinkClass}>
                 <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>
               </a>
@@ -64,7 +64,7 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-2 lg:col-span-2 lg:pl-6">
+          <div className="md:col-span-2 lg:col-span-2 lg:pl-6 text-center md:text-left">
             <h4 className="text-white font-medium text-[15px] mb-5">Quick Links</h4>
             <ul className="space-y-3.5">
               {(quickLinks && quickLinks.length > 0) ? (
@@ -84,7 +84,7 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           </div>
 
           {/* Resources */}
-          <div className="md:col-span-3 lg:col-span-3 lg:pl-6">
+          <div className="md:col-span-3 lg:col-span-3 lg:pl-6 text-center md:text-left">
             <h4 className="text-white font-medium text-[15px] mb-5">Resources</h4>
             <ul className="space-y-3.5">
               {(resourcesLinks && resourcesLinks.length > 0) ? (
@@ -104,7 +104,7 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
           </div>
 
           {/* Services */}
-          <div className="md:col-span-3 lg:col-span-3">
+          <div className="md:col-span-3 lg:col-span-3 text-center md:text-left">
             <h4 className="text-white font-medium text-[15px] mb-5">Services</h4>
             <ul className="space-y-3.5">
               {(servicesLinks && servicesLinks.length > 0) ? (
@@ -126,11 +126,11 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
 
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p className="text-[13px] text-slate-400 font-light">
             {`© ${new Date().getFullYear()} ${brandName}. All rights reserved.`}
           </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-slate-400 font-light">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-[13px] text-slate-400 font-light">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>

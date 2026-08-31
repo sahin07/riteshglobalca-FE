@@ -78,7 +78,7 @@ export function FloatingChat() {
   return (
     <>
       {/* Floating Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-4">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-center gap-3 sm:gap-4">
         {/* WhatsApp Button */}
         {!isOpen && (
           <button
@@ -107,7 +107,7 @@ export function FloatingChat() {
 
       {/* Chat Popup Box */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[350px] bg-[#f8f9fa] rounded-xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col h-[550px] animate-fade-in-up">
+        <div className="fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-6 sm:right-6 z-50 w-auto sm:w-[350px] max-w-[calc(100vw-2rem)] bg-[#f8f9fa] rounded-xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col h-[min(550px,calc(100dvh-2rem))] sm:h-[550px] animate-fade-in-up">
 
           {/* Header */}
           <div className="bg-[#f28e2b] px-4 py-4 flex items-center justify-between shadow-sm z-10">

@@ -66,7 +66,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="font-sans bg-slate-950 text-white antialiased overflow-x-hidden">
-        <div className="mb-28">
+        <div className="header-offset">
           <Navbar 
             mainModules={mainModules} 
             categories={categories} 

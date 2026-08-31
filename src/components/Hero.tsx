@@ -22,7 +22,7 @@ export function Hero({
   backgroundImage
 }: HeroProps) {
   return (
-    <section className="relative overflow-hidden flex items-center">
+    <section className="relative overflow-hidden flex items-center min-h-[420px] sm:min-h-[480px] md:min-h-[540px] lg:min-h-[600px]">
       {/* Background Image */}
       {backgroundImage && (
         <>

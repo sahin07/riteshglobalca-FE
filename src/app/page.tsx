@@ -135,7 +135,7 @@ export default async function Page() {
         <Section
           title={servicesTitle}
           subtitle={servicesSubtitle}
-          className="bg-white py-20"
+          className="bg-white py-12 sm:py-16 md:py-20"
         >
           <ServiceCardsSlider services={servicesData || []} />
           <div className="mt-12 flex justify-center">
@@ -166,9 +166,9 @@ export default async function Page() {
         )}
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-slate-50">
-          <div className="container-prose text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark">
+        <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
+          <div className="container-prose text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">
               {cmsData?.testimonialsTitle || "Client Testimonials"}
             </h2>
             <p className="text-slate-600 mt-3">

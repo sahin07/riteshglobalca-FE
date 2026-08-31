@@ -47,7 +47,7 @@ function Counter({ end, suffix }: { end: number | null, suffix: string }) {
   }, [end, isVisible])
 
   return (
-    <div ref={ref} className="text-4xl font-bold text-brand-orange">
+    <div ref={ref} className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-orange">
       {end !== null ? count : null}{suffix}
     </div>
   )
@@ -72,13 +72,13 @@ export function Stats({ stats }: StatsProps) {
     })
 
   return (
-    <div className="bg-brand-orange py-12">
+    <div className="bg-brand-orange py-8 sm:py-10 md:py-12">
       <div className="container-prose">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {items?.map((s) => (
-            <div key={s.label} className="bg-white rounded-lg p-8 text-center shadow-lg transform hover:-translate-y-1 transition-transform">
+            <div key={s.label} className="bg-white rounded-lg p-4 sm:p-6 md:p-8 text-center shadow-lg transform hover:-translate-y-1 transition-transform">
               <Counter end={s.value} suffix={s.suffix} />
-              <div className="mt-1 text-slate-800 font-medium text-sm">{s.label}</div>
+              <div className="mt-1 text-slate-800 font-medium text-xs sm:text-sm">{s.label}</div>
             </div>
           ))}
         </div>

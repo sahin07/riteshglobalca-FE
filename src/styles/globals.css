@@ -4,6 +4,27 @@
 
 :root {
   --brand-primary: #F19020;
+  --header-offset: 5.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-offset: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-offset: 7rem;
+  }
+}
+
+.header-offset {
+  margin-bottom: var(--header-offset);
+}
+
+.header-overlap {
+  margin-top: calc(-1 * var(--header-offset));
 }
 
 html, body {
@@ -165,6 +186,22 @@ html, body {
   border-radius: 0.75rem;
   overflow: hidden;
   border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 767px) {
+  .strapi-html table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .strapi-html thead th,
+  .strapi-html tbody td {
+    padding: 0.6rem 0.85rem;
+    font-size: 12px;
+  }
 }
 .strapi-html thead th {
   background: #0b293d;

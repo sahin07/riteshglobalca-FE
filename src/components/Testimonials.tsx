@@ -25,7 +25,7 @@ export function Testimonials({ items }: TestimonialsProps) {
           const ratingStars = t.rating || 5
 
           return (
-            <div key={`${t.author}-${idx}`} className="w-[300px] md:w-[400px] flex-shrink-0 rounded-xl border border-slate-100 bg-white p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div key={`${t.author}-${idx}`} className="w-[260px] sm:w-[300px] md:w-[400px] flex-shrink-0 rounded-xl border border-slate-100 bg-white p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-shadow">
               <div className="flex text-brand-orange mb-4">
                 {[...Array(ratingStars)].map((_, i) => (
                   <svg key={i} width="18" height="18" viewBox="0 0 24 24">

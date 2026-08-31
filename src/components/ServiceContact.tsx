@@ -123,7 +123,7 @@ export function ServiceContact({
     }
 
     return (
-        <section className="relative py-20 md:py-24 bg-[#0b293d] overflow-hidden text-left">
+        <section className="relative py-12 sm:py-16 md:py-24 bg-[#0b293d] overflow-hidden text-left">
             {/* Background Pattern: Sunburst */}
             {/* Insights-style hero gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0b293d] via-[#0b293d]/90 to-[#003B49]" />
@@ -175,7 +175,7 @@ export function ServiceContact({
                     )}
 
                     {/* Right Column: Form Container */}
-                    <div className={`w-full rounded-[20px] p-8 md:p-10 shadow-2xl bg-white ${(officeAddress || email || phone) ? "lg:col-span-7" : "lg:col-span-8 lg:col-start-3 mx-auto"}`}>
+                    <div className={`w-full rounded-[20px] p-5 sm:p-8 md:p-10 shadow-2xl bg-white ${(officeAddress || email || phone) ? "lg:col-span-7" : "lg:col-span-8 lg:col-start-3 mx-auto"}`}>
                         {/* Title if no left column details are provided */}
                         {!(officeAddress || email || phone) && (
                             <div className="text-center mb-8">

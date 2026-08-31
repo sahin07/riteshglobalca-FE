@@ -10,11 +10,11 @@ type Props = {
 
 export function Section({ title, subtitle, children, className }: Props) {
   return (
-    <section className={clsx('py-20 md:py-24', className)}>
+    <section className={clsx('py-12 sm:py-16 md:py-24', className)}>
       <div className="container-prose">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">{title}</h2>
-          {subtitle && <p className="text-lg text-slate-600">{subtitle}</p>}
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark mb-3 sm:mb-4">{title}</h2>
+          {subtitle && <p className="text-base sm:text-lg text-slate-600">{subtitle}</p>}
         </div>
         {children}
       </div>

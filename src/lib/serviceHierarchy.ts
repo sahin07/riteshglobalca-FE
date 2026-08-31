@@ -58,7 +58,7 @@ export function findServiceAncestors(
         ) || null
       : null
 
-  // Taxonomy may be filtered from nav tree (hideDocs) while detail API still populates relations.
+  // Nav tree is filtered to Excel+doc allowlist; fall back to populated relations for detail pages.
   if (!sub && populatedSub?.slug) {
     sub = {
       id: populatedSub.id,

@@ -1,6 +1,19 @@
 import qs from 'qs';
+import { cache } from 'react';
+import {
+  isPublishedCategorySlug,
+  isPublishedModuleSlug,
+  isPublishedServiceSlug,
+} from './serviceAllowlist';
+import { hasDetailPageContent } from './serviceContent';
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1338';
+
+const SERVICES_NAV_QUERY =
+  '/api/services?fields[0]=title&fields[1]=slug&fields[2]=introDescription' +
+  '&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=slug&populate[subcategory][fields][2]=title' +
+  '&populate[subcategory][populate][category][fields][0]=id&populate[subcategory][populate][category][fields][1]=slug' +
+  '&populate[contentBlocks][populate]=*';
 
 async function fetchAllPages(pathWithQuery: string, init: RequestInit = { next: { revalidate: 60 } }): Promise<any[]> {
   const pageSize = 100;
@@ -26,6 +39,67 @@ async function fetchAllPages(pathWithQuery: string, init: RequestInit = { next: 
 
   return all;
 }
+
+const loadVisibleTaxonomy = cache(async () => {
+  const [modules, categories, subcategories, servicesRaw] = await Promise.all([
+    fetchAllPages('/api/main-modules'),
+    fetchAllPages('/api/service-categories?populate[mainModule][fields][0]=title&populate[mainModule][fields][1]=slug'),
+    fetchAllPages('/api/service-subcategories?populate[category][fields][0]=title&populate[category][fields][1]=slug&populate[category][populate][mainModule][fields][0]=slug'),
+    fetchAllPages(SERVICES_NAV_QUERY),
+  ]);
+
+  const services = servicesRaw
+    .filter((row) => isPublishedServiceSlug(row.slug) && hasDetailPageContent(row))
+    .map(({ contentBlocks: _contentBlocks, ...rest }) => rest);
+
+  const visibleSubIds = new Set<number>();
+  const visibleSubSlugs = new Set<string>();
+  for (const service of services) {
+    const sub = service.subcategory;
+    if (sub?.id != null) visibleSubIds.add(sub.id);
+    if (sub?.slug) visibleSubSlugs.add(sub.slug);
+  }
+
+  const subcategoriesVisible = subcategories.filter(
+    (row) => visibleSubIds.has(row.id) || visibleSubSlugs.has(row.slug)
+  );
+
+  const visibleCatIds = new Set<number>();
+  const visibleCatSlugs = new Set<string>();
+  for (const sub of subcategoriesVisible) {
+    const cat = sub.category;
+    if (cat?.id != null) visibleCatIds.add(cat.id);
+    if (cat?.slug) visibleCatSlugs.add(cat.slug);
+  }
+
+  const categoriesVisible = categories.filter(
+    (row) =>
+      isPublishedCategorySlug(row.slug) &&
+      (visibleCatIds.has(row.id) || visibleCatSlugs.has(row.slug))
+  );
+
+  const visibleModIds = new Set<number>();
+  const visibleModSlugs = new Set<string>();
+  for (const cat of categoriesVisible) {
+    const mod = cat.mainModule;
+    if (mod?.id != null) visibleModIds.add(mod.id);
+    if (mod?.slug) visibleModSlugs.add(mod.slug);
+  }
+
+  const modulesVisible = modules.filter(
+    (row) =>
+      isPublishedModuleSlug(row.slug) &&
+      (visibleModIds.has(row.id) || visibleModSlugs.has(row.slug))
+  );
+
+  return {
+    modules: modulesVisible,
+    categories: categoriesVisible,
+    subcategories: subcategoriesVisible,
+    services,
+  };
+});
+
 export interface StrapiBlogPost {
   id: number;
   documentId: string;
@@ -228,7 +302,7 @@ export interface StrapiServicesPage {
 
 export async function getMainModules(): Promise<StrapiMainModule[]> {
   try {
-    return await fetchAllPages('/api/main-modules');
+    return (await loadVisibleTaxonomy()).modules;
   } catch (error) {
     console.error('Error fetching main modules:', error);
     return [];
@@ -237,7 +311,7 @@ export async function getMainModules(): Promise<StrapiMainModule[]> {
 
 export async function getServiceCategories(): Promise<StrapiServiceCategory[]> {
   try {
-    return await fetchAllPages('/api/service-categories?populate[mainModule][fields][0]=title&populate[mainModule][fields][1]=slug');
+    return (await loadVisibleTaxonomy()).categories;
   } catch (error) {
     console.error('Error fetching categories:', error);
     return [];
@@ -246,7 +320,7 @@ export async function getServiceCategories(): Promise<StrapiServiceCategory[]> {
 
 export async function getServiceSubcategories(): Promise<StrapiServiceSubcategory[]> {
   try {
-    return await fetchAllPages('/api/service-subcategories?populate[category][fields][0]=title&populate[category][fields][1]=slug');
+    return (await loadVisibleTaxonomy()).subcategories;
   } catch (error) {
     console.error('Error fetching subcategories:', error);
     return [];
@@ -255,10 +329,7 @@ export async function getServiceSubcategories(): Promise<StrapiServiceSubcategor
 
 export async function getServices(): Promise<StrapiService[]> {
   try {
-    // Nav only needs title/slug/subcategory — avoid populate=* across hundreds of pages.
-    return await fetchAllPages(
-      '/api/services?fields[0]=title&fields[1]=slug&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=title&populate[subcategory][fields][2]=slug'
-    );
+    return (await loadVisibleTaxonomy()).services;
   } catch (error) {
     console.error('Error fetching services:', error);
     return [];
@@ -351,6 +422,9 @@ export async function getAboutPage(): Promise<StrapiAboutPage | null> {
 }
 
 export async function getServiceBySlug(slug: string): Promise<StrapiService | null> {
+  if (!isPublishedServiceSlug(slug)) {
+    return null;
+  }
   try {
     const query = qs.stringify({
       filters: {
@@ -454,7 +528,11 @@ export async function getServiceBySlug(slug: string): Promise<StrapiService | nu
     const data = json.data;
 
     if (data && data.length > 0) {
-      return data[0];
+      const service = data[0] as StrapiService;
+      if (!hasDetailPageContent(service)) {
+        return null;
+      }
+      return service;
     }
 
     return null;

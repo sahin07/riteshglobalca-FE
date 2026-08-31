@@ -1,0 +1,183 @@
+﻿================================================================================
+DEEP AUDIT: EXCEL 1.1û1.5 vs STRAPI vs FRONTEND MENU
+================================================================================
+
+################################################################################
+## EXCEL SECTION 1.1: GST & Indirect Tax Services
+################################################################################
+
+Excel subdiv2 count (1.x.y): 2
+Excel page count (1.x.y.z): 10
+
+STRAPI CATEGORY: GST & Indirect Tax Services (`gst-indirect-tax-services`)
+  Hidden from menu: YES ù ENTIRE BRANCH SUPPRESSED
+  Subcategories in Strapi: 2 (visible after filter: 0)
+  Services in Strapi: 10 (visible after filter: 0)
+  MENU STATUS: **NOT SHOWN** ù category in hide-docs-123.json
+
+  Strapi subcategories:
+    - Customs & International Trade Services [customs-international-trade-services] -> HIDDEN
+    - GST Services [gst-services] -> HIDDEN
+
+  Sample Excel subdiv2 (first 8):
+    1.1.1 GST Services
+    1.1.2 Customs & International Trade Services
+
+################################################################################
+## EXCEL SECTION 1.2: Direct Tax Services
+################################################################################
+
+Excel subdiv2 count (1.x.y): 7
+Excel page count (1.x.y.z): 29
+
+STRAPI CATEGORY: Direct Tax Services (`direct-tax-services`)
+  Hidden from menu: YES ù ENTIRE BRANCH SUPPRESSED
+  Subcategories in Strapi: 8 (visible after filter: 1)
+  Services in Strapi: 29 (visible after filter: 0)
+  MENU STATUS: **NOT SHOWN** ù category in hide-docs-123.json
+
+  Strapi subcategories:
+    - Family & Wealth Tax Planning [family-wealth-tax-planning] -> HIDDEN
+    - Income Tax Compliance [income-tax-compliance] -> HIDDEN
+    - Litigation & Representation [litigation-representation] -> HIDDEN
+    - TDS/TCS Compliance [service-subcategory-5] -> HIDDEN
+    - Specialized Services [specialized-services] -> HIDDEN
+    - Startup & Business Setup (Direct Tax) [startup-business-setup-direct-tax] -> HIDDEN
+    - Tax Advisory Services [tax-advisory-services] -> HIDDEN
+    - Tax Audit & Reporting [tax-audit-reporting] -> HIDDEN
+
+  Sample Excel subdiv2 (first 8):
+    1.2.1 Income Tax Compliance
+    1.2.2 Tax Advisory Services
+    1.2.3 Litigation & Representation
+    1.2.4 Specialized Services
+    1.2.5 Startup & Business Setup (Direct Tax)
+    1.2.6 Family & Wealth Tax Planning
+    1.2.7 Tax Audit & Reporting
+
+################################################################################
+## EXCEL SECTION 1.3: Audit & Assurance Services
+################################################################################
+
+Excel subdiv2 count (1.x.y): 8
+Excel page count (1.x.y.z): 37
+
+STRAPI CATEGORY: Audit & Assurance Services (`audit-assurance-services`)
+  Hidden from menu: YES ù ENTIRE BRANCH SUPPRESSED
+  Subcategories in Strapi: 8 (visible after filter: 0)
+  Services in Strapi: 37 (visible after filter: 0)
+  MENU STATUS: **NOT SHOWN** ù category in hide-docs-123.json
+
+  Strapi subcategories:
+    - Assurance & Reporting Services [assurance-reporting-services] -> HIDDEN
+    - Due Diligence & Investigations [due-diligence-investigations] -> HIDDEN
+    - ESG & Sustainability / CSR Audits [esg-sustainability-csr-audits] -> HIDDEN
+    - Internal Audit & Risk Management [internal-audit-risk-management] -> HIDDEN
+    - Management & Operational Audits [management-operational-audits] -> HIDDEN
+    - Special Purpose Audits & Certifications [special-purpose-audits-certifications] -> HIDDEN
+    - Statutory Audits [statutory-audits] -> HIDDEN
+    - Tax & Regulatory Audits [tax-regulatory-audits] -> HIDDEN
+
+  Sample Excel subdiv2 (first 8):
+    1.3.1 Statutory Audits
+    1.3.2 Internal Audit & Risk Management
+    1.3.3 Management & Operational Audits
+    1.3.4 Special Purpose Audits & Certifications
+    1.3.5 Tax & Regulatory Audits
+    1.3.6 Due Diligence & Investigations
+    1.3.7 Assurance & Reporting Services
+    1.3.8 ESG & Sustainability / CSR Audits
+
+################################################################################
+## EXCEL SECTION 1.4: Accounting & Compliance Services
+################################################################################
+
+Excel subdiv2 count (1.x.y): 6
+Excel page count (1.x.y.z): 18
+
+STRAPI CATEGORY: Accounting & Compliance Services (`accounting-compliance-services`)
+  Hidden from menu: YES ù ENTIRE BRANCH SUPPRESSED
+  Subcategories in Strapi: 6 (visible after filter: 0)
+  Services in Strapi: 18 (visible after filter: 0)
+  MENU STATUS: **NOT SHOWN** ù category in hide-docs-123.json
+
+  Strapi subcategories:
+    - Accounting & Bookkeeping [accounting-bookkeeping] -> HIDDEN
+    - Accounting System Setup & Advisory [accounting-system-setup-advisory] -> HIDDEN
+    - Compliance Management [compliance-management] -> HIDDEN
+    - Financial Reporting & Controls [financial-reporting-controls] -> HIDDEN
+    - Payroll Management [payroll-management] -> HIDDEN
+    - ROC / MCA Compliances [roc-mca-compliances] -> HIDDEN
+
+  Sample Excel subdiv2 (first 8):
+    1.4.1 Accounting & Bookkeeping
+    1.4.2 Payroll Management
+    1.4.3 ROC / MCA Compliances
+    1.4.4 Accounting System Setup & Advisory
+    1.4.5 Financial Reporting & Controls
+    1.4.6 Compliance Management
+
+################################################################################
+## EXCEL SECTION 1.5: Corporate Advisory Services
+################################################################################
+
+Excel subdiv2 count (1.x.y): 6
+Excel page count (1.x.y.z): 18
+
+STRAPI CATEGORY: Corporate Advisory Services (`corporate-advisory-services`)
+  Hidden from menu: YES ù ENTIRE BRANCH SUPPRESSED
+  Subcategories in Strapi: 6 (visible after filter: 0)
+  Services in Strapi: 18 (visible after filter: 0)
+  MENU STATUS: **NOT SHOWN** ù category in hide-docs-123.json
+
+  Strapi subcategories:
+    - Business Setup & Incorporation [business-setup-incorporation] -> HIDDEN
+    - Corporate Restructuring [corporate-restructuring] -> HIDDEN
+    - Due Diligence & Deal Structuring [due-diligence-deal-structuring] -> HIDDEN
+    - FEMA & RBI Compliances [fema-rbi-compliances] -> HIDDEN
+    - Startup Advisory [startup-advisory] -> HIDDEN
+    - Valuation & Transaction Advisory [valuation-transaction-advisory] -> HIDDEN
+
+  Sample Excel subdiv2 (first 8):
+    1.5.1 Business Setup & Incorporation
+    1.5.2 Corporate Restructuring
+    1.5.3 FEMA & RBI Compliances
+    1.5.4 Valuation & Transaction Advisory
+    1.5.5 Due Diligence & Deal Structuring
+    1.5.6 Startup Advisory
+
+================================================================================
+SUMMARY: WHY CLIENT SEES 1.1û1.5 AS MISSING
+================================================================================
+1.1 GST & Indirect Tax Services: IN STRAPI (2 subs, 10 services) BUT HIDDEN BY FRONTEND FILTER
+1.2 Direct Tax Services: IN STRAPI (8 subs, 29 services) BUT HIDDEN BY FRONTEND FILTER
+1.3 Audit & Assurance Services: IN STRAPI (8 subs, 37 services) BUT HIDDEN BY FRONTEND FILTER
+1.4 Accounting & Compliance Services: IN STRAPI (6 subs, 18 services) BUT HIDDEN BY FRONTEND FILTER
+1.5 Corporate Advisory Services: IN STRAPI (6 subs, 18 services) BUT HIDDEN BY FRONTEND FILTER
+
+================================================================================
+WHAT SHOWS IN MENU TODAY (India Practice ù not 1.1-1.5)
+================================================================================
+  VISIBLE: Business Valuation & Financial Modelling (business-valuation-financial-modelling)
+  VISIBLE: EPFO & Labour Law Compliance (epfo-labour-law-compliance)
+  VISIBLE: IPO Readiness & Advisory (ipo-readiness-advisory)
+  VISIBLE: Loan Syndication & Project Finance (loan-syndication-project-finance)
+  VISIBLE: MCA Compliances (mca-compliances)
+  VISIBLE: RERA Registration & Compliance (rera-registration-compliance)
+  VISIBLE: Startup India Registration & Compliance (startup-india-registration-compliance)
+
+================================================================================
+WORD DOC COVERAGE FOR 1.1û1.5
+================================================================================
+  1.1: Content RA Assosciates 1.docx (GST + Customs; also contains 1.2 start)
+  1.2: Content RA Assosciates 1.docx (Direct Tax ù same file as 1.1)
+  1.3: Content RA Assosciates 2.docx + 3.docx (Audit & Assurance)
+  1.4: Content RA Assosciates 1.docx / 3.docx (Accounting ù verify import)
+  1.5: Content RA Assosciates 3.docx / 4.docx (Corporate Advisory)
+
+================================================================================
+SLUG MISMATCH NOTE (hide list vs current Strapi slugs)
+================================================================================
+Strapi GST service slugs: ['1-1-1-4-litigation-support-services', '1-1-1-2-return-filing-service', '1-1-1-5-gst-refunds', '1-1-1-3-gst-advisory-service', '1-1-1-1-registration-service']
+hide-docs-123 service slugs (old): ['registration-service', 'return-filing-service', 'gst-advisory-service', 'litigation-support-services', 'gst-refunds']
+Service-level hide list may be OUTDATED ù but category/subcategory hide still blocks entire 1.1û1.5 branches

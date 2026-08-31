@@ -1,21 +1,4 @@
 import qs from 'qs';
-import {
-  isHiddenCategorySlug,
-  isHiddenServiceSlug,
-  isHiddenSubcategorySlug,
-} from './hideDocs123'
-import {
-  isEmptyContentServiceSlug,
-  isEmptyContentSubcategorySlug,
-} from './emptyContent'
-
-function shouldHideService(slug?: string | null) {
-  return isHiddenServiceSlug(slug) || isEmptyContentServiceSlug(slug)
-}
-
-function shouldHideSubcategory(slug?: string | null) {
-  return isHiddenSubcategorySlug(slug) || isEmptyContentSubcategorySlug(slug)
-};
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1338';
 
@@ -254,8 +237,7 @@ export async function getMainModules(): Promise<StrapiMainModule[]> {
 
 export async function getServiceCategories(): Promise<StrapiServiceCategory[]> {
   try {
-    const rows = await fetchAllPages('/api/service-categories?populate[mainModule][fields][0]=title&populate[mainModule][fields][1]=slug');
-    return rows.filter((row) => !isHiddenCategorySlug(row.slug));
+    return await fetchAllPages('/api/service-categories?populate[mainModule][fields][0]=title&populate[mainModule][fields][1]=slug');
   } catch (error) {
     console.error('Error fetching categories:', error);
     return [];
@@ -264,8 +246,7 @@ export async function getServiceCategories(): Promise<StrapiServiceCategory[]> {
 
 export async function getServiceSubcategories(): Promise<StrapiServiceSubcategory[]> {
   try {
-    const rows = await fetchAllPages('/api/service-subcategories?populate[category][fields][0]=title&populate[category][fields][1]=slug');
-    return rows.filter((row) => !shouldHideSubcategory(row.slug));
+    return await fetchAllPages('/api/service-subcategories?populate[category][fields][0]=title&populate[category][fields][1]=slug');
   } catch (error) {
     console.error('Error fetching subcategories:', error);
     return [];
@@ -275,10 +256,9 @@ export async function getServiceSubcategories(): Promise<StrapiServiceSubcategor
 export async function getServices(): Promise<StrapiService[]> {
   try {
     // Nav only needs title/slug/subcategory — avoid populate=* across hundreds of pages.
-    const rows = await fetchAllPages(
+    return await fetchAllPages(
       '/api/services?fields[0]=title&fields[1]=slug&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=title&populate[subcategory][fields][2]=slug'
     );
-    return rows.filter((row) => !shouldHideService(row.slug));
   } catch (error) {
     console.error('Error fetching services:', error);
     return [];
@@ -371,9 +351,6 @@ export async function getAboutPage(): Promise<StrapiAboutPage | null> {
 }
 
 export async function getServiceBySlug(slug: string): Promise<StrapiService | null> {
-  if (shouldHideService(slug)) {
-    return null;
-  }
   try {
     const query = qs.stringify({
       filters: {
@@ -499,11 +476,7 @@ export async function getServicesPage(): Promise<StrapiServicesPage | null> {
     }
 
     const json = await res.json();
-    const page = json.data || null;
-    if (page?.services) {
-      page.services = page.services.filter((row: { slug?: string }) => !shouldHideService(row.slug));
-    }
-    return page;
+    return json.data || null;
   } catch (error) {
     console.error('Error fetching services-page:', error);
     return null;

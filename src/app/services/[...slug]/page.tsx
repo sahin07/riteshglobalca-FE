@@ -36,16 +36,6 @@ import {
   subcategoryHref,
   subcategoriesForCategory,
 } from '@/lib/serviceHierarchy'
-import {
-  isHiddenCategorySlug,
-  isHiddenServiceSlug,
-  isHiddenSubcategorySlug,
-} from '@/lib/hideDocs123'
-import {
-  isEmptyContentServiceSlug,
-  isEmptyContentSubcategorySlug,
-} from '@/lib/emptyContent'
-
 interface PageProps {
   params: { slug: string[] }
 }
@@ -76,7 +66,7 @@ async function resolvePath(segments: string[]) {
     const mainModule = findModule(tree.modules, a)
     if (!mainModule) return null
     const category = findCategory(tree.categories, b, mainModule.id)
-    if (!category || isHiddenCategorySlug(category.slug)) return null
+    if (!category) return null
     return { kind: 'category' as const, module: mainModule, category, tree }
   }
 
@@ -84,15 +74,15 @@ async function resolvePath(segments: string[]) {
     const mainModule = findModule(tree.modules, a)
     if (!mainModule) return null
     const category = findCategory(tree.categories, b, mainModule.id)
-    if (!category || isHiddenCategorySlug(category.slug)) return null
+    if (!category) return null
     const subcategory = findSubcategory(tree.subcategories, c, category.id)
-    if (!subcategory || isHiddenSubcategorySlug(subcategory.slug) || isEmptyContentSubcategorySlug(subcategory.slug)) return null
+    if (!subcategory) return null
     return { kind: 'subcategory' as const, module: mainModule, category, subcategory, tree }
   }
 
   if (segments.length === 4) {
     const service = await getServiceBySlug(d)
-    if (!service || isHiddenServiceSlug(service.slug) || isEmptyContentServiceSlug(service.slug)) return null
+    if (!service) return null
     return { kind: 'service' as const, service, tree }
   }
 

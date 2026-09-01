@@ -1,12 +1,16 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import { StrapiFooter } from '@/lib/strapi'
+import { HIDE_ARTICLES, isArticleNavLink } from '@/lib/hideArticles'
 import { HIDE_BLOGS, isBlogNavLink } from '@/lib/hideBlogs'
 
 function filterFooterLinks(links?: { id: number; label: string; url: string }[]) {
   if (!links) return links
-  if (!HIDE_BLOGS) return links
-  return links.filter(l => !isBlogNavLink(l.label, l.url))
+  return links.filter(l => {
+    if (HIDE_BLOGS && isBlogNavLink(l.label, l.url)) return false
+    if (HIDE_ARTICLES && isArticleNavLink(l.label, l.url)) return false
+    return true
+  })
 }
 
 export function Footer({ className, footer }: { className?: string, footer?: StrapiFooter | null }) {

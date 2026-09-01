@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { ArticlePdfGrid } from '@/components/articles/ArticlePdfGrid'
 import { ServiceHero } from '@/components/ServiceHero'
 import { getArticlesPageContent, getPdfArticles } from '@/lib/articles'
+import { HIDE_ARTICLES } from '@/lib/hideArticles'
 
 export const metadata: Metadata = {
   title: 'Articles | Ritesh Arora & Associates',
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 }
 
 export default function ArticlesPage() {
+  if (HIDE_ARTICLES) notFound()
+
   const { hero, section } = getArticlesPageContent()
   const items = getPdfArticles()
 

@@ -286,6 +286,7 @@ import { useState, useEffect } from 'react'
 
 import { StrapiService, StrapiServiceCategory, StrapiMainModule, StrapiServiceSubcategory, StrapiBlogPost, StrapiHeader, getStrapiMedia } from '@/lib/strapi'
 import { DesktopPracticeNav, MobileServicesSlideNav } from '@/components/PracticeMegaNav'
+import { HIDE_ARTICLES, isArticleNavLink } from '@/lib/hideArticles'
 import { HIDE_BLOGS, isBlogNavLink } from '@/lib/hideBlogs'
 
 export function Navbar({
@@ -370,6 +371,9 @@ export function Navbar({
     if (HIDE_BLOGS) {
       links = links.filter(l => !isBlogNavLink(l.label, l.url))
     }
+    if (HIDE_ARTICLES) {
+      links = links.filter(l => !isArticleNavLink(l.label, l.url))
+    }
     // Replace Pricing with Insights in the main menu
     links = links.map(l => {
       const label = (l.label || '').toLowerCase()
@@ -386,12 +390,14 @@ export function Navbar({
       if (careersIdx !== -1) links.splice(careersIdx, 0, insightsLink)
       else links.push(insightsLink)
     }
-    const hasArticles = links.some(l => l.url === '/articles' || (l.label || '').toLowerCase() === 'articles')
-    if (!hasArticles) {
-      const insightsIdx = links.findIndex(l => l.url === '/insights' || (l.label || '').toLowerCase() === 'insights')
-      const articlesLink = { id: 997, label: 'Articles', url: '/articles' }
-      if (insightsIdx !== -1) links.splice(insightsIdx + 1, 0, articlesLink)
-      else links.push(articlesLink)
+    if (!HIDE_ARTICLES) {
+      const hasArticles = links.some(l => l.url === '/articles' || (l.label || '').toLowerCase() === 'articles')
+      if (!hasArticles) {
+        const insightsIdx = links.findIndex(l => l.url === '/insights' || (l.label || '').toLowerCase() === 'insights')
+        const articlesLink = { id: 997, label: 'Articles', url: '/articles' }
+        if (insightsIdx !== -1) links.splice(insightsIdx + 1, 0, articlesLink)
+        else links.push(articlesLink)
+      }
     }
     const hasFaq = links.some(l => l.url === '/faq' || l.label.toLowerCase() === 'faq')
     if (!hasFaq) {
@@ -485,7 +491,7 @@ export function Navbar({
                     { id: 2, label: 'About', url: '/about' },
                     { id: 3, label: 'Services', url: '/services' },
                     { id: 4, label: 'Insights', url: '/insights' },
-                    { id: 5, label: 'Articles', url: '/articles' },
+                    ...(!HIDE_ARTICLES ? [{ id: 5, label: 'Articles', url: '/articles' }] : []),
                     ...(!HIDE_BLOGS ? [{ id: 6, label: 'Blog', url: '/blog' }] : []),
                     { id: 7, label: 'Careers', url: '/careers' },
                     { id: 8, label: 'FAQ', url: '/faq' },
@@ -724,7 +730,9 @@ export function Navbar({
                       <MobileNavLink href="/blog" label="Blog" onClick={closeMobileMenu} />
                     )}
                     <MobileNavLink href="/insights" label="Insights" onClick={closeMobileMenu} />
-                    <MobileNavLink href="/articles" label="Articles" onClick={closeMobileMenu} />
+                    {!HIDE_ARTICLES && (
+                      <MobileNavLink href="/articles" label="Articles" onClick={closeMobileMenu} />
+                    )}
                     <MobileNavLink href="/careers" label="Careers" onClick={closeMobileMenu} />
                     <MobileNavLink href="/faq" label="FAQ" onClick={closeMobileMenu} />
                     <MobileNavLink href="/contact" label="Contact" onClick={closeMobileMenu} />

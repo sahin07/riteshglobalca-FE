@@ -386,6 +386,13 @@ export function Navbar({
       if (careersIdx !== -1) links.splice(careersIdx, 0, insightsLink)
       else links.push(insightsLink)
     }
+    const hasArticles = links.some(l => l.url === '/articles' || (l.label || '').toLowerCase() === 'articles')
+    if (!hasArticles) {
+      const insightsIdx = links.findIndex(l => l.url === '/insights' || (l.label || '').toLowerCase() === 'insights')
+      const articlesLink = { id: 997, label: 'Articles', url: '/articles' }
+      if (insightsIdx !== -1) links.splice(insightsIdx + 1, 0, articlesLink)
+      else links.push(articlesLink)
+    }
     const hasFaq = links.some(l => l.url === '/faq' || l.label.toLowerCase() === 'faq')
     if (!hasFaq) {
       const contactIdx = links.findIndex(l => l.label.toLowerCase() === 'contact')
@@ -478,10 +485,11 @@ export function Navbar({
                     { id: 2, label: 'About', url: '/about' },
                     { id: 3, label: 'Services', url: '/services' },
                     { id: 4, label: 'Insights', url: '/insights' },
-                    ...(!HIDE_BLOGS ? [{ id: 5, label: 'Blog', url: '/blog' }] : []),
-                    { id: 6, label: 'Careers', url: '/careers' },
-                    { id: 7, label: 'FAQ', url: '/faq' },
-                    { id: 8, label: 'Contact', url: '/contact' },
+                    { id: 5, label: 'Articles', url: '/articles' },
+                    ...(!HIDE_BLOGS ? [{ id: 6, label: 'Blog', url: '/blog' }] : []),
+                    { id: 7, label: 'Careers', url: '/careers' },
+                    { id: 8, label: 'FAQ', url: '/faq' },
+                    { id: 9, label: 'Contact', url: '/contact' },
                   ]
               const isPrimary = (label: string) => {
                 const l = label.toLowerCase()
@@ -716,6 +724,7 @@ export function Navbar({
                       <MobileNavLink href="/blog" label="Blog" onClick={closeMobileMenu} />
                     )}
                     <MobileNavLink href="/insights" label="Insights" onClick={closeMobileMenu} />
+                    <MobileNavLink href="/articles" label="Articles" onClick={closeMobileMenu} />
                     <MobileNavLink href="/careers" label="Careers" onClick={closeMobileMenu} />
                     <MobileNavLink href="/faq" label="FAQ" onClick={closeMobileMenu} />
                     <MobileNavLink href="/contact" label="Contact" onClick={closeMobileMenu} />

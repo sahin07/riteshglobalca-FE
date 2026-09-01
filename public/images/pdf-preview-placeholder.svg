@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="780" viewBox="0 0 600 780" fill="none">
+  <rect width="600" height="780" rx="24" fill="#F8FAFC"/>
+  <rect x="48" y="64" width="504" height="652" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="96" y="120" width="280" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="96" y="164" width="408" height="12" rx="4" fill="#F1F5F9"/>
+  <rect x="96" y="188" width="360" height="12" rx="4" fill="#F1F5F9"/>
+  <rect x="96" y="212" width="384" height="12" rx="4" fill="#F1F5F9"/>
+  <rect x="96" y="260" width="408" height="12" rx="4" fill="#F1F5F9"/>
+  <rect x="96" y="284" width="320" height="12" rx="4" fill="#F1F5F9"/>
+  <rect x="420" y="560" width="84" height="84" rx="12" fill="#F19020" fill-opacity="0.15"/>
+  <path d="M452 592h20v36h-20z" fill="#F19020"/>
+  <path d="M444 628h36v8H444z" fill="#F19020"/>
+  <text x="300" y="720" text-anchor="middle" fill="#64748B" font-family="Arial, sans-serif" font-size="22" font-weight="600">PDF Preview</text>
+</svg>

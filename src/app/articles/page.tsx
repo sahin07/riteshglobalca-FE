@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { ArticlePdfGrid } from '@/components/articles/ArticlePdfGrid'
 import { ServiceHero } from '@/components/ServiceHero'
 import { getArticlesPageContent, getPdfArticles } from '@/lib/articles'
 
@@ -47,47 +48,7 @@ export default function ArticlesPage() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {items.map((article) => (
-                <article
-                  key={article.id}
-                  className="flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200/80 bg-white shadow-sm transition-shadow hover:shadow-md"
-                >
-                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
-                    <img
-                      src={article.previewSrc}
-                      alt={`${article.title} preview`}
-                      className="h-full w-full object-cover object-top"
-                      loading="lazy"
-                    />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent" />
-                  </div>
-
-                  <div className="flex flex-grow flex-col p-5 md:p-6">
-                    <h3 className="mb-5 flex-grow text-[18px] font-bold leading-snug text-[#0b293d] md:text-[20px]">
-                      {article.title}
-                    </h3>
-
-                    <a
-                      href={article.pdfUrl}
-                      download={article.fileName}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b293d] px-5 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#F19020]"
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      Download PDF
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <ArticlePdfGrid items={items} />
           )}
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { plainTextFromHtml } from '@/lib/serviceContent'
 
 export type ServiceCardItem = {
   title: string
@@ -82,7 +83,7 @@ export function ServicesCardsGrid({
               </h3>
               {item.description && (
                 <p className="mb-8 line-clamp-4 flex-1 text-[14px] leading-relaxed text-slate-500">
-                  {item.description}
+                  {plainTextFromHtml(item.description)}
                 </p>
               )}
               <Link

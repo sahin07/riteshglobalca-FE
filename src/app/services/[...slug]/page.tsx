@@ -23,6 +23,7 @@ import {
   StrapiService,
 } from '@/lib/strapi'
 import { getSharedServicesSections } from '@/lib/sharedServicesSections'
+import { plainTextFromHtml } from '@/lib/serviceContent'
 import {
   categoryHref,
   categoriesForModule,
@@ -36,6 +37,14 @@ import {
   subcategoryHref,
   subcategoriesForCategory,
 } from '@/lib/serviceHierarchy'
+
+function cardDescription(...candidates: Array<string | null | undefined>) {
+  for (const value of candidates) {
+    const text = plainTextFromHtml(value)
+    if (text) return text
+  }
+  return undefined
+}
 
 interface PageProps {
   params: { slug: string[] }
@@ -284,7 +293,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         links={cats.map((cat) => ({
           title: cat.title,
           href: categoryHref(resolved.module.slug, cat.slug),
-          description: cat.intro || cat.description || `Explore ${cat.title} services.`,
+          description: cardDescription(cat.intro, cat.description) || `Explore ${cat.title} services.`,
         }))}
         gridTitle={`${resolved.module.title} Categories`}
         gridSubtitle="Select a category to view related service groups."
@@ -310,7 +319,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         links={subs.map((sub) => ({
           title: sub.title,
           href: subcategoryHref(resolved.module.slug, resolved.category.slug, sub.slug),
-          description: sub.intro || sub.description || `Explore ${sub.title}.`,
+          description: cardDescription(sub.intro, sub.description) || `Explore ${sub.title}.`,
         }))}
         gridTitle={`${resolved.category.title} Groups`}
         gridSubtitle="Select a service group to continue."
@@ -340,7 +349,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
           categorySlug: resolved.category.slug,
           subcategorySlug: resolved.subcategory.slug,
         }),
-        description: srv.heroSubtitle || srv.introDescription || srv.shortDescription,
+        description: cardDescription(srv.heroSubtitle, srv.introDescription, srv.shortDescription),
       }))}
       gridTitle={`${resolved.subcategory.title} Services`}
       gridSubtitle="Select a service to view full details."

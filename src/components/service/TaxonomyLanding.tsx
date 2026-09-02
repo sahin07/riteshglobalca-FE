@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { plainTextFromHtml } from '@/lib/serviceContent'
 import { ServicesCardsGrid, ServiceCardItem } from '@/components/shared/ServicesCardsGrid'
 import { SharedTestimonials, SharedTestimonialItem } from '@/components/shared/SharedTestimonials'
 import { SharedFAQ, SharedFaqItem } from '@/components/shared/SharedFAQ'
@@ -54,7 +55,7 @@ export function TaxonomyLanding({
           <h1 className="max-w-3xl text-[32px] font-bold leading-tight text-white md:text-[44px]">{title}</h1>
           {intro && (
             <p className="mt-4 max-w-2xl text-[16px] font-light leading-relaxed text-slate-200 md:text-[18px]">
-              {intro}
+              {plainTextFromHtml(intro)}
             </p>
           )}
         </div>
@@ -64,7 +65,7 @@ export function TaxonomyLanding({
         <section className="bg-[#f8f9fa] pt-10">
           <div className="mx-auto max-w-[1400px] px-4 lg:px-8">
             <p className="max-w-3xl whitespace-pre-line text-[15px] leading-relaxed text-slate-600">
-              {description}
+              {plainTextFromHtml(description)}
             </p>
           </div>
         </section>

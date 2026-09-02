@@ -10,7 +10,7 @@ import { hasDetailPageContent } from './serviceContent';
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1338';
 
 const SERVICES_NAV_QUERY =
-  '/api/services?fields[0]=title&fields[1]=slug&fields[2]=introDescription' +
+  '/api/services?fields[0]=title&fields[1]=slug&fields[2]=heroSubtitle&fields[3]=introDescription' +
   '&populate[subcategory][fields][0]=id&populate[subcategory][fields][1]=slug&populate[subcategory][fields][2]=title' +
   '&populate[subcategory][populate][category][fields][0]=id&populate[subcategory][populate][category][fields][1]=slug' +
   '&populate[contentBlocks][populate]=*';

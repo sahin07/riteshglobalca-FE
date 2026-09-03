@@ -14,32 +14,35 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'AcmeCMS — Modern Consulting',
-    template: '%s — AcmeCMS'
+    default: 'Chartered Accountancy Firm in India | Ritesh Arora & Associates',
+    template: '%s | Ritesh Arora & Associates'
   },
-  description: 'Consulting and advisory services. Built with Next.js and Tailwind CSS.',
-  metadataBase: new URL('https://example.com'),
+  description:
+    'Ritesh Arora & Associates is a multidisciplinary Chartered Accountancy firm delivering comprehensive audit, taxation, GST, company incorporation, and business advisory services.',
+  metadataBase: new URL('https://riteshglobalca.com'),
   alternates: {
-    canonical: 'https://example.com'
+    canonical: 'https://riteshglobalca.com'
   },
   openGraph: {
-    title: 'AcmeCMS — Modern Consulting',
-    description: 'Consulting and advisory services. Built with Next.js and Tailwind CSS.',
+    title: 'Chartered Accountancy Firm in India | Ritesh Arora & Associates',
+    description:
+      'Ritesh Arora & Associates is a multidisciplinary Chartered Accountancy firm delivering comprehensive audit, taxation, GST, company incorporation, and business advisory services.',
     type: 'website',
-    url: 'https://example.com',
+    url: 'https://riteshglobalca.com',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'AcmeCMS'
+        alt: 'Ritesh Arora & Associates'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AcmeCMS — Modern Consulting',
-    description: 'Consulting and advisory services. Built with Next.js and Tailwind CSS.'
+    title: 'Chartered Accountancy Firm in India | Ritesh Arora & Associates',
+    description:
+      'Ritesh Arora & Associates is a multidisciplinary Chartered Accountancy firm delivering comprehensive audit, taxation, GST, company incorporation, and business advisory services.'
   },
   robots: {
     index: true,

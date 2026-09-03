@@ -14,30 +14,44 @@ import { fetchHomepageData, getStrapiUrl, fetchContactPageData } from '@/data/st
 import { resolveContactDetails } from '@/lib/contactDetails'
 import { HIDE_BLOGS } from '@/lib/hideBlogs'
 
-// Dynamically generate SEO Metadata using the CMS SEO fields
+// Homepage SEO (source of truth for /)
+const HOME_SEO = {
+  title: 'Chartered Accountancy Firm in India | Ritesh Arora & Associates',
+  description:
+    'Ritesh Arora & Associates is a multidisciplinary Chartered Accountancy firm delivering comprehensive audit, taxation, GST, company incorporation, and business advisory services.',
+  keywords: [
+    'Chartered Accountant in India',
+    'CA firm India',
+    'GST registration and filing',
+    'income tax advisory',
+    'company incorporation',
+    'audit and assurance',
+    'corporate advisory services',
+  ],
+}
+
 export async function generateMetadata(): Promise<Metadata> {
-  const cmsData = await fetchHomepageData();
-  const seo = cmsData?.seo;
-
-  if (!seo) {
-    return {
-      title: 'Ritesh Arora & Associates — Chartered Accountants',
-      description: 'Your Trusted Chartered Accountants for Tax, Compliance & Business Growth. Built with Next.js.',
-      alternates: {
-        canonical: 'https://example.com'
-      }
-    };
-  }
-
   return {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    keywords: seo.keywords,
-    alternates: {
-      canonical: seo.canonicalURL || undefined
+    title: {
+      absolute: HOME_SEO.title,
     },
-    robots: seo.metaRobots || undefined
-  };
+    description: HOME_SEO.description,
+    keywords: HOME_SEO.keywords,
+    alternates: {
+      canonical: 'https://riteshglobalca.com',
+    },
+    openGraph: {
+      title: HOME_SEO.title,
+      description: HOME_SEO.description,
+      url: 'https://riteshglobalca.com',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: HOME_SEO.title,
+      description: HOME_SEO.description,
+    },
+  }
 }
 
 export default async function Page() {

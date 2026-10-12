@@ -298,6 +298,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         gridTitle={`${resolved.module.title} Categories`}
         gridSubtitle="Select a category to view related service groups."
         testimonials={shared.testimonials}
+        googleSummary={shared.googleSummary}
         faqs={shared.faqs}
       />
     )
@@ -324,6 +325,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
         gridTitle={`${resolved.category.title} Groups`}
         gridSubtitle="Select a service group to continue."
         testimonials={shared.testimonials}
+        googleSummary={shared.googleSummary}
         faqs={shared.faqs}
       />
     )
@@ -354,6 +356,7 @@ export default async function ServiceHierarchyPage({ params }: PageProps) {
       gridTitle={`${resolved.subcategory.title} Services`}
       gridSubtitle="Select a service to view full details."
       testimonials={shared.testimonials}
+      googleSummary={shared.googleSummary}
       faqs={shared.faqs}
     />
   )

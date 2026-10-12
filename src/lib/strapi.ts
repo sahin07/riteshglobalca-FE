@@ -561,6 +561,54 @@ export async function getServicesPage(): Promise<StrapiServicesPage | null> {
   }
 }
 
+export interface StrapiGoogleReview {
+  id: number;
+  documentId: string;
+  reviewerName: string;
+  rating: number;
+  reviewText: string;
+  reviewDate?: string | null;
+  reviewerPhoto?: { url: string } | null;
+  reviewUrl?: string | null;
+  sortOrder?: number | null;
+}
+
+export interface StrapiGoogleReviewsSetting {
+  googleProfileUrl?: string | null;
+  averageRating?: number | string | null;
+  totalReviews?: number | null;
+}
+
+export async function getGoogleReviews(): Promise<StrapiGoogleReview[]> {
+  try {
+    return await fetchAllPages(
+      '/api/google-reviews?populate[reviewerPhoto]=true&sort[0]=sortOrder:asc&sort[1]=reviewDate:desc'
+    );
+  } catch (error) {
+    console.error('Error fetching google-reviews:', error);
+    return [];
+  }
+}
+
+export async function getGoogleReviewsSetting(): Promise<StrapiGoogleReviewsSetting | null> {
+  try {
+    const res = await fetch(`${STRAPI_URL}/api/google-reviews-setting`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      console.error('Failed to fetch google-reviews-setting from Strapi:', res.status, res.statusText);
+      return null;
+    }
+
+    const json = await res.json();
+    return json.data || null;
+  } catch (error) {
+    console.error('Error fetching google-reviews-setting:', error);
+    return null;
+  }
+}
+
 export interface StrapiCareerPage {
   id: number;
   documentId: string;

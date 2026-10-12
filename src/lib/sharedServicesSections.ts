@@ -1,12 +1,8 @@
-import {
-  getBlogSubscribe,
-  getServicesPage,
-  getStrapiMedia,
-  StrapiFaq,
-  StrapiTestimonial,
-} from '@/lib/strapi'
+import { getBlogSubscribe, getServicesPage, StrapiFaq } from '@/lib/strapi'
+import { getGoogleReviewsData } from '@/lib/googleReviews'
 import type { SharedTestimonialItem } from '@/components/shared/SharedTestimonials'
 import type { SharedFaqItem } from '@/components/shared/SharedFAQ'
+import type { GoogleReviewsSummary } from '@/components/shared/GoogleReviewsBadge'
 
 export type SharedNewsletterData = {
   title?: string
@@ -17,19 +13,9 @@ export type SharedNewsletterData = {
 
 export type SharedServicesSections = {
   testimonials: SharedTestimonialItem[]
+  googleSummary: GoogleReviewsSummary | null
   faqs: SharedFaqItem[]
   newsletter: SharedNewsletterData
-}
-
-function mapTestimonials(items?: StrapiTestimonial[] | null): SharedTestimonialItem[] {
-  if (!items?.length) return []
-  return items.map((t) => ({
-    quote: t.content,
-    author: t.authorName,
-    role: t.authorTitle || '',
-    rating: t.rating || 5,
-    avatarUrl: getStrapiMedia((t as any).authorImage?.url) || null,
-  }))
 }
 
 function mapFaqs(items?: StrapiFaq[] | null): SharedFaqItem[] {
@@ -41,10 +27,15 @@ function mapFaqs(items?: StrapiFaq[] | null): SharedFaqItem[] {
 }
 
 export async function getSharedServicesSections(): Promise<SharedServicesSections> {
-  const [pageData, subscribe] = await Promise.all([getServicesPage(), getBlogSubscribe()])
+  const [pageData, subscribe, googleReviews] = await Promise.all([
+    getServicesPage(),
+    getBlogSubscribe(),
+    getGoogleReviewsData(),
+  ])
 
   return {
-    testimonials: mapTestimonials(pageData?.testimonials),
+    testimonials: googleReviews.items,
+    googleSummary: googleReviews.summary,
     faqs: mapFaqs(pageData?.faqs),
     newsletter: {
       title: subscribe?.subscribeTitle || undefined,

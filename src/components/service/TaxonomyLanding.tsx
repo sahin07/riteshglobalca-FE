@@ -3,6 +3,7 @@ import { plainTextFromHtml } from '@/lib/serviceContent'
 import { ServicesCardsGrid, ServiceCardItem } from '@/components/shared/ServicesCardsGrid'
 import { SharedTestimonials, SharedTestimonialItem } from '@/components/shared/SharedTestimonials'
 import { SharedFAQ, SharedFaqItem } from '@/components/shared/SharedFAQ'
+import type { GoogleReviewsSummary } from '@/components/shared/GoogleReviewsBadge'
 
 type Crumb = { label: string; href?: string }
 
@@ -16,6 +17,7 @@ export function TaxonomyLanding({
   gridTitle,
   gridSubtitle,
   testimonials = [],
+  googleSummary,
   faqs = [],
 }: {
   eyebrow?: string
@@ -27,6 +29,7 @@ export function TaxonomyLanding({
   gridTitle?: string
   gridSubtitle?: string
   testimonials?: SharedTestimonialItem[]
+  googleSummary?: GoogleReviewsSummary | null
   faqs?: SharedFaqItem[]
 }) {
   return (
@@ -77,7 +80,7 @@ export function TaxonomyLanding({
         items={links}
       />
 
-      <SharedTestimonials items={testimonials} />
+      <SharedTestimonials badge="Google Reviews" items={testimonials} googleSummary={googleSummary} />
       <SharedFAQ items={faqs} />
 </main>
   )

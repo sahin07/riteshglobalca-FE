@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { GoogleIcon, GoogleReviewsBadge, GoogleReviewsSummary } from '@/components/shared/GoogleReviewsBadge'
 
 export type SharedTestimonialItem = {
   quote: string
@@ -8,6 +9,8 @@ export type SharedTestimonialItem = {
   role?: string
   rating?: number
   avatarUrl?: string | null
+  source?: 'google'
+  href?: string | null
 }
 
 interface SharedTestimonialsProps {
@@ -15,6 +18,7 @@ interface SharedTestimonialsProps {
   title?: string
   subtitle?: string
   items?: SharedTestimonialItem[]
+  googleSummary?: GoogleReviewsSummary | null
 }
 
 function Stars({ count = 5 }: { count?: number }) {
@@ -53,6 +57,7 @@ export function SharedTestimonials({
   title = 'Trusted by Founders and Growing Businesses',
   subtitle,
   items,
+  googleSummary,
 }: SharedTestimonialsProps) {
   const list = items || []
   const [start, setStart] = useState(0)
@@ -80,6 +85,7 @@ export function SharedTestimonials({
             {title}
           </h2>
           {subtitle && <p className="mx-auto mt-3 max-w-2xl text-[15px] text-slate-600">{subtitle}</p>}
+          <GoogleReviewsBadge summary={googleSummary} />
         </div>
 
         <div className="relative">
@@ -113,6 +119,22 @@ export function SharedTestimonials({
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
                   <Avatar name={item.author} url={item.avatarUrl} />
                 </div>
+                {item.source === 'google' &&
+                  (item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${item.author}'s review on Google`}
+                      className="absolute right-4 top-4"
+                    >
+                      <GoogleIcon />
+                    </a>
+                  ) : (
+                    <span className="absolute right-4 top-4" title="Google review">
+                      <GoogleIcon />
+                    </span>
+                  ))}
                 <p className="mb-6 flex-1 text-[14px] leading-relaxed text-slate-600">{item.quote}</p>
                 <div className="flex items-end justify-between gap-3 border-t border-slate-100 pt-4">
                   <div>

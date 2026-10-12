@@ -1,9 +1,13 @@
+import { GoogleIcon } from '@/components/shared/GoogleReviewsBadge'
+
 export interface TestimonialItem {
   quote: string
   author: string
   role?: string
   rating?: number
   authorImage?: string
+  source?: 'google'
+  href?: string | null
 }
 
 export interface TestimonialsProps {
@@ -19,13 +23,32 @@ export function Testimonials({ items }: TestimonialsProps) {
       <div className="absolute left-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
-      <div className="flex gap-6 w-max animate-marquee pause-on-hover py-4">
+      <div
+        className="flex gap-6 w-max animate-marquee pause-on-hover py-4"
+        style={{ animationDuration: `${Math.max(30, testimonialList.length * 3 * 3)}s` }}
+      >
         {[...testimonialList, ...testimonialList, ...testimonialList].map((t, idx) => {
           const initials = t.author ? t.author.split(' ').map(n => n[0]).join('') : 'C'
           const ratingStars = t.rating || 5
 
           return (
-            <div key={`${t.author}-${idx}`} className="w-[260px] sm:w-[300px] md:w-[400px] flex-shrink-0 rounded-xl border border-slate-100 bg-white p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div key={`${t.author}-${idx}`} className="relative w-[260px] sm:w-[300px] md:w-[400px] flex-shrink-0 rounded-xl border border-slate-100 bg-white p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-shadow">
+              {t.source === 'google' &&
+                (t.href ? (
+                  <a
+                    href={t.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${t.author}'s review on Google`}
+                    className="absolute right-5 top-5 sm:right-6 sm:top-6"
+                  >
+                    <GoogleIcon />
+                  </a>
+                ) : (
+                  <span className="absolute right-5 top-5 sm:right-6 sm:top-6" title="Google review">
+                    <GoogleIcon />
+                  </span>
+                ))}
               <div className="flex text-brand-orange mb-4">
                 {[...Array(ratingStars)].map((_, i) => (
                   <svg key={i} width="18" height="18" viewBox="0 0 24 24">

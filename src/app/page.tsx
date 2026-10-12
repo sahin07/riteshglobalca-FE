@@ -13,6 +13,8 @@ import { Button } from '@/components/Button'
 import { fetchHomepageData, getStrapiUrl, fetchContactPageData } from '@/data/strapi'
 import { resolveContactDetails } from '@/lib/contactDetails'
 import { HIDE_BLOGS } from '@/lib/hideBlogs'
+import { getGoogleReviewsData } from '@/lib/googleReviews'
+import { GoogleReviewsBadge } from '@/components/shared/GoogleReviewsBadge'
 
 // Homepage SEO (source of truth for /)
 const HOME_SEO = {
@@ -55,8 +57,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const cmsData = await fetchHomepageData();
-  const contactCmsData = await fetchContactPageData();
+  const [cmsData, contactCmsData, googleReviews] = await Promise.all([
+    fetchHomepageData(),
+    fetchContactPageData(),
+    getGoogleReviewsData(),
+  ]);
   const contactDetails = resolveContactDetails(contactCmsData);
 
   // 1. Map Hero component properties
@@ -127,15 +132,16 @@ export default async function Page() {
       href: ins.linkUrl
     }))
 
-  // 7. Map Client Testimonials
-  const testimonialsData = cmsData?.testimonials && cmsData.testimonials.length > 0
-    && cmsData.testimonials.map((t: any) => ({
-      quote: t.text,
-      author: t.authorName,
-      role: t.authorRole,
-      rating: t.rating,
-      authorImage: t.authorImage ? getStrapiUrl(t.authorImage.url) : undefined
-    }))
+  // 7. Map Google Reviews
+  const testimonialsData = googleReviews.items.slice(0, 12).map((r) => ({
+    quote: r.quote,
+    author: r.author,
+    role: r.role,
+    rating: r.rating,
+    authorImage: r.avatarUrl || undefined,
+    source: r.source,
+    href: r.href,
+  }))
 
   // 8. Map Contact section title
   const contactTitle = cmsData?.contactTitle;
@@ -179,18 +185,21 @@ export default async function Page() {
           <InsightsHome title={insightsTitle} subTitle={insightsSubtitle} updates={insightsData} />
         )}
 
-        {/* Testimonials Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
-          <div className="container-prose text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">
-              {cmsData?.testimonialsTitle || "Client Testimonials"}
-            </h2>
-            <p className="text-slate-600 mt-3">
-              {cmsData?.testimonialsSubtitle || "See what our partners have to say about our work."}
-            </p>
-          </div>
-          <Testimonials items={testimonialsData} />
-        </section>
+        {/* Google Reviews Section */}
+        {testimonialsData.length > 0 && (
+          <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
+            <div className="container-prose text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">
+                {cmsData?.testimonialsTitle || "Client Testimonials"}
+              </h2>
+              <p className="text-slate-600 mt-3">
+                {cmsData?.testimonialsSubtitle || "See what our partners have to say about our work."}
+              </p>
+              <GoogleReviewsBadge summary={googleReviews.summary} />
+            </div>
+            <Testimonials items={testimonialsData} />
+          </section>
+        )}
 
         {/* Contact Form Section - Deep Blue */}
         <ServiceContact 

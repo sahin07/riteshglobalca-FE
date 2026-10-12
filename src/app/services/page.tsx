@@ -64,7 +64,7 @@ export default async function ServicesPage() {
         items={cards}
       />
 
-      <SharedTestimonials items={shared.testimonials} />
+      <SharedTestimonials badge="Google Reviews" items={shared.testimonials} googleSummary={shared.googleSummary} />
       <SharedFAQ items={shared.faqs} />
     </main>
   )

@@ -24,7 +24,7 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
   const youtubeUrl = socialOrDefault(footer?.youtubeUrl, 'https://youtube.com/@gstupskilling')
   const threadsUrl = socialOrDefault(footer?.threadsUrl, 'https://www.threads.com/@ritesharoraassociates')
   const socialLinkClass =
-    'w-[30px] h-[30px] flex items-center justify-center rounded-[6px] bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-colors'
+    'w-9 h-9 flex items-center justify-center rounded-[6px] bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-colors'
   const quickLinks = filterFooterLinks(footer?.quickLinks)
   const resourcesLinks = filterFooterLinks(footer?.resourcesLinks)
   const servicesLinks = filterFooterLinks(footer?.servicesLinks)
@@ -50,19 +50,19 @@ export function Footer({ className, footer }: { className?: string, footer?: Str
             </p>
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
               <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={socialLinkClass}>
-                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>
               </a>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={socialLinkClass}>
-                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
               <a href={twitterUrl} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={socialLinkClass}>
-                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </a>
               <a href={threadsUrl} target="_blank" rel="noopener noreferrer" aria-label="Threads" className={socialLinkClass}>
-                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.223-8.184-3.574C2.35 18.24 1.5 15.092 1.5 11.25 1.5 5.04 5.76.75 12 .75c5.76 0 10.5 3.84 10.5 9.75 0 4.41-2.64 7.5-6.75 8.25-.18.03-.36-.09-.39-.27-.03-.15.06-.3.21-.36 1.95-.75 3.18-2.55 3.18-5.04 0-4.05-3.06-6.75-7.5-6.75-5.04 0-8.25 3.45-8.25 8.85 0 3.3.99 5.85 2.94 7.59 1.74 1.56 4.14 2.37 7.14 2.4.18 0 .33.15.33.33v.45c0 .18-.15.33-.33.33h-.007zM12 7.5c3.3 0 5.25 1.95 5.25 5.25 0 2.85-1.65 4.65-4.05 4.95-.15.03-.3-.09-.33-.24-.03-.15.06-.3.21-.36 1.2-.45 1.92-1.65 1.92-3.3 0-2.4-1.5-3.9-4.05-3.9-3.15 0-5.25 2.25-5.25 5.7 0 2.55.75 4.5 2.25 5.85 1.35 1.2 3.3 1.8 5.7 1.8.15 0 .3.15.3.3v.45c0 .15-.15.3-.3.3-2.85 0-5.1-.75-6.75-2.25C5.1 18.6 4.2 16.2 4.2 13.2c0-4.05 2.7-6.9 7.05-6.9.24 0 .45.15.45.45s-.21.45-.45.45c-3.6 0-5.7 2.4-5.7 5.85 0 2.7.75 4.8 2.1 6.15 1.2 1.2 3 1.8 5.25 1.8 2.7 0 4.65-.9 5.7-2.55.9-1.35 1.35-3.15 1.35-5.25 0-4.05-2.4-6.75-6.3-6.75-.24 0-.45-.15-.45-.45S11.76 7.5 12 7.5z"/></svg>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.223-8.184-3.574C2.35 18.24 1.5 15.092 1.5 11.25 1.5 5.04 5.76.75 12 .75c5.76 0 10.5 3.84 10.5 9.75 0 4.41-2.64 7.5-6.75 8.25-.18.03-.36-.09-.39-.27-.03-.15.06-.3.21-.36 1.95-.75 3.18-2.55 3.18-5.04 0-4.05-3.06-6.75-7.5-6.75-5.04 0-8.25 3.45-8.25 8.85 0 3.3.99 5.85 2.94 7.59 1.74 1.56 4.14 2.37 7.14 2.4.18 0 .33.15.33.33v.45c0 .18-.15.33-.33.33h-.007zM12 7.5c3.3 0 5.25 1.95 5.25 5.25 0 2.85-1.65 4.65-4.05 4.95-.15.03-.3-.09-.33-.24-.03-.15.06-.3.21-.36 1.2-.45 1.92-1.65 1.92-3.3 0-2.4-1.5-3.9-4.05-3.9-3.15 0-5.25 2.25-5.25 5.7 0 2.55.75 4.5 2.25 5.85 1.35 1.2 3.3 1.8 5.7 1.8.15 0 .3.15.3.3v.45c0 .15-.15.3-.3.3-2.85 0-5.1-.75-6.75-2.25C5.1 18.6 4.2 16.2 4.2 13.2c0-4.05 2.7-6.9 7.05-6.9.24 0 .45.15.45.45s-.21.45-.45.45c-3.6 0-5.7 2.4-5.7 5.85 0 2.7.75 4.8 2.1 6.15 1.2 1.2 3 1.8 5.25 1.8 2.7 0 4.65-.9 5.7-2.55.9-1.35 1.35-3.15 1.35-5.25 0-4.05-2.4-6.75-6.3-6.75-.24 0-.45-.15-.45-.45S11.76 7.5 12 7.5z"/></svg>
               </a>
               <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={socialLinkClass}>
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
             </div>
           </div>

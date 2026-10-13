@@ -1,0 +1,27 @@
+{
+  "subcategory": {
+    "documentId": "g8shc5776ybtxjlcj1g4ixlk",
+    "slug": "tax-audit-reporting",
+    "title": "Tax Audit & Reporting",
+    "intro": null,
+    "description": null
+  },
+  "services": [
+    {
+      "documentId": "hermmpkq90s2xa93vy7zmn3e",
+      "slug": "1-2-7-1-tax-audit-under-section-44ab",
+      "title": "Tax Audit under Section 44AB",
+      "heroTitle": "Tax Audit under Section 44AB",
+      "heroSubtitle": "Section 44AB of the Income Tax Act mandates tax audits for specified businesses and professionals whose turnover or gross receipts exceed the prescribed limits. The objective of the audit is to verify the accuracy of books of accounts, ensure proper computation of taxable income, and confirm compliance with various provisions of the Income Tax Act. Timely completion of the audit helps businesses avoid penalties, strengthens financial transparency, and reduces the likelihood of future tax disputes.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide end-to-end Tax Audit services under Section 44AB for businesses across various industries. Our professionals conduct detailed examinations of financial records, evaluate statutory compliance, and prepare audit reports in accordance with applicable tax laws.</p>"
+    },
+    {
+      "documentId": "dsoedjm08zublkcvdzv1hzgq",
+      "slug": "1-2-7-2-reporting-under-form-3ca-3cb-3cd",
+      "title": "Reporting under Form 3CA/3CB/3CD",
+      "heroTitle": "Reporting under Form 3CA/3CB/3CD",
+      "heroSubtitle": "Tax audit reporting under Forms 3CA, 3CB, and 3CD is an integral part of the tax audit process prescribed under the Income Tax Act. These forms require detailed disclosures relating to financial transactions, statutory compliances, deductions, depreciation, related party transactions, and other tax-sensitive information. Accurate reporting is essential to ensure compliance, reduce scrutiny risks, and avoid penalties arising from incomplete or incorrect disclosures.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we prepare comprehensive tax audit reports with meticulous attention to detail, ensuring consistency between financial statements, audit reports, and income tax returns.</p>"
+    }
+  ]
+}

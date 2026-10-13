@@ -94,7 +94,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                   className="shrink-0 rounded-full bg-slate-100 p-2 text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900"
                   aria-label="Close Profile"
                 >
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -131,7 +131,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-brand-dark"
                           >
-                            <svg className="h-5 w-5 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
                             LinkedIn
@@ -144,7 +144,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-brand-dark"
                           >
-                            <svg className="h-5 w-5 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                             </svg>
                             Twitter
@@ -159,7 +159,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                     {selectedMember.biography && (
                       <div className="mb-6">
                         <h4 className="mb-3 flex items-center gap-2 border-b border-slate-100 pb-1.5 text-base font-bold text-slate-900 sm:text-lg">
-                          <svg className="h-5 w-5 shrink-0 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-6 w-6 shrink-0 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                           Partner Biography
@@ -181,7 +181,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                       return (
                         <div className="mb-6">
                           <h4 className="mb-3 flex items-center gap-2 border-b border-slate-100 pb-1.5 text-base font-bold text-slate-900 sm:text-lg">
-                            <svg className="h-5 w-5 shrink-0 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="h-6 w-6 shrink-0 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                             Areas of Expertise
@@ -190,7 +190,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                             {modalExpertise.map((exp) => (
                               <li key={exp} className="flex items-start gap-2.5 text-[14px] text-slate-700">
                                 <svg
-                                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500"
+                                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500"
                                   fill="none"
                                   viewBox="0 0 24 24"
                                   stroke="currentColor"
@@ -251,7 +251,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 via-transparent to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
                   <span className="flex items-center gap-1.5 text-sm font-semibold text-white">
                     View Full Profile
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>

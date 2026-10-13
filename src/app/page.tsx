@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
-import { Section } from '@/components/Section'
-import { ServiceCardsSlider } from '@/components/ServiceCardsSlider'
+import { ServicesCardsGrid } from '@/components/shared/ServicesCardsGrid'
 import { Stats } from '@/components/Stats'
 import { Testimonials } from '@/components/Testimonials'
 import { PhotoGallery } from '@/components/PhotoGallery'
@@ -15,6 +14,11 @@ import { resolveContactDetails } from '@/lib/contactDetails'
 import { HIDE_BLOGS } from '@/lib/hideBlogs'
 import { getGoogleReviewsData } from '@/lib/googleReviews'
 import { GoogleReviewsBadge } from '@/components/shared/GoogleReviewsBadge'
+import { getMainModules, getServiceCategories } from '@/lib/strapi'
+import { categoriesForModule, categoryHref } from '@/lib/serviceHierarchy'
+import { plainTextFromHtml } from '@/lib/serviceContent'
+
+const HOME_SERVICES_MODULE_SLUG = 'india-practice'
 
 // Homepage SEO (source of truth for /)
 const HOME_SEO = {
@@ -57,10 +61,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const [cmsData, contactCmsData, googleReviews] = await Promise.all([
+  const [cmsData, contactCmsData, googleReviews, modules, categories] = await Promise.all([
     fetchHomepageData(),
     fetchContactPageData(),
     getGoogleReviewsData(),
+    getMainModules(),
+    getServiceCategories(),
   ]);
   const contactDetails = resolveContactDetails(contactCmsData);
 
@@ -76,17 +82,21 @@ export default async function Page() {
     backgroundImage: '/images/home-hero.jpg',
   };
 
-  // 2. Map Services section and items
+  // 2. Map Services section to the India Practice categories
   const servicesTitle = cmsData?.servicesTitle;
   const servicesSubtitle = cmsData?.servicesSubtitle;
 
-  const servicesData = cmsData?.services && cmsData.services.length > 0
-    && cmsData.services.map((s: any) => ({
-      title: s.title,
-      description: s.description,
-      href: s.linkUrl,
-      image: s.image && getStrapiUrl(s.image.url)
+  const servicesModule = modules.find((m) => m.slug === HOME_SERVICES_MODULE_SLUG);
+  const servicesData = servicesModule
+    ? categoriesForModule(categories, servicesModule.id).map((cat) => ({
+      title: cat.title,
+      href: categoryHref(servicesModule.slug, cat.slug),
+      description:
+        plainTextFromHtml(cat.intro) ||
+        plainTextFromHtml(cat.description) ||
+        `Explore ${cat.title} services.`,
     }))
+    : [];
 
   // 3. Map Stats counter data
   const statsData = cmsData?.stats && cmsData.stats.length > 0
@@ -152,12 +162,11 @@ export default async function Page() {
         <Hero {...heroProps} />
 
         {/* Core Services Section */}
-        <Section
-          title={servicesTitle}
-          subtitle={servicesSubtitle}
-          className="bg-white py-12 sm:py-16 md:py-20"
+        <ServicesCardsGrid
+          title={servicesTitle || 'Our Core Services'}
+          subtitle={servicesSubtitle || undefined}
+          items={servicesData}
         >
-          <ServiceCardsSlider services={servicesData || []} />
           <div className="mt-12 flex justify-center">
             <Link href="/services">
               <Button variant="primary" className="bg-brand-orange hover:bg-orange-600 text-white font-bold px-10 h-12 shadow-md">
@@ -165,7 +174,7 @@ export default async function Page() {
               </Button>
             </Link>
           </div>
-        </Section>
+        </ServicesCardsGrid>
 
         {/* Stats Strip - Full Width */}
         <Stats stats={statsData} />
@@ -189,6 +198,13 @@ export default async function Page() {
         {testimonialsData.length > 0 && (
           <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
             <div className="container-prose text-center mb-8 sm:mb-12">
+              <img
+                src="/images/google-reviews-logo.png"
+                alt="Google Reviews"
+                width={1004}
+                height={413}
+                className="mx-auto mb-4 h-14 w-auto md:h-16"
+              />
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">
                 {cmsData?.testimonialsTitle || "Client Testimonials"}
               </h2>

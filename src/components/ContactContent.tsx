@@ -281,7 +281,7 @@ export function ContactContent({
                             >
                                 {file ? (
                                     <div className="flex flex-col items-center justify-center">
-                                        <svg className="w-8 h-8 text-green-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg className="w-10 h-10 text-green-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         <div className="text-sm font-semibold text-slate-700 max-w-xs truncate">

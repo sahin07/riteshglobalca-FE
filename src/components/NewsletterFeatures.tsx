@@ -45,7 +45,7 @@ export function NewsletterFeatures({ featuresTitle, featuresDescription, feature
 
                         return (
                             <div key={idx} className="bg-white p-8 rounded-[12px] shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                                <div className="w-8 h-8 text-[#0b293d] mb-6">
+                                <div className="w-10 h-10 text-[#0b293d] mb-6">
                                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={path} />
                                     </svg>

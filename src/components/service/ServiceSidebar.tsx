@@ -26,7 +26,7 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
                 className="flex items-center justify-between px-4 py-3 bg-white rounded-xl border border-slate-100 hover:border-[#F19020] hover:shadow-sm transition-all group"
               >
                 <span className="text-[14px] text-slate-700 group-hover:text-[#0b293d] font-medium">{svc.title}</span>
-                <svg className="w-4 h-4 text-slate-400 group-hover:text-[#F19020] flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-slate-400 group-hover:text-[#F19020] flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </Link>
@@ -64,20 +64,20 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
 
         <ul className="space-y-3 mb-6">
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
-            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <span className="w-6 h-6 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
-            Average response rate 1 hour
+            Prompt Professional Response
           </li>
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
-            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <span className="w-6 h-6 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
             Proven track of results
           </li>
           <li className="flex items-center gap-2.5 text-[13px] text-white/90">
-            <span className="w-5 h-5 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
-              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <span className="w-6 h-6 rounded-full bg-[#F19020] flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
             </span>
             Dedicated and honest team
           </li>
@@ -88,7 +88,7 @@ export function ServiceSidebar({ relatedServices }: ServiceSidebarProps) {
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#F19020] text-white font-bold text-[14px] rounded-full hover:bg-[#d87f1c] transition-colors"
         >
           Get Appointment
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
         </Link>

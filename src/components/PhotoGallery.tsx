@@ -148,7 +148,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
                 className="absolute left-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-lg transition hover:bg-slate-50 sm:h-11 sm:w-11"
                 aria-label="Previous"
               >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -158,7 +158,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
                 className="absolute right-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-lg transition hover:bg-slate-50 sm:h-11 sm:w-11"
                 aria-label="Next"
               >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -178,7 +178,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
             className="absolute right-4 top-4 z-50 cursor-pointer rounded-full bg-white/10 p-2.5 text-white transition-all hover:rotate-90 hover:bg-white/20"
             aria-label="Close Lightbox"
           >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -189,7 +189,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
             className="absolute left-4 top-1/2 z-50 -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/20 active:scale-95"
             aria-label="Previous Image"
           >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+            <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
@@ -200,7 +200,7 @@ export function PhotoGallery({ images, title, subtitle }: PhotoGalleryProps) {
             className="absolute right-4 top-1/2 z-50 -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/20 active:scale-95"
             aria-label="Next Image"
           >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+            <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>

@@ -17,7 +17,10 @@ function completeSentences(text: string): string {
 
 export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps) {
   const bgUrl = service.image?.url && getStrapiMedia(service.image.url)
-  const heroCopy = completeSentences(service.heroSubtitle || '')
+  const heroParagraphs = String(service.heroSubtitle || '')
+    .split(/\n\s*\n/)
+    .map(completeSentences)
+    .filter(Boolean)
 
   return (
     <section className="relative overflow-hidden min-h-[320px] md:min-h-[380px] flex items-center">
@@ -57,10 +60,14 @@ export function ServiceHeroSection({ service, crumbs }: ServiceHeroSectionProps)
         <h1 className="text-[32px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] tracking-tight mb-4 font-serif">
           {service.heroTitle || service.title}
         </h1>
-        {heroCopy && (
-          <p className="text-[15px] md:text-[17px] text-white/80 leading-relaxed max-w-2xl">
-            {heroCopy}
-          </p>
+        {heroParagraphs.length > 0 && (
+          <div className="max-w-3xl space-y-3">
+            {heroParagraphs.map((paragraph, i) => (
+              <p key={i} className="text-[15px] md:text-[17px] text-white/80 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         )}
       </div>
     </section>

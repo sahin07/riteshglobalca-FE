@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { FloatingChat } from '@/components/FloatingChat'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import { SharedNewsletter } from '@/components/shared/SharedNewsletter'
 import { getServices, getMainModules, getServiceCategories, getServiceSubcategories, getBlogPosts, getHeader, getFooter, getBlogSubscribe } from '@/lib/strapi'
 
@@ -67,7 +68,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   ])
 
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={montserrat.variable} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('reveal-pending');setTimeout(function(){r.classList.remove('reveal-pending')},4000)}",
+          }}
+        />
+      </head>
       <body className="font-sans bg-slate-950 text-white antialiased overflow-x-hidden">
         <div className="header-offset">
           <Navbar 
@@ -92,6 +101,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Footer footer={footer} />
         </div>
         <FloatingChat />
+        <ScrollReveal />
       </body>
     </html>
   )

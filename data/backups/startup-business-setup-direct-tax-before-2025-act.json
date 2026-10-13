@@ -1,0 +1,35 @@
+{
+  "subcategory": {
+    "documentId": "i70vngr5kff0546rj9sm6gnk",
+    "slug": "startup-business-setup-direct-tax",
+    "title": "Startup & Business Setup (Direct Tax)",
+    "intro": null,
+    "description": null
+  },
+  "services": [
+    {
+      "documentId": "hr412vl0s39scjjurg8i65x1",
+      "slug": "1-2-5-2-presumptive-taxation-sec-44ad-44ada-44ae",
+      "title": "Presumptive Taxation (Sec 44AD/44ADA/44AE)",
+      "heroTitle": "Presumptive Taxation (Sec 44AD/44ADA/44AE)",
+      "heroSubtitle": "The Presumptive Taxation Scheme simplifies tax compliance for eligible small businesses, professionals, and transport operators by allowing income to be declared at prescribed rates without maintaining detailed books of accounts. Choosing the right taxation scheme can reduce compliance costs while ensuring adherence to the Income Tax Act.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we help taxpayers evaluate their eligibility under Sections 44AD, 44ADA, and 44AE, compare available tax options, and ensure accurate compliance under the presumptive taxation framework.</p>"
+    },
+    {
+      "documentId": "cmkirb9fkdkzgq1wo0qz6373",
+      "slug": "1-2-5-3-startup-india-recognition-tax-exemptions",
+      "title": "Startup India Recognition & Tax Exemptions",
+      "heroTitle": "Startup India Recognition & Tax Exemptions",
+      "heroSubtitle": "The Startup India initiative provides eligible startups with various tax incentives, funding opportunities, and regulatory benefits to encourage innovation and entrepreneurship. Obtaining DPIIT recognition is the first step towards accessing these benefits, including income tax exemptions available under the Income Tax Act. Proper guidance ensures that startups meet the eligibility criteria and continue to remain compliant with applicable regulations.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we assist startups throughout the recognition process and provide advisory on tax exemptions, compliance requirements, and ongoing eligibility under the Startup India framework.</p>"
+    },
+    {
+      "documentId": "mtz53338g0newidh6gsjgggy",
+      "slug": "1-2-5-4-angel-tax-compliance",
+      "title": "Angel Tax Compliance",
+      "heroTitle": "Angel Tax Compliance",
+      "heroSubtitle": "Raising capital is an important milestone for startups, but investments received at a premium may attract tax implications under the provisions commonly referred to as Angel Tax. Proper valuation, documentation, and compliance are essential to ensure that fundraising activities are structured appropriately and do not result in unnecessary tax disputes.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide comprehensive Angel Tax advisory services to help startups and investors navigate valuation requirements, maintain proper documentation, and comply with applicable income tax provisions throughout the investment process.</p>"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+﻿{
+    "subcategory":  [
+                        {
+                            "id":  2240,
+                            "documentId":  "oyccsr9wkvez4j7vibo0dhow",
+                            "title":  "Income Tax Compliance",
+                            "slug":  "income-tax-compliance",
+                            "createdAt":  "2026-07-06T06:25:27.428Z",
+                            "updatedAt":  "2026-08-25T19:07:24.020Z",
+                            "publishedAt":  "2026-08-25T19:07:24.032Z",
+                            "menuLabel":  null,
+                            "position":  null,
+                            "intro":  null,
+                            "description":  null
+                        }
+                    ],
+    "services":  [
+                     {
+                         "id":  3907,
+                         "documentId":  "tcp2vl17p22801kvx59sib9c",
+                         "title":  "Income Tax Return Filing",
+                         "slug":  "1-2-1-1-income-tax-return-filing",
+                         "heroTitle":  "Income Tax Return Filing",
+                         "heroSubtitle":  "Filing an Income Tax Return (ITR) is one of the most important compliance requirements under the Income Tax Act, 1961. It enables individuals, businesses, and other entities to report their income, claim eligible deductions, pay applicable taxes, and maintain compliance with tax regulations. A correctly filed return not only helps avoid penalties and legal complications but also serves as an important financial document for loan applications, visa processing, government tenders, and other financial transactions.",
+                         "introDescription":  "\u003cp\u003eAt Ritesh Arora \u0026amp; Associates, we provide comprehensive Income Tax Return Filing services for individuals, businesses, and various types of entities. Our professionals ensure accurate tax computation, timely filing, proper disclosure of income, and compliance with the latest tax provisions. Whether your income includes salary, business profits, capital gains, rental income, or other sources, we simplify the entire filing process while helping you maximise eligible tax benefits and minimise compliance risks.\u003c/p\u003e"
+                     },
+                     {
+                         "id":  3808,
+                         "documentId":  "iox1nmsj2wqssl80kr3c1aqq",
+                         "title":  "TDS/TCS Compliance",
+                         "slug":  "1-2-1-2-tds-tcs-compliance",
+                         "heroTitle":  "TDS/TCS Compliance",
+                         "heroSubtitle":  "Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) are important compliance requirements under the Income Tax Act, applicable to businesses, employers, professionals, and certain individuals. These provisions ensure timely collection of taxes by requiring tax to be deducted or collected at the time of specified transactions. Failure to comply with TDS/TCS provisions can result in interest, penalties, disallowance of expenses, and notices from the Income Tax Department.",
+                         "introDescription":  "\u003cp\u003eAt Ritesh Arora \u0026amp; Associates, we provide comprehensive TDS and TCS compliance services to help businesses meet their statutory obligations with accuracy and confidence. From tax deduction and return filing to reconciliation and compliance advisory, our professionals ensure every aspect of TDS/TCS is handled efficiently and within the prescribed timelines.\u003c/p\u003e"
+                     },
+                     {
+                         "id":  3731,
+                         "documentId":  "tlcddxvywjf1b13sgysnp2kn",
+                         "title":  "Advance Tax Computation",
+                         "slug":  "1-2-1-3-advance-tax-computation",
+                         "heroTitle":  "Advance Tax Computation",
+                         "heroSubtitle":  "Advance Tax is the income tax payable in installments during the financial year instead of a single payment at the end of the year. It is applicable to taxpayers whose estimated tax liability exceeds the prescribed threshold under the Income Tax Act, 1961. Accurate computation of advance tax is essential to avoid interest under Sections 234B and 234C, ensure timely compliance, and effectively manage cash flow.",
+                         "introDescription":  "\u003cp\u003eAt Ritesh Arora \u0026amp; Associates, we provide comprehensive Advance Tax Computation services for individuals, professionals, businesses, LLPs, companies, and other taxable entities. Our professionals carefully estimate your annual tax liability, reconcile available tax credits, and prepare a structured payment plan to help you remain fully compliant while avoiding unnecessary interest and penalties.\u003c/p\u003e"
+                     },
+                     {
+                         "id":  3833,
+                         "documentId":  "rx2pz6zf2t94d9sn55ezv7q9",
+                         "title":  "Income Computation \u0026 Disclosure Standards (ICDS)",
+                         "slug":  "1-2-1-4-income-computation-disclosure-standards-icds",
+                         "heroTitle":  "Income Computation \u0026 Disclosure Standards (ICDS)",
+                         "heroSubtitle":  "Income Computation and Disclosure Standards (ICDS) are a set of tax accounting standards notified by the Central Board of Direct Taxes (CBDT) under the Income Tax Act, 1961. These standards prescribe the manner in which certain categories of income and expenses should be recognised for the purpose of computing taxable income. ICDS generally applies to taxpayers following the mercantile system of accounting and is intended to bring uniformity and consistency in tax reporting.",
+                         "introDescription":  "\u003cp\u003eImproper application of ICDS may result in tax adjustments, scrutiny assessments, additional tax liabilities, and prolonged litigation. At Ritesh Arora \u0026amp; Associates, we provide comprehensive ICDS advisory services to help businesses understand the applicability of these standards, align their accounting practices with tax requirements, and ensure accurate computation of taxable income.\u003c/p\u003e"
+                     }
+                 ],
+    "homeServices":  [
+                         {
+                             "id":  85,
+                             "title":  "Company Incorporation",
+                             "description":  "End-to-end assistance in registering your company, LLP, or partnership firm.",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-6-3-1-company-incorporation"
+                         },
+                         {
+                             "id":  86,
+                             "title":  "GST Registration \u0026 Filing",
+                             "description":  "Expert guidance on GST registration, compliance, and return filing.",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/gst-registration-and-filing"
+                         },
+                         {
+                             "id":  87,
+                             "title":  "Income Tax Advisory",
+                             "description":  "Strategic tax planning and filing for individuals and corporations.",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services"
+                         },
+                         {
+                             "id":  88,
+                             "title":  "LLP Incorporation",
+                             "description":  "A Limited Liability Partnership (LLP) combines the operational flexibility of a partnership with the benefits of limited liability. Registering an LLP requir...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-6-3-2-llp-incorporation"
+                         },
+                         {
+                             "id":  89,
+                             "title":  "Accounting \u0026 Bookkeeping Setup",
+                             "description":  "A well-organized accounting system enables startups to manage finances effectively, monitor business performance, and maintain statutory compliance from the...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-8-2-2-accounting-bookkeeping-setup"
+                         },
+                         {
+                             "id":  90,
+                             "title":  "GST Registration Services",
+                             "description":  "GST registration is a mandatory compliance requirement for businesses and professionals engaged in the supply of goods or services in India once they meet th...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/gst-registration-services"
+                         },
+                         {
+                             "id":  91,
+                             "title":  "Income Tax Return Filing",
+                             "description":  "Filing an Income Tax Return (ITR) is one of the most important compliance requirements under the Income Tax Act, 1961. It enables individuals, businesses, an...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-2-1-1-income-tax-return-filing"
+                         },
+                         {
+                             "id":  92,
+                             "title":  "TDS/TCS Compliance",
+                             "description":  "Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) are important compliance requirements under the Income Tax Act, applicable to businesses, empl...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-2-1-2-tds-tcs-compliance"
+                         },
+                         {
+                             "id":  93,
+                             "title":  "Forensic Audit",
+                             "description":  "Fraud, financial irregularities, and misappropriation of funds can significantly impact an organization\u0027s financial health and reputation. A Forensic Audit i...",
+                             "linkText":  "Learn More",
+                             "linkUrl":  "/services/1-3-4-3-forensic-audit"
+                         }
+                     ]
+}

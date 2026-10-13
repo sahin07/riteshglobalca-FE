@@ -48,7 +48,7 @@ export function ServicePricing({ servicesTitle, services, addonsTitle, addons }:
                         const path = serviceIconPaths[s.icon?.toLowerCase()] || defaultServicePath
                         return (
                             <div key={s.name} className="bg-white p-5 rounded-[12px] border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-                                <div className="w-6 h-6 text-brand-dark mb-4 shrink-0">
+                                <div className="w-8 h-8 text-brand-dark mb-4 shrink-0">
                                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={path} />
                                     </svg>
@@ -75,7 +75,7 @@ export function ServicePricing({ servicesTitle, services, addonsTitle, addons }:
                         const path = a.icon ? (addonIconPaths[a.icon?.toLowerCase()] || defaultAddonPath) : defaultAddonPath
                         return (
                             <div key={a.name} className="bg-white p-6 rounded-[12px] border border-slate-200 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                                <div className="w-6 h-6 text-brand-dark mb-4 shrink-0">
+                                <div className="w-8 h-8 text-brand-dark mb-4 shrink-0">
                                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={path} />
                                     </svg>

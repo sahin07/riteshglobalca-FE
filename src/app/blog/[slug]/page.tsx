@@ -166,7 +166,7 @@ export default function BlogPostDetailPage({ params }: { params: any }) {
                     blockquote: ({ children }) => (
                       <div className="flex gap-4 p-5 my-6 rounded-[8px] border-l-[4px] bg-slate-50 text-[15px] leading-relaxed border-[#003B49] text-slate-700">
                         <div className="flex-shrink-0 mt-0.5">
-                          <svg className="w-5 h-5 text-[#003B49]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <svg className="w-6 h-6 text-[#003B49]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
@@ -199,23 +199,23 @@ export default function BlogPostDetailPage({ params }: { params: any }) {
               <div className="flex items-center gap-4 mt-6 pt-4 border-t border-slate-100">
                 <span className="text-[14px] font-semibold text-slate-500">Share:</span>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-[#25D366]/10 text-[#25D366] hover:scale-105 transition-transform" aria-label="Share on WhatsApp">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-[#25D366]/10 text-[#25D366] hover:scale-105 transition-transform" aria-label="Share on WhatsApp">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.63-1.023-5.101-2.887-6.967a9.8 9.8 0 00-6.977-2.87c-5.439 0-9.865 4.42-9.87 9.853-.002 1.758.463 3.473 1.346 5.006l-.994 3.633 3.693-.969zm11.722-6.843c-.303-.152-1.794-.885-2.072-.986-.279-.101-.482-.152-.684.152-.202.303-.781.986-.957 1.189-.176.202-.353.228-.656.076-1.24-.622-2.128-1.087-2.986-2.55-.23-.396.23-.367.659-1.22.076-.152.038-.285-.019-.387-.057-.102-.482-1.16-.66-1.597-.173-.418-.348-.362-.482-.369h-.411c-.152 0-.399.057-.608.285-.21.228-.798.78-.798 1.902 0 1.121.817 2.204.931 2.356.114.152 1.61 2.458 3.901 3.447.545.235 1.023.393 1.374.502.548.174 1.047.15 1.44.09.438-.067 1.794-.734 2.047-1.443.254-.71.254-1.317.177-1.443-.077-.126-.279-.228-.582-.38z" />
                     </svg>
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-[#0077B5]/10 text-[#0077B5] hover:scale-105 transition-transform" aria-label="Share on LinkedIn">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-[#0077B5]/10 text-[#0077B5] hover:scale-105 transition-transform" aria-label="Share on LinkedIn">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                     </svg>
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1DA1F2]/10 text-[#1DA1F2] hover:scale-105 transition-transform" aria-label="Share on Twitter">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-[#1DA1F2]/10 text-[#1DA1F2] hover:scale-105 transition-transform" aria-label="Share on Twitter">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                       <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                     </svg>
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1877F2]/10 text-[#1877F2] hover:scale-105 transition-transform" aria-label="Share on Facebook">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-[#1877F2]/10 text-[#1877F2] hover:scale-105 transition-transform" aria-label="Share on Facebook">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                       <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z" />
                     </svg>
                   </a>

@@ -39,7 +39,7 @@ function Accordion({ question, answer, isOpen: initialOpen }: { question: string
             >
                 <span className="font-semibold text-slate-800">{question}</span>
                 <svg
-                    className={clsx("w-5 h-5 text-slate-400 transition-transform duration-200", isOpen ? "transform rotate-180" : "")}
+                    className={clsx("w-6 h-6 text-slate-400 transition-transform duration-200", isOpen ? "transform rotate-180" : "")}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

@@ -51,7 +51,7 @@ export function Testimonials({ items }: TestimonialsProps) {
                 ))}
               <div className="flex text-brand-orange mb-4">
                 {[...Array(ratingStars)].map((_, i) => (
-                  <svg key={i} width="18" height="18" viewBox="0 0 24 24">
+                  <svg key={i} width="22" height="22" viewBox="0 0 24 24">
                     <path d="M12 17.27l5.18 3.04-1.64-5.81L20 10.9l-6-.52L12 5l-2 5.38-6 .52 4.46 3.6-1.64 5.81z" fill="currentColor" />
                   </svg>
                 ))}

@@ -1,0 +1,35 @@
+{
+  "subcategory": {
+    "documentId": "tmq8prhbmg5si9vt75u9cmoy",
+    "slug": "family-wealth-tax-planning",
+    "title": "Family & Wealth Tax Planning",
+    "intro": null,
+    "description": null
+  },
+  "services": [
+    {
+      "documentId": "izwhx3gt37nljqt9xdl6ajel",
+      "slug": "1-2-6-1-huf-creation-management",
+      "title": "HUF Creation & Management",
+      "heroTitle": "HUF Creation & Management",
+      "heroSubtitle": "A Hindu Undivided Family (HUF) is recognized as a separate taxable entity under the Income Tax Act and can be an effective tool for legitimate tax planning and wealth management. When properly established and managed, an HUF enables families to avail separate tax benefits, claim eligible deductions, and structure family assets more efficiently. However, proper documentation and ongoing compliance are essential to ensure that the HUF remains legally valid and tax compliant.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide end-to-end advisory for the creation, management, and taxation of HUFs, helping families optimize tax benefits while preserving wealth across generations.</p>"
+    },
+    {
+      "documentId": "c5q52f48irbfeyl4uk1sry0p",
+      "slug": "1-2-6-2-gift-tax-clubbing-provisions",
+      "title": "Gift Tax & Clubbing Provisions",
+      "heroTitle": "Gift Tax & Clubbing Provisions",
+      "heroSubtitle": "Transferring money, property, or investments among family members can have significant tax implications under the Income Tax Act. While certain gifts are exempt from tax, others may attract taxation or trigger the clubbing provisions, resulting in income being taxed in the hands of the transferor. Careful planning is essential to ensure that family asset transfers remain tax-efficient and fully compliant with applicable laws.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide strategic advisory on Gift Tax and Clubbing Provisions to help individuals and families structure asset transfers effectively while minimizing tax exposure and avoiding future disputes.</p>"
+    },
+    {
+      "documentId": "c9uwyts3rqpocdvhbbif3oxz",
+      "slug": "1-2-6-3-succession-estate-planning",
+      "title": "Succession & Estate Planning",
+      "heroTitle": "Succession & Estate Planning",
+      "heroSubtitle": "Succession and estate planning play a vital role in protecting family wealth, ensuring business continuity, and facilitating the smooth transfer of assets across generations. A well-structured estate plan minimizes uncertainty, reduces the likelihood of family disputes, and provides clarity regarding the ownership and management of assets after succession.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we help individuals, business owners, and families develop customized succession strategies that align with their financial objectives while considering the tax implications of asset transfers and business succession.</p>"
+    }
+  ]
+}

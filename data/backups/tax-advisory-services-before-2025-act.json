@@ -1,0 +1,35 @@
+{
+  "subcategory": {
+    "documentId": "zb3w3tdqxrtweggv0a83eccf",
+    "slug": "tax-advisory-services",
+    "title": "Tax Advisory Services",
+    "intro": null,
+    "description": null
+  },
+  "services": [
+    {
+      "documentId": "f3ere4ui38u9qtjovqy6clj4",
+      "slug": "1-2-2-1-personal-tax-planning",
+      "title": "Personal Tax Planning",
+      "heroTitle": "Personal Tax Planning",
+      "heroSubtitle": "Effective tax planning is an essential part of sound financial management. It helps individuals reduce their tax liability through legitimate tax-saving opportunities while ensuring compliance with the Income Tax Act, 1961. Whether you are a salaried employee, self-employed professional, freelancer, investor, or high-net-worth individual (HNI), a well-planned tax strategy can help you optimise your finances, preserve wealth, and achieve your long-term financial goals.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide comprehensive Personal Tax Planning services tailored to your income structure, investments, financial objectives, and tax profile. Our professionals analyse your financial position and recommend tax-efficient strategies that maximise available deductions, exemptions, and benefits while ensuring complete compliance with the latest tax regulations.</p>\n<p>Our proactive approach helps you make informed financial decisions, minimise tax exposure, and avoid unnecessary tax disputes.</p>"
+    },
+    {
+      "documentId": "btqmft1xku1oqmewvgdcwrpu",
+      "slug": "1-2-2-2-corporate-tax-advisory",
+      "title": "Corporate Tax Advisory",
+      "heroTitle": "Corporate Tax Advisory",
+      "heroSubtitle": "Corporate taxation requires businesses to balance regulatory compliance with tax efficiency. A well-planned tax strategy helps companies minimise tax exposure, optimise available incentives, and make informed business decisions while complying with the Income Tax Act and other applicable regulations.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide strategic Corporate Tax Advisory services for Private Limited Companies, Public Limited Companies, LLPs, and Partnership Firms. Our professionals work closely with businesses to develop tax-efficient structures, evaluate the tax implications of commercial decisions, and ensure ongoing compliance.</p>"
+    },
+    {
+      "documentId": "eacg8qx82q6l8t3o1whagp76",
+      "slug": "1-2-2-5-transaction-restructuring-advisory",
+      "title": "Transaction & Restructuring Advisory",
+      "heroTitle": "Transaction & Restructuring Advisory",
+      "heroSubtitle": "Business transactions such as mergers, acquisitions, business transfers, and corporate restructuring involve significant tax implications. Proper planning before executing these transactions helps minimise tax liabilities, manage risks, and facilitate smoother business transitions.",
+      "introDescription": "<p>We provide strategic Transaction &amp; Restructuring Advisory services that enable businesses to evaluate tax implications and structure transactions in a commercially and tax-efficient manner.</p>"
+    }
+  ]
+}

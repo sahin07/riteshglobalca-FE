@@ -1,0 +1,35 @@
+{
+  "subcategory": {
+    "documentId": "n4c9145motj7j7lbkoedfv3r",
+    "slug": "specialized-services",
+    "title": "Specialized Services",
+    "intro": null,
+    "description": null
+  },
+  "services": [
+    {
+      "documentId": "p41i06mjv2zhzuku5ce8n2sm",
+      "slug": "1-2-4-4-tds-on-non-resident-payments",
+      "title": "TDS on Non-resident Payments",
+      "heroTitle": "TDS on Non-resident Payments",
+      "heroSubtitle": "Payments made to non-residents are subject to specialised withholding tax provisions under the Income Tax Act, 1961, and applicable Double Taxation Avoidance Agreements (DTAAs). Determining the correct tax deduction requires careful analysis of the nature of the payment, residential status of the recipient, treaty benefits, and regulatory requirements. Incorrect withholding may result in interest, penalties, and disallowance of expenses.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide comprehensive advisory services to help businesses comply with withholding tax provisions for cross-border payments while minimising regulatory risks.</p>"
+    },
+    {
+      "documentId": "c3lgxzvshb7bnp22nkuyelln",
+      "slug": "1-2-4-2-international-taxation",
+      "title": "International Taxation",
+      "heroTitle": "International Taxation",
+      "heroSubtitle": "Global business operations and cross-border investments involve complex tax regulations that require careful planning and compliance. Businesses engaged in international transactions must consider domestic tax laws, Double Taxation Avoidance Agreements (DTAAs), transfer pricing regulations, and foreign tax reporting requirements to avoid unnecessary tax liabilities and regulatory challenges.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we provide comprehensive International Taxation services to help businesses and individuals manage cross-border tax obligations efficiently while remaining compliant with applicable laws.</p>"
+    },
+    {
+      "documentId": "zluxb276vh5httfew9r3wz8u",
+      "slug": "1-2-4-1-tax-due-diligence",
+      "title": "Tax Due Diligence",
+      "heroTitle": "Tax Due Diligence",
+      "heroSubtitle": "Tax Due Diligence is an essential part of mergers, acquisitions, investments, business restructuring, and strategic transactions. It helps identify potential tax risks, compliance gaps, pending litigations, and hidden liabilities before a transaction is completed. Conducting a thorough tax review enables buyers, investors, and businesses to make informed decisions while reducing future tax exposure.",
+      "introDescription": "<p>At Ritesh Arora &amp; Associates, we perform comprehensive tax due diligence by reviewing historical tax records, compliance status, and ongoing tax matters to provide clients with a clear understanding of potential risks and opportunities.</p>"
+    }
+  ]
+}

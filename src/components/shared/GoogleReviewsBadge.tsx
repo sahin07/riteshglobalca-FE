@@ -4,7 +4,7 @@ export type GoogleReviewsSummary = {
   totalReviews?: number | null
 }
 
-export function GoogleIcon({ className = 'h-5 w-5' }: { className?: string }) {
+export function GoogleIcon({ className = 'h-6 w-6' }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 48" aria-hidden="true">
       <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z" />
@@ -22,7 +22,7 @@ export function GoogleReviewsBadge({ summary }: { summary?: GoogleReviewsSummary
 
   const content = (
     <>
-      <GoogleIcon className="h-6 w-6" />
+      <GoogleIcon className="h-7 w-7" />
       {averageRating ? (
         <span className="text-[18px] font-bold text-[#0b293d]">{averageRating.toFixed(1)}</span>
       ) : null}
@@ -31,7 +31,7 @@ export function GoogleReviewsBadge({ summary }: { summary?: GoogleReviewsSummary
           {Array.from({ length: 5 }).map((_, i) => (
             <svg
               key={i}
-              className={`h-4 w-4 ${i < Math.round(averageRating) ? 'fill-current' : 'fill-none'}`}
+              className={`h-5 w-5 ${i < Math.round(averageRating) ? 'fill-current' : 'fill-none'}`}
               viewBox="0 0 24 24"
               stroke="currentColor"
             >

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hides section content until ScrollReveal takes over, so it doesn't flash before animating in. */
+html.reveal-pending section :is(h1, h2, h3, h4, h5, h6, p, a, button, img, ul, ol, blockquote, figure) {
+  opacity: 0;
+}
+
 :root {
   --brand-primary: #F19020;
   --header-offset: 5.5rem;

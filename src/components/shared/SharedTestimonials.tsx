@@ -19,13 +19,14 @@ interface SharedTestimonialsProps {
   subtitle?: string
   items?: SharedTestimonialItem[]
   googleSummary?: GoogleReviewsSummary | null
+  logoSrc?: string
 }
 
 function Stars({ count = 5 }: { count?: number }) {
   return (
     <div className="flex gap-0.5 text-[#F19020]">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} className={`h-4 w-4 ${i < count ? 'fill-current' : 'fill-none'}`} viewBox="0 0 24 24" stroke="currentColor">
+        <svg key={i} className={`h-5 w-5 ${i < count ? 'fill-current' : 'fill-none'}`} viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 17.27l5.18 3.04-1.64-5.81L20 10.9l-6-.52L12 5l-2 5.38-6 .52 4.46 3.6-1.64 5.81z" />
         </svg>
       ))}
@@ -58,6 +59,7 @@ export function SharedTestimonials({
   subtitle,
   items,
   googleSummary,
+  logoSrc,
 }: SharedTestimonialsProps) {
   const list = items || []
   const [start, setStart] = useState(0)
@@ -78,9 +80,19 @@ export function SharedTestimonials({
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-4 lg:px-8">
         <div className="mb-12 text-center">
-          <span className="mb-4 inline-flex rounded-md bg-[#0b293d] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-            {badge}
-          </span>
+          {logoSrc ? (
+            <img
+              src={logoSrc}
+              alt={badge}
+              width={1004}
+              height={413}
+              className="mx-auto mb-4 h-14 w-auto md:h-16"
+            />
+          ) : (
+            <span className="mb-4 inline-flex rounded-md bg-[#0b293d] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+              {badge}
+            </span>
+          )}
           <h2 className="mx-auto max-w-3xl text-[28px] font-bold leading-tight text-[#0b293d] md:text-[36px]">
             {title}
           </h2>

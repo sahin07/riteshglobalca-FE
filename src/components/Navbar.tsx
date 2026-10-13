@@ -505,6 +505,9 @@ export function Navbar({
               const secondary = links.filter(l => !isPrimary(l.label || ''))
 
               const renderLink = (link: { id?: number; label: string; url: string }, idx: number, keyPrefix: string) => {
+                if ((link.label || '').toLowerCase() === 'insights') {
+                  return <DesktopInsightsNav key={`${keyPrefix}-${idx}`} href={link.url} label={link.label} />
+                }
                 if ((link.label || '').toLowerCase() === 'services') {
                   return (
                     <DesktopPracticeNav
@@ -717,6 +720,11 @@ export function Navbar({
                         />
                       )
                     }
+                    if (link.label.toLowerCase() === 'insights') {
+                      return (
+                        <MobileInsightsNav key={`m-nav-${idx}`} href={link.url} label={link.label} onClick={closeMobileMenu} />
+                      )
+                    }
                     return (
                       <MobileNavLink key={`m-nav-${idx}`} href={link.url} label={link.label} onClick={closeMobileMenu} />
                     )
@@ -729,7 +737,7 @@ export function Navbar({
                     {!HIDE_BLOGS && (
                       <MobileNavLink href="/blog" label="Blog" onClick={closeMobileMenu} />
                     )}
-                    <MobileNavLink href="/insights" label="Insights" onClick={closeMobileMenu} />
+                    <MobileInsightsNav href="/insights" label="Insights" onClick={closeMobileMenu} />
                     {!HIDE_ARTICLES && (
                       <MobileNavLink href="/articles" label="Articles" onClick={closeMobileMenu} />
                     )}
@@ -756,6 +764,73 @@ export function Navbar({
         </div>
       )}
     </header>
+  )
+}
+
+const INSIGHTS_SUB_LINKS = [
+  { label: 'Newsletter', url: '/newsletter' },
+  ...(!HIDE_BLOGS ? [{ label: 'Blog', url: '/blog' }] : []),
+]
+
+function DesktopInsightsNav({ href, label }: { href: string; label: string }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  return (
+    <div
+      className="relative self-stretch flex items-center"
+      onMouseEnter={() => setMenuOpen(true)}
+      onMouseLeave={() => setMenuOpen(false)}
+      onFocus={() => setMenuOpen(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setMenuOpen(false)
+      }}
+    >
+      <Link
+        href={href}
+        onClick={() => setMenuOpen(false)}
+        aria-haspopup="menu"
+        aria-expanded={menuOpen}
+        className={`flex h-full items-center gap-1 text-[14px] xl:text-[15px] whitespace-nowrap transition-colors ${menuOpen ? 'text-brand-dark' : 'text-slate-600 hover:text-brand-dark'}`}
+      >
+        {label}
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform ${menuOpen ? 'rotate-180' : ''}`}><path d="M6 9l6 6 6-6" /></svg>
+      </Link>
+      {menuOpen && (
+        <div className="absolute left-1/2 top-full z-[70] -translate-x-1/2 pt-2" role="menu">
+          <div className="min-w-[180px] rounded-xl border border-gray-100 bg-white p-2 shadow-xl">
+            {INSIGHTS_SUB_LINKS.map((item) => (
+              <Link
+                key={item.url}
+                href={item.url}
+                role="menuitem"
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-md px-3 py-2 text-[14px] text-gray-700 transition-colors hover:bg-orange-50 hover:text-brand-orange"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function MobileInsightsNav({ href, label, onClick }: { href: string; label: string; onClick: () => void }) {
+  return (
+    <>
+      <MobileNavLink href={href} label={label} onClick={onClick} />
+      {INSIGHTS_SUB_LINKS.map((item) => (
+        <Link
+          key={item.url}
+          href={item.url}
+          onClick={onClick}
+          className="block py-2.5 pl-6 pr-2 text-[14px] text-slate-500 hover:text-brand-dark border-b border-gray-100 transition-colors"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </>
   )
 }
 

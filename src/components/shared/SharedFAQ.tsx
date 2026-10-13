@@ -65,7 +65,7 @@ export function SharedFAQ({
                 >
                   <span className="text-[15px] font-semibold md:text-[16px]">{faq.question}</span>
                   <svg
-                    className={clsx('h-5 w-5 shrink-0 transition-transform', open && 'rotate-180')}
+                    className={clsx('h-6 w-6 shrink-0 transition-transform', open && 'rotate-180')}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

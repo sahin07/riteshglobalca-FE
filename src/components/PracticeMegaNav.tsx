@@ -30,6 +30,8 @@ export function DesktopPracticeNav({
   services: StrapiService[]
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuTop, setMenuTop] = useState(104)
+  const wrapperRef = useRef<HTMLDivElement | null>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
   const [activeModuleId, setActiveModuleId] = useState<number | null>(modules[0]?.id ?? null)
@@ -75,6 +77,17 @@ export function DesktopPracticeNav({
     }
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const measure = () => {
+      const header = wrapperRef.current?.closest('header')
+      if (header) setMenuTop(Math.round(header.getBoundingClientRect().bottom))
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [menuOpen])
+
   const selectModule = (id: number) => {
     setActiveModuleId(id)
     setActiveCategoryId(null)
@@ -84,6 +97,7 @@ export function DesktopPracticeNav({
 
   return (
     <div
+      ref={wrapperRef}
       className={`services-menu relative self-stretch flex items-center ${menuOpen ? 'is-open' : ''}`}
       onMouseEnter={keepOpen}
       onMouseLeave={closeSoon}
@@ -98,6 +112,7 @@ export function DesktopPracticeNav({
       </Link>
       <PracticeMegaMenu
         open={menuOpen}
+        top={menuTop}
         modules={modules}
         activeModule={activeModule}
         categories={moduleCats}
@@ -119,6 +134,7 @@ export function DesktopPracticeNav({
 
 function PracticeMegaMenu({
   open,
+  top,
   modules,
   activeModule,
   categories,
@@ -135,6 +151,7 @@ function PracticeMegaMenu({
   onNavigate,
 }: {
   open: boolean
+  top: number
   modules: StrapiMainModule[]
   activeModule: StrapiMainModule | null
   categories: StrapiServiceCategory[]
@@ -158,15 +175,20 @@ function PracticeMegaMenu({
     <>
       <div
         aria-hidden
-        className={`hidden lg:block fixed inset-x-0 top-[6.5rem] bottom-0 z-40 pointer-events-none bg-transparent backdrop-blur-0 transition-all duration-300 ${open ? 'visible bg-black/20 backdrop-blur-xl' : 'invisible'}`}
+        style={{ top }}
+        className={`hidden lg:block fixed inset-x-0 bottom-0 z-40 pointer-events-none bg-transparent backdrop-blur-0 transition-all duration-300 ${open ? 'visible bg-black/20 backdrop-blur-xl' : 'invisible'}`}
       />
       <div
         aria-hidden
-        className={`hidden lg:block fixed left-1/2 -translate-x-1/2 top-[5rem] h-14 w-[min(1080px,calc(100vw-2rem))] z-[55] ${open ? 'block' : 'hidden'}`}
+        style={{ top: top - 32 }}
+        className={`hidden fixed inset-x-0 h-8 z-[55] ${open ? 'lg:block' : ''}`}
       />
-      <div className={`hidden lg:block fixed left-1/2 -translate-x-1/2 top-[6.5rem] z-50 w-[min(1080px,calc(100vw-2rem))] transition-opacity duration-200 ease-out ${open ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'}`}>
-        <div className="bg-white border border-t-0 border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
-          <div className="grid grid-cols-4">
+      <div
+        style={{ top, ['--mega-max-h' as string]: `calc(100vh - ${top}px - 1.5rem)` }}
+        className={`hidden lg:block fixed inset-x-0 z-50 transition-opacity duration-200 ease-out ${open ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'}`}
+      >
+        <div className="bg-white border-t border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+          <div className="mx-auto grid max-w-[1400px] grid-cols-[minmax(170px,0.75fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.35fr)] px-4 lg:px-8 2xl:grid-cols-[minmax(200px,0.7fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.6fr)]">
             <MegaColumn label="Practice Areas">
               {modules.length === 0 && <MegaEmpty text="No practice areas" />}
               {modules.map((mod) => {
@@ -224,7 +246,7 @@ function PracticeMegaMenu({
               })}
             </MegaColumn>
 
-            <MegaColumn label="Services" last>
+            <MegaColumn label="Services" last listClassName="xl:grid xl:grid-cols-2 xl:gap-x-2">
               {services.length === 0 && <MegaEmpty text="No services" />}
               {services.map((srv) => {
                 const isActive = activeServiceId === srv.id
@@ -260,17 +282,21 @@ function MegaColumn({
   label,
   children,
   last,
+  listClassName = '',
 }: {
   label: string
   children: ReactNode
   last?: boolean
+  listClassName?: string
 }) {
   return (
-    <div className={`flex flex-col px-3 py-4 bg-white ${last ? '' : 'border-r border-gray-100'}`}>
-      <div className="mb-3 text-[11px] font-bold tracking-[0.16em] uppercase text-slate-500 px-2">
+    <div
+      className={`flex min-w-0 max-h-[var(--mega-max-h)] flex-col bg-white py-4 xl:py-5 ${last ? 'pl-3 xl:pl-4' : 'border-r border-gray-100 px-3 xl:px-4'}`}
+    >
+      <div className="mb-3 shrink-0 px-2 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
         {label}
       </div>
-      <div className="flex flex-col gap-1">
+      <div className={`flex min-h-0 flex-col gap-1 overflow-y-auto overscroll-contain pr-1 ${listClassName}`}>
         {children}
       </div>
     </div>

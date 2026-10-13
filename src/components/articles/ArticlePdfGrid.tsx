@@ -6,9 +6,10 @@ import { submitContactRequest, triggerPdfDownload } from '@/lib/submitContactReq
 
 interface ArticlePdfGridProps {
   items: PdfArticle[]
+  leadSource?: string
 }
 
-export function ArticlePdfGrid({ items }: ArticlePdfGridProps) {
+export function ArticlePdfGrid({ items, leadSource = 'Articles PDF Download' }: ArticlePdfGridProps) {
   const [selected, setSelected] = useState<PdfArticle | null>(null)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -58,7 +59,7 @@ export function ArticlePdfGrid({ items }: ArticlePdfGridProps) {
         fullName,
         email,
         phone,
-        serviceInterest: 'Articles PDF Download',
+        serviceInterest: leadSource,
         message: `Requested PDF download: ${selected.title} (${selected.fileName})`,
       })
 
@@ -99,7 +100,7 @@ export function ArticlePdfGrid({ items }: ArticlePdfGridProps) {
                 onClick={() => openModal(article)}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b293d] px-5 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#F19020]"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14"
                     stroke="currentColor"

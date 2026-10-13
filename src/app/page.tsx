@@ -20,6 +20,22 @@ import { plainTextFromHtml } from '@/lib/serviceContent'
 
 const HOME_SERVICES_MODULE_SLUG = 'india-practice'
 
+// Files live in public/images/services/categories/<slug>.jpg
+const CATEGORY_THUMBNAILS = new Set([
+  'gst-indirect-tax-services',
+  'direct-tax-services',
+  'audit-assurance-services',
+  'accounting-compliance-services',
+  'corporate-advisory-services',
+  'mca-compliances',
+  'ipo-readiness-advisory',
+  'startup-india-registration-compliance',
+  'rera-registration-compliance',
+  'loan-syndication-project-finance',
+  'business-valuation-financial-modelling',
+  'epfo-labour-law-compliance',
+])
+
 // Homepage SEO (source of truth for /)
 const HOME_SEO = {
   title: 'Chartered Accountancy Firm in India | Ritesh Arora & Associates',
@@ -91,6 +107,7 @@ export default async function Page() {
     ? categoriesForModule(categories, servicesModule.id).map((cat) => ({
       title: cat.title,
       href: categoryHref(servicesModule.slug, cat.slug),
+      image: CATEGORY_THUMBNAILS.has(cat.slug) ? `/images/services/categories/${cat.slug}.jpg` : null,
       description:
         plainTextFromHtml(cat.intro) ||
         plainTextFromHtml(cat.description) ||
@@ -166,6 +183,7 @@ export default async function Page() {
           title={servicesTitle || 'Our Core Services'}
           subtitle={servicesSubtitle || undefined}
           items={servicesData}
+          columns={4}
         >
           <div className="mt-12 flex justify-center">
             <Link href="/services">

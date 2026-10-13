@@ -36,9 +36,11 @@ function hasOwnText(el: HTMLElement): boolean {
 }
 
 // A transparent layout wrapper is split into its children; cards, text and media animate as one piece.
+// Sliders stay whole: their moving track and off-screen slides would never report as in view.
 function isWrapper(el: HTMLElement, children: HTMLElement[]): boolean {
   if (children.length === 0 || children.length > MAX_GROUP_CHILDREN) return false
   if (LEAF_TAGS.has(el.tagName.toUpperCase()) || hasOwnText(el)) return false
+  if (el.scrollWidth > el.clientWidth + 1) return false
   const s = getComputedStyle(el)
   const painted =
     (s.backgroundColor !== 'rgba(0, 0, 0, 0)' && s.backgroundColor !== 'transparent') ||

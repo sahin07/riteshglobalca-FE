@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { plainTextFromHtml } from '@/lib/serviceContent'
 
@@ -6,6 +7,7 @@ export type ServiceCardItem = {
   title: string
   description?: string | null
   href: string
+  image?: string | null
 }
 
 const icons = [
@@ -39,13 +41,46 @@ interface ServicesCardsGridProps {
   title?: string
   subtitle?: string
   items: ServiceCardItem[]
+  columns?: 3 | 4
   children?: ReactNode
+}
+
+function ImageServiceCard({ item }: { item: ServiceCardItem }) {
+  return (
+    <Link
+      href={item.href}
+      className="group flex flex-col overflow-hidden rounded-[24px] bg-white shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#eef1f4]">
+        <Image
+          src={item.image as string}
+          alt={item.title}
+          fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#F19020] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </div>
+      <div className="flex flex-1 flex-col items-center px-6 pb-7 pt-6 text-center">
+        <h3 className="mb-3 text-[18px] font-bold leading-snug text-[#0b293d] md:text-[19px]">{item.title}</h3>
+        {item.description && (
+          <p className="mb-6 line-clamp-3 flex-1 text-[14px] leading-relaxed text-slate-500">
+            {plainTextFromHtml(item.description)}
+          </p>
+        )}
+        <span className="mt-auto inline-flex items-center justify-center rounded-full bg-[#0b293d] px-7 py-2.5 text-[12px] font-bold uppercase tracking-wider text-white transition-colors group-hover:bg-[#F19020]">
+          Learn More
+        </span>
+      </div>
+    </Link>
+  )
 }
 
 export function ServicesCardsGrid({
   title = 'Our Core Services',
   subtitle = 'Expert CA services to support individuals, startups, and enterprises.',
   items,
+  columns = 3,
   children,
 }: ServicesCardsGridProps) {
   if (!items.length) return null
@@ -65,15 +100,19 @@ export function ServicesCardsGrid({
         )}
 
         <div
-          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 ${
+          className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${columns === 4 ? '' : 'md:gap-8'} ${
             items.length === 1
               ? 'mx-auto max-w-md lg:grid-cols-1'
               : items.length === 2
                 ? 'mx-auto max-w-3xl lg:grid-cols-2'
-                : 'lg:grid-cols-3'
+                : columns === 4
+                  ? 'lg:grid-cols-4'
+                  : 'lg:grid-cols-3'
           }`}
         >
-          {items.map((item, idx) => (
+          {items.map((item, idx) => item.image ? (
+            <ImageServiceCard key={item.href} item={item} />
+          ) : (
             <div
               key={item.href}
               className="flex flex-col items-center rounded-[28px] bg-[#eef1f4] px-7 py-10 text-center transition-shadow hover:shadow-md"
